@@ -3,5 +3,6 @@
   <cDbServer>sapserver\sql2012</cDbServer>
   <cDbUser>sa</cDbUser>
   <cDbPass>Tecnologia.4</cDbPass>
+  <cSvrLicense>sapserver:30000</cSvrLicense>
 </cDbConStr>
  

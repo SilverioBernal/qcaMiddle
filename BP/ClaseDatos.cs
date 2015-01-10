@@ -27,6 +27,7 @@ namespace BP
         private static string cUserDb = null;
         private static string cPassDb = null;
         private static string cSvrDb = null;
+        private static string cSvrLicense = null;
         public static SqlConnection SqlConn = null;
 
         public static bool nSapConnected = false;
@@ -57,9 +58,11 @@ namespace BP
                     XmlNodeList nServer = nodo.GetElementsByTagName("cDbServer");
                     XmlNodeList nUser = nodo.GetElementsByTagName("cDbUser");
                     XmlNodeList nPass = nodo.GetElementsByTagName("cDbPass");
+                    XmlNodeList nSvrLicense = nodo.GetElementsByTagName("cSvrLicense");
                     cSvrDb = nServer[0].InnerText;
                     cUserDb = nUser[0].InnerText;
                     cPassDb = nPass[0].InnerText;
+                    cSvrLicense = nSvrLicense[0].InnerText;
                     break;
                 }
             }
@@ -220,6 +223,7 @@ namespace BP
                 objCompany.DbPassword = cPassDb;
                 objCompany.UserName = usuarioSap;
                 objCompany.Password = passwordSap;
+                objCompany.LicenseServer = cSvrLicense;
                 switch (tipoSver)
                 {
                     case "MSSQL 2005":
