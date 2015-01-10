@@ -1,0 +1,175 @@
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\bin\Debug\BP.exe
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\bin\Debug\BP.pdb
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.Form1.resources
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.exe
+C:\Users\i812590\Documents\Visual Studio 2008\Projects\SDK Training\BP\BP\obj\Debug\BP.pdb
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.exe
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.pdb
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Debug\BP.exe
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Debug\BP.pdb
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.Form1.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.FromsSDK_SBD.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.loging.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmItems.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.exe
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.pdb
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Debug\BP.exe
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Debug\BP.pdb
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.loging.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmFletes.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmReporteFletes.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmProductosControlados.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Debug\BP.frmCupoTecnico.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.exe
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.pdb
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\BP.exe
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\BP.pdb
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmCupoTecnico.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmFletes.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmProductosControlados.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmReporteFletes.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.loging.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmEstadoPedidos.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.frmEstimadosRecaudo.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\Control Año.dll
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\Control Año.pdb
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.Grilladeslizante.resources
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\office.dll
+C:\Documents and Settings\Invitado2\Escritorio\walter\Entrega Consensus MiddleWare 20091110\BP\BP\bin\Debug\Microsoft.Vbe.Interop.dll
+\\JoseWalter-vaio\Users\Public\Documents\Compartida\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\Interop.SAPbobsCOM.dll
+\\JoseWalter-vaio\Users\Public\Documents\Compartida\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+\\JoseWalter-vaio\Users\Public\Documents\Compartida\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.exe
+\\JoseWalter-vaio\Users\Public\Documents\Compartida\walter\Entrega Consensus MiddleWare 20091110\BP\BP\obj\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\office.dll
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\Control Año.pdb
+C:\Users\Administrador\Desktop\BP-Convertida\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.Grilladeslizante.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\ResGen.read.1.tlog
+C:\Users\Administrador\Desktop\BP-Convertida\BP\obj\Debug\ResGen.write.1.tlog
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\bin\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\bin\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\bin\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCircularizacion.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCupoGarantia.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmPrevisiones.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy - copia\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCircularizacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCupoGarantia.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmPrevisiones.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.exe
+C:\Users\Administrador\Desktop\Developoer\BP\obj\Debug\BP.pdb
+C:\Users\Administrador\Desktop\Developoer\BP\bin\Debug\BP.exe.config
+C:\Users\Administrador\Desktop\Developoer\BP\bin\Debug\BP.exe
+C:\Users\Administrador\Desktop\Developoer\BP\bin\Debug\BP.pdb
+C:\Users\Administrador\Desktop\Developoer\BP\bin\Debug\Interop.SAPbobsCOM.dll

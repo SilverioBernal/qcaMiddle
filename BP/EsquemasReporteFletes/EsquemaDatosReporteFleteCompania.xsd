@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EsquemaDatosReporteFleteCompania" targetNamespace="http://tempuri.org/fuenteRepValidacionesDocumentos.xsd" xmlns:mstns="http://tempuri.org/fuenteRepValidacionesDocumentos.xsd" xmlns="http://tempuri.org/fuenteRepValidacionesDocumentos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EsquemaDatosReporteFleteCompania" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_UserDSName="EsquemaDatosReporteFleteCompania" msprop:Generator_DataSetName="EsquemaDatosReporteFleteCompania">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T0" msprop:Generator_UserTableName="T0" msprop:Generator_RowDeletedName="T0RowDeleted" msprop:Generator_RowChangedName="T0RowChanged" msprop:Generator_RowClassName="T0Row" msprop:Generator_RowChangingName="T0RowChanging" msprop:Generator_RowEvArgName="T0RowChangeEvent" msprop:Generator_RowEvHandlerName="T0RowChangeEventHandler" msprop:Generator_TableClassName="T0DataTable" msprop:Generator_TableVarName="tableT0" msprop:Generator_RowDeletingName="T0RowDeleting" msprop:Generator_TablePropName="T0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompnyName" msprop:Generator_UserColumnName="CompnyName" msprop:Generator_ColumnVarNameInTable="columnCompnyName" msprop:Generator_ColumnPropNameInRow="CompnyName" msprop:Generator_ColumnPropNameInTable="CompnyNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompnyAddr" msprop:Generator_UserColumnName="CompnyAddr" msprop:Generator_ColumnVarNameInTable="columnCompnyAddr" msprop:Generator_ColumnPropNameInRow="CompnyAddr" msprop:Generator_ColumnPropNameInTable="CompnyAddrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone1" msprop:Generator_UserColumnName="Phone1" msprop:Generator_ColumnVarNameInTable="columnPhone1" msprop:Generator_ColumnPropNameInRow="Phone1" msprop:Generator_ColumnPropNameInTable="Phone1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="Fax" msprop:Generator_UserColumnName="Fax" msprop:Generator_ColumnVarNameInTable="columnFax" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TaxIdNum" msprop:Generator_UserColumnName="TaxIdNum" msprop:Generator_ColumnVarNameInTable="columnTaxIdNum" msprop:Generator_ColumnPropNameInRow="TaxIdNum" msprop:Generator_ColumnPropNameInTable="TaxIdNumColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_UserColumnName="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

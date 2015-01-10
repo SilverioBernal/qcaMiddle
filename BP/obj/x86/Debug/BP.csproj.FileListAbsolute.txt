@@ -1,0 +1,284 @@
+C:\Users\Administrador\Desktop\Developoer\BP\bin\x86\Debug\BP.exe.config
+C:\Users\Administrador\Desktop\Developoer\BP\bin\x86\Debug\BP.exe
+C:\Users\Administrador\Desktop\Developoer\BP\bin\x86\Debug\BP.pdb
+C:\Users\Administrador\Desktop\Developoer\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.exe
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.pdb
+C:\Archivoscopiados\Developoer_20100913MOD\BP\bin\x86\Debug\BP.exe.config
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.exe
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.pdb
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.loging.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Archivoscopiados\Developoer_20100913MOD\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Archivoscopiados\Developoer_20100913MOD\BP\bin\x86\Debug\BP.exe
+C:\Archivoscopiados\Developoer_20100913MOD\BP\bin\x86\Debug\BP.pdb
+C:\Archivoscopiados\Developoer_20100913MOD\BP\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Archivoscopiados\Developoer_20100913MOD\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.exe.config
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.exe
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.pdb
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.exe
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.pdb
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\office.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\office.xml
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\jsantamaria\Desktop\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Datos\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.exe.config
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.exe
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.pdb
+C:\Datos\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.exe
+C:\Datos\Developoer_20100913MOD20101012\BP\bin\x86\Debug\BP.pdb
+C:\Datos\Developoer_20100913MOD20101012\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.loging.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Datos\Developoer_20100913MOD20101012\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\BP.exe.config
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.exe
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.pdb
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\BP.exe
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\BP.pdb
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\GridControlBP.dll
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\bin\x86\Debug\GridControlBP.pdb
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.PopedCotainer.resources
+C:\Users\Jose Walter\Desktop\Developoer_20100913MOD20101210\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\BP.exe.config
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.exe
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\BP.exe
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\office.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.PopedCotainer.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\David\Desktop\Developer\BP\obj\x86\Debug\BP.frmEstimadosVentasOld.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\BP.exe.config
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.exe
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.pdb
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\BP.exe
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\BP.pdb
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\office.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmEstimadosVentasOld.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.PopedCotainer.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\BP.exe.config
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.exe
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.pdb
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\BP.exe
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\BP.pdb
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\office.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmEstimadosVentasOld.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.PopedCotainer.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog

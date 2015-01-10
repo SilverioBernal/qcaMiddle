@@ -1,0 +1,152 @@
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.csproj.ResolveComReference.cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.Form1.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.FromsSDK_SBD.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.Properties.Resources.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.csproj.GenerateResource.Cache
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Release\BP.exe
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Release\BP.pdb
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\bin\Release\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.exe
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.pdb
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.frmItems.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.frmMenuPrincipal.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.frmPresupuestos.resources
+C:\Documents and Settings\Michell Archila\Mis documentos\Silverio Bernal\BP\BP\obj\Release\BP.loging.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Release\BP.exe
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Release\BP.pdb
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\bin\Release\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\Interop.SAPbobsCOM.dll
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.csproj.ResolveComReference.cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.Form1.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmCtrlUsrMiddle.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmEditMenuOptions.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmMenuPrincipal.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmPresupuestos.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmProyectaCosto.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.frmUploadBudget.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.FromsSDK_SBD.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.loging.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.Properties.Resources.resources
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.csproj.GenerateResource.Cache
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.exe
+C:\Documents and Settings\MARIITA\Escritorio\Consensus\BP\BP\obj\Release\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\Release\BP.exe.config
+C:\Users\David\Desktop\Developer\BP\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.csproj.ResolveComReference.cache
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.exe
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\Release\BP.exe
+C:\Users\David\Desktop\Developer\BP\bin\Release\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\David\Desktop\Developer\BP\bin\Release\office.dll
+C:\Users\David\Desktop\Developer\BP\bin\Release\Microsoft.Vbe.Interop.dll
+C:\Users\David\Desktop\Developer\BP\bin\Release\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\Release\ResolveAssemblyReference.cache
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCircularizacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmContratosConsignacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCtrlUsrMiddle.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCupoAsegurado.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCupoGarantia.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCupoRiesgo.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmCupoTecnico.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmEditMenuOptions.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmEstadoPedidos.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmEstimadosRecaudo.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmEstimadosVentas.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmEstimadosVentasOld.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmMenuPrincipal.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmPresupuestos.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmPrevisiones.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmProductosControlados.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmProyectaCosto.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmReporteFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmReporteVentasAseguradora.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.frmUploadBudget.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.loging.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.PopedCotainer.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.Properties.Resources.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.ArrayControlQCA.resources
+C:\Users\David\Desktop\Developer\BP\obj\Release\BP.csproj.GenerateResource.Cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\BP.exe.config
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\BP.exe
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\BP.pdb
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\Microsoft.Office.Interop.Excel.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\Telerik.WinControls.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\Telerik.WinControls.Themes.Windows7.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\Telerik.WinControls.UI.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\TelerikCommon.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\Release\Interop.SAPbobsCOM.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\Interop.SAPbobsCOM.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.csproj.ResolveComReference.cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCircularizacion.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmContratosConsignacion.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCtrlUsrMiddle.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCupoAsegurado.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCupoGarantia.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCupoRiesgo.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmCupoTecnico.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmEditMenuOptions.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmEstadoPedidos.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmEstimadosRecaudo.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmEstimadosVentas.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmEstimadosVentasOld.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmFletes.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmMenuPrincipal.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmPresupuestos.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmPrevisiones.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmProductosControlados.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmProyectaCosto.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmReporteFletes.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmReporteVentasAseguradora.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.frmUploadBudget.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.loging.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.PopedCotainer.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.Properties.Resources.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.ArrayControlQCA.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.csproj.GenerateResource.Cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.exe
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\Release\BP.pdb
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\BP.exe.config
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\Interop.SAPbobsCOM.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.csproj.ResolveComReference.cache
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.exe
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.pdb
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.csprojResolveAssemblyReference.cache
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCircularizacion.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmContratosConsignacion.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCtrlUsrMiddle.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCupoAsegurado.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCupoGarantia.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCupoRiesgo.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmCupoTecnico.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmEditMenuOptions.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmEstadoPedidos.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmEstimadosRecaudo.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmEstimadosVentas.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmEstimadosVentasOld.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmFletes.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmMenuPrincipal.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmPresupuestos.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmPrevisiones.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmProductosControlados.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmProyectaCosto.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmReporteFletes.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmReporteVentasAseguradora.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmUploadBudget.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.loging.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.PopedCotainer.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.Properties.Resources.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.ArrayControlQCA.resources
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\obj\Release\BP.csproj.GenerateResource.Cache
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\BP.exe
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\BP.pdb
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\Telerik.WinControls.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\Telerik.WinControls.Themes.Windows7.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\Telerik.WinControls.UI.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\TelerikCommon.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\BP\bin\Release\Interop.SAPbobsCOM.dll

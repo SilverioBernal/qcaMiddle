@@ -1,0 +1,51 @@
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.pdb
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\bin\x86\Debug\BP.exe
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Administrador\Desktop\BP-Convertida - Sindy\BP\bin\x86\Debug\BP.pdb
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.exe
+C:\Users\Administrador\Desktop\Developoer\BP\obj\x86\Debug\BP.pdb

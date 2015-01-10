@@ -1,0 +1,4079 @@
+﻿
+DECLARE @AÑO_ACTUAL TABLE( 
+  CONCEPTO     CHAR(15)
+  , AÑO        INT
+  , ENERO      NUMERIC (19,6)
+  , FEBRERO    NUMERIC (19,6)
+  , MARZO      NUMERIC (19,6)
+  , ABRIL      NUMERIC (19,6)
+  , MAYO       NUMERIC (19,6)
+  , JUNIO      NUMERIC (19,6)
+  , JULIO      NUMERIC (19,6)
+  , AGOSTO     NUMERIC (19,6)
+  , SEPTIEMBRE NUMERIC (19,6)
+  , OCTUBRE    NUMERIC (19,6)
+  , NOVIEMBRE  NUMERIC (19,6)
+  , DICIEMBRE  NUMERIC (19,6))
+  
+Declare  @beforeToDate as DATETIME  select @beforeToDate = DATEADD(YY, -1, @todate)
+Declare  @afterToDate as DATETIME  select @afterToDate = DATEADD(YY, 1, @todate)
+
+DECLARE @AÑO_Anterior TABLE( 
+  CONCEPTO     CHAR(15)
+  , AÑO        INT
+  , ENERO      NUMERIC (19,6)
+  , FEBRERO    NUMERIC (19,6)
+  , MARZO      NUMERIC (19,6)
+  , ABRIL      NUMERIC (19,6)
+  , MAYO       NUMERIC (19,6)
+  , JUNIO      NUMERIC (19,6)
+  , JULIO      NUMERIC (19,6)
+  , AGOSTO     NUMERIC (19,6)
+  , SEPTIEMBRE NUMERIC (19,6)
+  , OCTUBRE    NUMERIC (19,6)
+  , NOVIEMBRE  NUMERIC (19,6)
+  , DICIEMBRE  NUMERIC (19,6))
+
+
+DECLARE @AÑO_SIGUIENTE TABLE( 
+  CONCEPTO     CHAR(15)
+  , AÑO        INT
+  , ENERO      NUMERIC (19,6)
+  , FEBRERO    NUMERIC (19,6)
+  , MARZO      NUMERIC (19,6)
+  , ABRIL      NUMERIC (19,6)
+  , MAYO       NUMERIC (19,6)
+  , JUNIO      NUMERIC (19,6)
+  , JULIO      NUMERIC (19,6)
+  , AGOSTO     NUMERIC (19,6)
+  , SEPTIEMBRE NUMERIC (19,6)
+  , OCTUBRE    NUMERIC (19,6)
+  , NOVIEMBRE  NUMERIC (19,6)
+  , DICIEMBRE  NUMERIC (19,6))
+
+/*** INICIO PRESUPUESTO ***/
+INSERT INTO @AÑO_ACTUAL (CONCEPTO, AÑO) 
+  VALUES ('PresupuestosKG', YEAR(@TODATE))
+
+UPDATE @AÑO_ACTUAL SET ENERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 1
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET FEBRERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 2
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET MARZO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 3
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+  WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET ABRIL = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 4
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET MAYO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 5
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET JUNIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 6
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET JULIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 7
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET AGOSTO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 8
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET SEPTIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 9
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET OCTUBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 10
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET NOVIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 11
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_ACTUAL SET DICIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@todate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 12
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+/*** FIN PRESUPUESTO ***/
+
+
+/*** INICIO ESTIMADOS ***/
+INSERT INTO @AÑO_ACTUAL (CONCEPTO, AÑO) 
+  VALUES('EstimadosKG', YEAR(@TODATE))
+
+UPDATE @AÑO_ACTUAL SET ENERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 1
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET FEBRERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 2
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET MARZO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 3
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET ABRIL = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 4
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET MAYO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 5
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET JUNIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 6
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET JULIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 7
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET AGOSTO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 8
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET SEPTIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 9
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET OCTUBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 10
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET NOVIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 11
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_ACTUAL SET DICIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@todate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 12
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+/*** FIN ESTIMADO ***/
+
+
+--*** INICIO VENTAS ****
+
+INSERT INTO @AÑO_ACTUAL (CONCEPTO, AÑO) 
+  VALUES('VentasKG', YEAR(@TODATE))
+							
+UPDATE @AÑO_ACTUAL SET ENERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 1 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET FEBRERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 2 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET MARZO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 3 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET ABRIL = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 4 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET MAYO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 5 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET JUNIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 6 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET JULIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 7 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET AGOSTO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 8 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET SEPTIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 9 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+			
+UPDATE @AÑO_ACTUAL SET OCTUBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 10 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET NOVIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 11 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_ACTUAL SET DICIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@TODATE) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 12 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+
+/*** INICIO PRESUPUESTO ANTERIOR***/
+INSERT INTO @AÑO_Anterior (CONCEPTO, AÑO) 
+  VALUES ('PresupuestosKG', YEAR(@beforeToDate))
+
+UPDATE @AÑO_Anterior SET ENERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 1
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET FEBRERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 2
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET MARZO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 3
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+  WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET ABRIL = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 4
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET MAYO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 5
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET JUNIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 6
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET JULIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 7
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET AGOSTO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 8
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET SEPTIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 9
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET OCTUBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 10
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET NOVIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 11
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_Anterior SET DICIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@beforeToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 12
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+/*** FIN PRESUPUESTO ***/
+
+
+/*** INICIO ESTIMADOS ANTERIOR***/
+INSERT INTO @AÑO_Anterior (CONCEPTO, AÑO) 
+  VALUES('EstimadosKG', YEAR(@beforeToDate))
+
+UPDATE @AÑO_Anterior SET ENERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 1
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET FEBRERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 2
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET MARZO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 3
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET ABRIL = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 4
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET MAYO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 5
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET JUNIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 6
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET JULIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 7
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET AGOSTO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 8
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET SEPTIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 9
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET OCTUBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 10
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET NOVIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 11
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_Anterior SET DICIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@beforeToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 12
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+/*** FIN ESTIMADO ***/
+
+
+/*** INICIO VENTAS ANTERIOR ***/
+
+INSERT INTO @AÑO_Anterior (CONCEPTO, AÑO) 
+  VALUES('VentasKG', YEAR(@beforeToDate))
+							
+UPDATE @AÑO_Anterior SET ENERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 1 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET FEBRERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 2 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET MARZO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 3 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET ABRIL = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 4 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET MAYO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 5 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET JUNIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 6 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET JULIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 7 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET AGOSTO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 8 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET SEPTIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 9 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+			
+UPDATE @AÑO_Anterior SET OCTUBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 10 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET NOVIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 11 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_Anterior SET DICIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@beforeToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 12 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+
+/*** INICIO PRESUPUESTO AÑO SIGUIENTE***/
+
+INSERT INTO @AÑO_SIGUIENTE (CONCEPTO, AÑO) 
+  VALUES ('PresupuestosKG', YEAR(@afterToDate))
+
+UPDATE @AÑO_SIGUIENTE SET ENERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 1
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET FEBRERO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 2
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET MARZO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 3
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+  WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET ABRIL = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 4
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET MAYO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 5
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET JUNIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 6
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET JULIO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 7
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET AGOSTO = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 8
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET SEPTIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 9
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET OCTUBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 10
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET NOVIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 11
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+UPDATE @AÑO_SIGUIENTE SET DICIEMBRE = (
+  SELECT PresupuestoKG 
+  FROM 
+    (
+      SELECT SUM(U_estimadokg) PresupuestoKG 
+      FROM 
+        [@CSS_PRESUPUESTOHEAD] T9 
+        INNER JOIN [@CSS_PRESUPUESTOLINE] T10 ON 
+          T9.U_id_estimado = T10.U_id_estima_venta
+      WHERE 
+        U_ano_estim = YEAR(@afterToDate)
+        AND U_cliente = @Cliente
+        AND U_item = @Item
+        AND U_id_ing_slpcode =@fromSLP
+        AND U_mes = 12
+	  GROUP BY 
+  	    U_ano_estim
+	    , U_mes
+	    , U_id_ing_slpcode
+	    , U_cliente
+	    , U_item) 
+  AS B )
+WHERE CONCEPTO = 'PresupuestosKG'
+
+/*** FIN PRESUPUESTO ***/
+
+
+/*** INICIO ESTIMADOS SIGUIENTE***/
+INSERT INTO @AÑO_SIGUIENTE (CONCEPTO, AÑO) 
+  VALUES('EstimadosKG', YEAR(@afterToDate))
+
+UPDATE @AÑO_SIGUIENTE SET ENERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 1
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET FEBRERO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 2
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET MARZO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 3
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET ABRIL = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 4
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET MAYO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 5
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET JUNIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 6
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET JULIO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 7
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET AGOSTO = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 8
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET SEPTIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 9
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET OCTUBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 10
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET NOVIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 11
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+UPDATE @AÑO_SIGUIENTE SET DICIEMBRE = (
+  SELECT EstimadoKG
+  FROM 
+   (
+     SELECT SUM(U_estimadokg) EstimadoKG
+     FROM 
+       [@CSS_ESTIMAVENT_HEAD] T3 
+       INNER JOIN [dbo].[@ESTIMADO_VENTA_LINE] T4 ON 
+         T3.U_ID_ESTIMADO = T4.U_ID_ESTIMA_VENTA  
+     WHERE 
+       U_ano_estim = YEAR(@afterToDate)
+       AND U_cliente = @Cliente
+       AND U_item = @Item
+       AND U_id_ing_slpcode =@fromSLP
+       AND U_mes = 12
+     GROUP BY 
+       U_ano_estim
+       , U_mes
+       , U_id_ing_slpcode
+       , U_cliente, U_item  
+   ) AS B )
+WHERE CONCEPTO = 'EstimadosKG'
+
+/*** FIN ESTIMADO ***/
+
+
+/*** INICIO VENTAS SIGUIENTE ***/
+
+INSERT INTO @AÑO_SIGUIENTE (CONCEPTO, AÑO) 
+  VALUES('VentasKG', YEAR(@afterToDate))
+							
+UPDATE @AÑO_SIGUIENTE SET ENERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 1 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET FEBRERO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 2 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET MARZO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 3 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET ABRIL = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 4 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET MAYO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 5 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET JUNIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 6 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET JULIO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 7 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET AGOSTO = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 8 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET SEPTIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 9 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+			
+UPDATE @AÑO_SIGUIENTE SET OCTUBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 10 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET NOVIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 11 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+UPDATE @AÑO_SIGUIENTE SET DICIEMBRE = 
+  ISNULL( -- VENTAS (FACTURAS/NOTAS DEBITO)
+    (
+      SELECT  SUM(ISNULL(KILOS,0)) 
+      FROM      
+        (
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE
+            , 'SERVICIOS') PRODUCTO
+            , T0.CardCode CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES
+            , ISNULL(T1.QUANTITY,0) KILOS
+            , T1.LINETOTAL VENTAS
+          FROM 
+            OINV T0 
+            INNER JOIN INV1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE
+          WHERE	
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate)
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+          UNION ALL -- NOTAS CREDITO
+          SELECT 
+            T3.SLPNAME INGENIERO
+            , COALESCE(T1.ITEMCODE,'SERVICIOS') PRODUCTO
+            , T0.CARDCODE CLIENTE
+            , YEAR(T0.DOCDATE) AÑO
+            , MONTH(T0.DOCDATE) MES 
+            , ISNULL(T1.QUANTITY*-1,0) KILOS
+            , T1.LINETOTAL*-1 VENTAS
+          FROM 
+            ORIN T0 
+            INNER JOIN RIN1 T1 ON 
+              T0.DOCENTRY=T1.DOCENTRY
+              LEFT OUTER JOIN OITM T4 ON 
+                T1.ITEMCODE=T4.ITEMCODE
+            INNER JOIN OSLP T3 ON 
+              T0.SLPCODE=T3.SLPCODE								 
+          WHERE 
+            T3.SlpCode = @fromSLP 
+            AND SUBSTRING(T1.ACCTCODE,1,2)='41'
+            AND YEAR(T0.DOCDATE) = YEAR(@afterToDate) 
+            AND T1.ItemCode = @Item
+            AND T0.CardCode = @Cliente
+        ) AS A 
+      WHERE MES = 12 
+      GROUP BY   
+        A.AÑO
+        , A.MES
+        , A.INGENIERO
+        , A.CLIENTE
+        , A.PRODUCTO 
+    ),0)
+WHERE CONCEPTO = 'VentasKG'
+
+
+SELECT * FROM @AÑO_ACTUAL
+
+SELECT * FROM @AÑO_Anterior 
+
+SELECT * FROM @AÑO_SIGUIENTE

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="datasetMio" targetNamespace="http://tempuri.org/datasetMio.xsd" xmlns:mstns="http://tempuri.org/datasetMio.xsd" xmlns="http://tempuri.org/datasetMio.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QCA_TESTConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QCA_TESTConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BP.Properties.Settings.GlobalReference.Default.QCA_TESTConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="@CSS_ESTIMADO_RECTableAdapter" GeneratorDataComponentClassName="@CSS_ESTIMADO_RECTableAdapter" Name="@CSS_ESTIMADO_REC" UserDataComponentName="@CSS_ESTIMADO_RECTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QCA_TESTConnectionString (Settings)" DbObjectName="[QCA-TEST].dbo.[@CSS_ESTIMADO_REC]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT U_CSS_Month1, U_CSS_Month2, U_CSS_Month3, U_CSS_Month4, U_CSS_Month5, U_CSS_Month6, U_CSS_Month7, U_CSS_Month8, U_CSS_Month9, U_CSS_Month10, U_CSS_Month11, U_CSS_Month12 FROM dbo.[@CSS_ESTIMADO_REC]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="U_CSS_Month1" DataSetColumn="U_CSS_Month1" />
+              <Mapping SourceColumn="U_CSS_Month2" DataSetColumn="U_CSS_Month2" />
+              <Mapping SourceColumn="U_CSS_Month3" DataSetColumn="U_CSS_Month3" />
+              <Mapping SourceColumn="U_CSS_Month4" DataSetColumn="U_CSS_Month4" />
+              <Mapping SourceColumn="U_CSS_Month5" DataSetColumn="U_CSS_Month5" />
+              <Mapping SourceColumn="U_CSS_Month6" DataSetColumn="U_CSS_Month6" />
+              <Mapping SourceColumn="U_CSS_Month7" DataSetColumn="U_CSS_Month7" />
+              <Mapping SourceColumn="U_CSS_Month8" DataSetColumn="U_CSS_Month8" />
+              <Mapping SourceColumn="U_CSS_Month9" DataSetColumn="U_CSS_Month9" />
+              <Mapping SourceColumn="U_CSS_Month10" DataSetColumn="U_CSS_Month10" />
+              <Mapping SourceColumn="U_CSS_Month11" DataSetColumn="U_CSS_Month11" />
+              <Mapping SourceColumn="U_CSS_Month12" DataSetColumn="U_CSS_Month12" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="datasetMio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="datasetMio" msprop:Generator_DataSetName="datasetMio" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="_x0040_CSS_ESTIMADO_REC" msprop:Generator_UserTableName="@CSS_ESTIMADO_REC" msprop:Generator_RowDeletedName="@CSS_ESTIMADO_RECRowDeleted" msprop:Generator_RowChangedName="@CSS_ESTIMADO_RECRowChanged" msprop:Generator_RowClassName="@CSS_ESTIMADO_RECRow" msprop:Generator_RowChangingName="@CSS_ESTIMADO_RECRowChanging" msprop:Generator_RowEvArgName="@CSS_ESTIMADO_RECRowChangeEvent" msprop:Generator_RowEvHandlerName="@CSS_ESTIMADO_RECRowChangeEventHandler" msprop:Generator_TableClassName="@CSS_ESTIMADO_RECDataTable" msprop:Generator_TableVarName="_table_CSS_ESTIMADO_REC" msprop:Generator_RowDeletingName="@CSS_ESTIMADO_RECRowDeleting" msprop:Generator_TablePropName="@CSS_ESTIMADO_REC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="U_CSS_Month1" msprop:Generator_UserColumnName="U_CSS_Month1" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month1" msprop:Generator_ColumnPropNameInRow="U_CSS_Month1" msprop:Generator_ColumnPropNameInTable="U_CSS_Month1Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month2" msprop:Generator_UserColumnName="U_CSS_Month2" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month2" msprop:Generator_ColumnPropNameInRow="U_CSS_Month2" msprop:Generator_ColumnPropNameInTable="U_CSS_Month2Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month3" msprop:Generator_UserColumnName="U_CSS_Month3" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month3" msprop:Generator_ColumnPropNameInRow="U_CSS_Month3" msprop:Generator_ColumnPropNameInTable="U_CSS_Month3Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month4" msprop:Generator_UserColumnName="U_CSS_Month4" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month4" msprop:Generator_ColumnPropNameInRow="U_CSS_Month4" msprop:Generator_ColumnPropNameInTable="U_CSS_Month4Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month5" msprop:Generator_UserColumnName="U_CSS_Month5" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month5" msprop:Generator_ColumnPropNameInRow="U_CSS_Month5" msprop:Generator_ColumnPropNameInTable="U_CSS_Month5Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month6" msprop:Generator_UserColumnName="U_CSS_Month6" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month6" msprop:Generator_ColumnPropNameInRow="U_CSS_Month6" msprop:Generator_ColumnPropNameInTable="U_CSS_Month6Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month7" msprop:Generator_UserColumnName="U_CSS_Month7" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month7" msprop:Generator_ColumnPropNameInRow="U_CSS_Month7" msprop:Generator_ColumnPropNameInTable="U_CSS_Month7Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month8" msprop:Generator_UserColumnName="U_CSS_Month8" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month8" msprop:Generator_ColumnPropNameInRow="U_CSS_Month8" msprop:Generator_ColumnPropNameInTable="U_CSS_Month8Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month9" msprop:Generator_UserColumnName="U_CSS_Month9" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month9" msprop:Generator_ColumnPropNameInRow="U_CSS_Month9" msprop:Generator_ColumnPropNameInTable="U_CSS_Month9Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month10" msprop:Generator_UserColumnName="U_CSS_Month10" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month10" msprop:Generator_ColumnPropNameInRow="U_CSS_Month10" msprop:Generator_ColumnPropNameInTable="U_CSS_Month10Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month11" msprop:Generator_UserColumnName="U_CSS_Month11" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month11" msprop:Generator_ColumnPropNameInRow="U_CSS_Month11" msprop:Generator_ColumnPropNameInTable="U_CSS_Month11Column" type="xs:decimal" minOccurs="0" />
+              <xs:element name="U_CSS_Month12" msprop:Generator_UserColumnName="U_CSS_Month12" msprop:Generator_ColumnVarNameInTable="columnU_CSS_Month12" msprop:Generator_ColumnPropNameInRow="U_CSS_Month12" msprop:Generator_ColumnPropNameInTable="U_CSS_Month12Column" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

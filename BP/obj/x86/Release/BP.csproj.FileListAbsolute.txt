@@ -1,0 +1,156 @@
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\BP.exe.config
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.csproj.ResolveComReference.cache
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\BP.exe
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\BP.pdb
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\office.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\Microsoft.Vbe.Interop.dll
+C:\Users\David\Desktop\Developer\BP\bin\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCircularizacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmContratosConsignacion.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCtrlUsrMiddle.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCupoAsegurado.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCupoGarantia.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCupoRiesgo.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmCupoTecnico.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmEditMenuOptions.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmEstadoPedidos.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmEstimadosRecaudo.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmEstimadosVentas.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmEstimadosVentasOld.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmMenuPrincipal.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmPresupuestos.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmPrevisiones.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmProductosControlados.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmProyectaCosto.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmReporteFletes.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmReporteVentasAseguradora.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.frmUploadBudget.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.loging.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.PopedCotainer.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.Properties.Resources.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.ArrayControlQCA.resources
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.csproj.GenerateResource.Cache
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.exe
+C:\Users\David\Desktop\Developer\BP\obj\x86\Release\BP.pdb
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\BP.exe.config
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.csproj.ResolveComReference.cache
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.exe
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.pdb
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\BP.exe
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\BP.pdb
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\office.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\Microsoft.Vbe.Interop.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\bin\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCircularizacion.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmContratosConsignacion.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCtrlUsrMiddle.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCupoAsegurado.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCupoGarantia.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCupoRiesgo.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmCupoTecnico.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmEditMenuOptions.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmEstadoPedidos.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmEstimadosRecaudo.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmEstimadosVentas.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmEstimadosVentasOld.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmFletes.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmMenuPrincipal.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmPresupuestos.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmPrevisiones.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmProductosControlados.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmProyectaCosto.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmReporteFletes.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmReporteVentasAseguradora.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.frmUploadBudget.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.loging.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.PopedCotainer.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.Properties.Resources.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.ArrayControlQCA.resources
+C:\Users\css\Documents\Visual Studio 2008\Projects\BP\obj\x86\Release\BP.csproj.GenerateResource.Cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\BP.exe.config
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.csproj.ResolveComReference.cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.exe
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.pdb
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\BP.exe
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\BP.pdb
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\office.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\Microsoft.Vbe.Interop.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\bin\x86\Release\Interop.SAPbobsCOM.dll
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCircularizacion.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmContratosConsignacion.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCtrlUsrMiddle.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCupoAsegurado.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCupoGarantia.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCupoRiesgo.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmCupoTecnico.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmEditMenuOptions.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmEstadoPedidos.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmEstimadosRecaudo.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmEstimadosVentas.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmEstimadosVentasOld.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmFletes.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmMenuPrincipal.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmPresupuestos.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmPrevisiones.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmProductosControlados.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmProyectaCosto.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmReporteFletes.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmReporteVentasAseguradora.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.frmUploadBudget.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.loging.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.PopedCotainer.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.Properties.Resources.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.ArrayControlQCA.resources
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.csprojResolveAssemblyReference.cache
+C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Release\BP.csproj.GenerateResource.Cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\BP.exe.config
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\Interop.SAPbobsCOM.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.csproj.ResolveComReference.cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.exe
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.pdb
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.csprojResolveAssemblyReference.cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCircularizacion.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmContratosConsignacion.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCtrlUsrMiddle.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCupoAsegurado.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCupoGarantia.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCupoRiesgo.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmCupoTecnico.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmEditMenuOptions.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmEstadoPedidos.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmEstimadosRecaudo.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmEstimadosVentas.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmEstimadosVentasOld.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmFletes.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmMenuPrincipal.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmPresupuestos.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmPrevisiones.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmProductosControlados.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmProyectaCosto.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmReporteFletes.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmReporteVentasAseguradora.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.frmUploadBudget.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.loging.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.PopedCotainer.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.Properties.Resources.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.ArrayControlQCA.resources
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\obj\x86\Release\BP.csproj.GenerateResource.Cache
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\BP.exe
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\BP.pdb
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Microsoft.Office.Interop.Excel.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Telerik.WinControls.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Telerik.WinControls.Themes.Windows7.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Telerik.WinControls.UI.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\TelerikCommon.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\office.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Microsoft.Vbe.Interop.dll
+D:\Dropbox\Dropbox\Proyectos\QCA\QCA_Testing\QCA\BP\bin\x86\Release\Interop.SAPbobsCOM.dll
