@@ -1,0 +1,4 @@
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entidades\bin\Release\Entidades.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entidades\bin\Release\Entidades.pdb
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entidades\obj\Release\Entidades.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entidades\obj\Release\Entidades.pdb

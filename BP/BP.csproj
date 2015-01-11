@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="CityAndValue.cs" />
     <Compile Include="ClaseDatos.cs" />
+    <Compile Include="EnvaseDevolutivo.cs" />
     <Compile Include="EsquemasReporteFletes\DataSetFletes.cs">
       <DependentUpon>DataSetFletes.xsd</DependentUpon>
       <SubType>Component</SubType>
