@@ -179,6 +179,12 @@
     <Compile Include="frmCupoTecnico.Designer.cs">
       <DependentUpon>frmCupoTecnico.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEnvaseDevolutivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnvaseDevolutivo.Designer.cs">
+      <DependentUpon>frmEnvaseDevolutivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEstadoPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     <EmbeddedResource Include="frmEditMenuOptions.resx">
       <DependentUpon>frmEditMenuOptions.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnvaseDevolutivo.resx">
+      <DependentUpon>frmEnvaseDevolutivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstadoPedidos.resx">
       <DependentUpon>frmEstadoPedidos.cs</DependentUpon>
@@ -518,7 +527,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cssConfig.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Librerias\Telerik.WinControls.dll" />
     <Content Include="Librerias\Telerik.WinControls.Themes.Windows7.dll" />
@@ -595,8 +603,6 @@
     <None Include="AppData\DataSetEstimadosVentas.xss">
       <DependentUpon>DataSetEstimadosVentas.xsd</DependentUpon>
     </None>
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram3.cd" />
     <None Include="Resources\iconSAP.jpg" />
     <None Include="Resources\add_40.png" />
     <None Include="Resources\add_16.png" />
@@ -610,7 +616,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\vcm_s_kf_repr_40x40.jpg" />
     <None Include="Resources\vcm_s_kf_repr_64x64.jpg" />
   </ItemGroup>

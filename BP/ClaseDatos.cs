@@ -15,6 +15,7 @@ using System.Security.Permissions;
 using System.Security.Principal;
 using Microsoft.CSharp;
 using System.IO;
+using System.Configuration;
 
 namespace BP
 {
@@ -46,25 +47,30 @@ namespace BP
             string[] vConnStr = new string[2];
             try
             {
-                //lectura de archivo XML con las propiedades de la conexion
-                XmlDocument xDoc = new XmlDocument();
-                //La ruta del documento XML esta en la ruta del ejecutable
-                string path = System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-                xDoc.Load(path + "\\cssConfig.xml");
-                XmlNodeList lista = xDoc.GetElementsByTagName("cDbConStr");
-                foreach (XmlElement nodo in lista)
-                {
-                    XmlNodeList nServer = nodo.GetElementsByTagName("cDbServer");
-                    XmlNodeList nUser = nodo.GetElementsByTagName("cDbUser");
-                    XmlNodeList nPass = nodo.GetElementsByTagName("cDbPass");
-                    XmlNodeList nSvrLicense = nodo.GetElementsByTagName("cSvrLicense");
-                    cSvrDb = nServer[0].InnerText;
-                    cUserDb = nUser[0].InnerText;
-                    cPassDb = nPass[0].InnerText;
-                    cSvrLicense = nSvrLicense[0].InnerText;
-                    break;
-                }
+                ////lectura de archivo XML con las propiedades de la conexion
+                //XmlDocument xDoc = new XmlDocument();
+                ////La ruta del documento XML esta en la ruta del ejecutable
+                //string path = System.IO.Path.GetDirectoryName(
+                //System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                //xDoc.Load(path + "\\cssConfig.xml");
+                //XmlNodeList lista = xDoc.GetElementsByTagName("cDbConStr");
+                //foreach (XmlElement nodo in lista)
+                //{
+                //    XmlNodeList nServer = nodo.GetElementsByTagName("cDbServer");
+                //    XmlNodeList nUser = nodo.GetElementsByTagName("cDbUser");
+                //    XmlNodeList nPass = nodo.GetElementsByTagName("cDbPass");
+                //    XmlNodeList nSvrLicense = nodo.GetElementsByTagName("cSvrLicense");
+                //    cSvrDb = nServer[0].InnerText;
+                //    cUserDb = nUser[0].InnerText;
+                //    cPassDb = nPass[0].InnerText;
+                //    cSvrLicense = nSvrLicense[0].InnerText;
+                //    break;
+                //}
+
+                cSvrDb = ConfigurationManager.AppSettings["cDbServer"].ToString();
+                cUserDb = ConfigurationManager.AppSettings["cDbUser"].ToString();
+                cPassDb = ConfigurationManager.AppSettings["cDbPass"].ToString();
+                cSvrLicense = ConfigurationManager.AppSettings["cSvrLicense"].ToString();
             }
             catch (Exception er)
             {
@@ -326,8 +332,7 @@ namespace BP
                 //MessageBox.Show(ex.Message,"Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);            
             }
         }
-
-        //public DataSet ImportaExcel(string query)
+        
         public static DataSet ImportaExcel(string query, string ruta)
         {
             DataSet oDs = new DataSet();
