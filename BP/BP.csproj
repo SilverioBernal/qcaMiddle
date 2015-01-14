@@ -144,6 +144,12 @@
     <Compile Include="EsquemasReporteFletes\EsquemaDatosReporteFletesDetalle.cs">
       <DependentUpon>EsquemaDatosReporteFletesDetalle.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmCargaEnvaseDevolutivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCargaEnvaseDevolutivo.Designer.cs">
+      <DependentUpon>frmCargaEnvaseDevolutivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCircularizacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCargaEnvaseDevolutivo.resx">
+      <DependentUpon>frmCargaEnvaseDevolutivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCircularizacion.resx">
       <DependentUpon>frmCircularizacion.cs</DependentUpon>
       <SubType>Designer</SubType>

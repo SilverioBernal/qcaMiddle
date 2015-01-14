@@ -56,7 +56,7 @@ namespace BP
         {
             #region Definicion de consultas
             string cQqery;
-            if (loging.usrCode.ToUpper() == "QCA01")
+            if (loging.usrCode.ToUpper() == "B_JEFTIC")//== "QCA01")
             {
                 cQqery =
                     "SELECT " +

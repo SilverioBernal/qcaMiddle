@@ -153,7 +153,7 @@
             this.txtUsrSap.Name = "txtUsrSap";
             this.txtUsrSap.Size = new System.Drawing.Size(100, 20);
             this.txtUsrSap.TabIndex = 1;
-            this.txtUsrSap.Text = "B_INGE6";
+            this.txtUsrSap.Text = "B_JEFTIC";
             this.txtUsrSap.TextChanged += new System.EventHandler(this.txtUsrSap_TextChanged);
             // 
             // label1

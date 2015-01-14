@@ -191,3 +191,4 @@ C:\Users\DESARROLLO\Documents\GitHub\qcaMiddle\BP\obj\Release\BP.Properties.Reso
 C:\Users\DESARROLLO\Documents\GitHub\qcaMiddle\BP\obj\Release\BP.ArrayControlQCA.resources
 C:\Users\DESARROLLO\Documents\GitHub\qcaMiddle\BP\obj\Release\BP.csproj.GenerateResource.Cache
 C:\Users\DESARROLLO\Documents\GitHub\qcaMiddle\BP\obj\Release\BP.frmEnvaseDevolutivo.resources
+C:\Users\DESARROLLO\Documents\GitHub\qcaMiddle\BP\obj\Release\BP.frmCargaEnvaseDevolutivo.resources
