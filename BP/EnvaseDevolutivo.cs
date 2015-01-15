@@ -10,12 +10,13 @@ namespace BP
     public class EnvaseDevolutivo
     {
         public DateTime inicioEnvaseDevolutivo { get; set; }
+        public DateTime ultimaSincronizacion { get; set; }
 
         public EnvaseDevolutivo()
         {
             Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
-            string consultaDoc = "select U_inicioEnvDev from [@ORK_ENV_DEV_INICIO]";
+            string consultaDoc = "select U_inicioEnvDev, U_ultSincronizacion from [@ORK_ENV_DEV_INICIO]";
 
             rsDocumento.DoQuery(consultaDoc.ToString());
 
@@ -24,6 +25,7 @@ namespace BP
                 rsDocumento.MoveFirst();
 
                 inicioEnvaseDevolutivo = (DateTime)rsDocumento.Fields.Item(0).Value;
+                ultimaSincronizacion = (DateTime)rsDocumento.Fields.Item(1).Value;
             }
         }
 

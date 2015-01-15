@@ -35,7 +35,13 @@ namespace BP
 
             //toolStripProgressBar1.Value = 0;
 
-            SaveWkr.RunWorkerAsync();
+            if (envaseDevolutivo.ultimaSincronizacion < DateTime.Now)
+            {
+                if (MessageBox.Show(string.Format("No sincroniza desde {0}. Desea sincronizar los datos en este momento?", 
+                    envaseDevolutivo.ultimaSincronizacion.ToString("yyyy-MM-dd")),"Sincronizacion de envase devolutivo", 
+                    MessageBoxButtons.YesNo)== System.Windows.Forms.DialogResult.Yes)
+                SaveWkr.RunWorkerAsync();
+            }
         }
 
         private void SaveWkr_DoWork(object sender, DoWorkEventArgs e)
