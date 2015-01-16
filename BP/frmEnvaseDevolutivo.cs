@@ -59,14 +59,17 @@ namespace BP
                 if (!envaseDevolutivo.ExistsBaseDocument(item))                
                     envaseDevolutivo.SaveBaseDocument(item);
                 
-                //busqueda de notas credito a sincronizar
-                List<MktDocHeader> lsCreditNotes = envaseDevolutivo.GetCreditNoteDocumentsForSync(item.objType, item.docEntry);
+                ////busqueda de notas credito a sincronizar
+                //List<MktDocHeader> lsCreditNotes = envaseDevolutivo.GetCreditNoteDocumentsForSync(item.objType, item.docEntry);
 
-                foreach (MktDocHeader itemNC in lsCreditNotes)
-                {
-                    if (!envaseDevolutivo.ExistsChildDocument(itemNC))
-                        envaseDevolutivo.SaveCreditNoteDocument(itemNC);
-                }
+                //foreach (MktDocHeader itemNC in lsCreditNotes)
+                //{
+                //    if (!envaseDevolutivo.ExistsChildDocument(itemNC))
+                //        envaseDevolutivo.SaveCreditNoteDocument(itemNC);
+                //}
+
+                //GUARDA NOTAS CREDITO RELACIONADAS
+                envaseDevolutivo.SaveCreditNoteDocument(item);
 
                 advancePerc = (100 * processedRecords) / totalRecords;
                 SaveWkr.ReportProgress(advancePerc, "Guardando Información de clientes");

@@ -161,18 +161,18 @@ namespace BP
         {
             int noDoc = 0;
             string masterCode = "";
-           
+
             try
             {
                 ClaseDatos.objCompany.StartTransaction();
 
                 UserTable objORK_ENVASE_DEV = ClaseDatos.objCompany.UserTables.Item("ORK_ENVASE_DEV");
 
-                masterCode = GetNextLineNum("Code", Documento.U_targetType);
+                masterCode = GetNextLineNum("Code", 0);
 
                 objORK_ENVASE_DEV.Code = masterCode;
                 objORK_ENVASE_DEV.Name = masterCode;
-                
+
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_objType").Value = Documento.U_objType;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_docEntry").Value = Documento.U_docEntry;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_docNum").Value = Documento.U_docNum;
@@ -505,105 +505,105 @@ namespace BP
             return res;
         }
 
-        public List<MktDocHeader> GetReturnDocumentsForSync(int baseType, string baseEntry)
-        {
-            #region Consulta de info relacionada al documento
-            string maestroDevolucion = "", detalleDevolucion = "";
+        //public List<MktDocHeader> GetReturnDocumentsForSync(int baseType, string baseEntry)
+        //{
+        //    #region Consulta de info relacionada al documento
+        //    string maestroDevolucion = "", detalleDevolucion = "";
 
-            switch (baseType)
-            {
-                case 15:
-                    maestroDevolucion = "ORDN";
-                    detalleDevolucion = "RDN1";
-                    break;
-                case 20:
-                    maestroDevolucion = "ORPD";
-                    detalleDevolucion = "RPD1";
-                    break;
-                default:
-                    break;
-            }
-            Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+        //    switch (baseType)
+        //    {
+        //        case 15:
+        //            maestroDevolucion = "ORDN";
+        //            detalleDevolucion = "RDN1";
+        //            break;
+        //        case 20:
+        //            maestroDevolucion = "ORPD";
+        //            detalleDevolucion = "RPD1";
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
-            string queryDoc = GetHeaderQuery(maestroDevolucion, detalleDevolucion, baseType.ToString(), baseEntry);
+        //    string queryDoc = GetHeaderQuery(maestroDevolucion, detalleDevolucion, baseType.ToString(), baseEntry);
 
-            rsDocumento.DoQuery(queryDoc);
+        //    rsDocumento.DoQuery(queryDoc);
 
-            #endregion
+        //    #endregion
 
-            #region Formateo de la informacion encontrada
-            List<MktDocHeader> documents = new List<MktDocHeader>();
+        //    #region Formateo de la informacion encontrada
+        //    List<MktDocHeader> documents = new List<MktDocHeader>();
 
-            if (rsDocumento.RecordCount > 0)
-            {
-                while (!rsDocumento.EoF)
-                {
-                    MktDocHeader document = new MktDocHeader()
-                    {                        
-                        docNum = rsDocumento.Fields.Item(0).Value.ToString(),
-                        docEntry = rsDocumento.Fields.Item(1).Value.ToString(),
-                        objType = int.Parse(rsDocumento.Fields.Item(2).Value.ToString())
-                    };
-                    documents.Add(document);
+        //    if (rsDocumento.RecordCount > 0)
+        //    {
+        //        while (!rsDocumento.EoF)
+        //        {
+        //            MktDocHeader document = new MktDocHeader()
+        //            {                        
+        //                docNum = rsDocumento.Fields.Item(0).Value.ToString(),
+        //                docEntry = rsDocumento.Fields.Item(1).Value.ToString(),
+        //                objType = int.Parse(rsDocumento.Fields.Item(2).Value.ToString())
+        //            };
+        //            documents.Add(document);
 
-                    rsDocumento.MoveNext();
-                }
-            }
-            #endregion
+        //            rsDocumento.MoveNext();
+        //        }
+        //    }
+        //    #endregion
 
-            return documents;
-        }
+        //    return documents;
+        //}
 
-        public List<MktDocHeader> GetCreditNoteDocumentsForSync(int baseType, string baseEntry)
-        {
-            #region Consulta de info relacionada al documento
-            string maestroNotaCr = "", detalleNotaCr = "";
+        //public List<MktDocHeader> GetCreditNoteDocumentsForSync(int baseType, string baseEntry)
+        //{
+        //    #region Consulta de info relacionada al documento
+        //    string maestroNotaCr = "", detalleNotaCr = "";
 
-            switch (baseType)
-            {
-                case 15:
-                    maestroNotaCr = "ORIN";
-                    detalleNotaCr = "RIN1";
-                    break;
-                case 20:
-                    maestroNotaCr = "ORPC";
-                    detalleNotaCr = "RPC1";
-                    break;
-                default:
-                    break;
-            }
-            Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+        //    switch (baseType)
+        //    {
+        //        case 15:
+        //            maestroNotaCr = "ORIN";
+        //            detalleNotaCr = "RIN1";
+        //            break;
+        //        case 20:
+        //            maestroNotaCr = "ORPC";
+        //            detalleNotaCr = "RPC1";
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
-            string queryDoc = GetHeaderQuery(maestroNotaCr, detalleNotaCr, baseType.ToString(), baseEntry);
+        //    string queryDoc = GetHeaderQuery(maestroNotaCr, detalleNotaCr, baseType.ToString(), baseEntry);
 
-            rsDocumento.DoQuery(queryDoc);
+        //    rsDocumento.DoQuery(queryDoc);
 
-            #endregion
+        //    #endregion
 
-            #region Formateo de la informacion encontrada
-            List<MktDocHeader> documents = new List<MktDocHeader>();
+        //    #region Formateo de la informacion encontrada
+        //    List<MktDocHeader> documents = new List<MktDocHeader>();
 
-            if (rsDocumento.RecordCount > 0)
-            {
-                while (!rsDocumento.EoF)
-                {
-                    MktDocHeader document = new MktDocHeader()
-                    {
-                        docNum = rsDocumento.Fields.Item(0).Value.ToString(),
-                        docEntry = rsDocumento.Fields.Item(1).Value.ToString(),
-                        baseEntry = baseEntry,
-                        baseType = baseType,
-                        objType = int.Parse(rsDocumento.Fields.Item(2).Value.ToString())
-                    };
-                    documents.Add(document);
+        //    if (rsDocumento.RecordCount > 0)
+        //    {
+        //        while (!rsDocumento.EoF)
+        //        {
+        //            MktDocHeader document = new MktDocHeader()
+        //            {
+        //                docNum = rsDocumento.Fields.Item(0).Value.ToString(),
+        //                docEntry = rsDocumento.Fields.Item(1).Value.ToString(),
+        //                baseEntry = baseEntry,
+        //                baseType = baseType,
+        //                objType = int.Parse(rsDocumento.Fields.Item(2).Value.ToString())
+        //            };
+        //            documents.Add(document);
 
-                    rsDocumento.MoveNext();
-                }
-            }
-            #endregion
+        //            rsDocumento.MoveNext();
+        //        }
+        //    }
+        //    #endregion
 
-            return documents;
-        }
+        //    return documents;
+        //}
 
         public bool ExistsChildDocument(MktDocHeader document)
         {
@@ -632,7 +632,7 @@ namespace BP
                 case 15:
                     invoiceMaster = "OINV";
                     invoiceDetail = "INV1";
-                    deliveryMaster = "ODLN";                    
+                    deliveryMaster = "ODLN";
                     creditNoteMaster = "ORIN";
                     creditNoteDetail = "RIN1";
                     targetType = 14;
@@ -640,7 +640,7 @@ namespace BP
                 case 20:
                     invoiceMaster = "OPCH";
                     invoiceDetail = "PCH1";
-                    deliveryMaster = "OPDN";                                        
+                    deliveryMaster = "OPDN";
                     creditNoteMaster = "ORPC";
                     creditNoteDetail = "RPC1";
                     targetType = 19;
@@ -649,7 +649,7 @@ namespace BP
                     break;
             }
 
-            string query = GetCreditNoteDocumentQuery(invoiceMaster, invoiceDetail, deliveryMaster, creditNoteMaster, creditNoteDetail, document.baseType, targetType);
+            string query = GetCreditNoteDocumentQuery(invoiceMaster, invoiceDetail, deliveryMaster, creditNoteMaster, creditNoteDetail, document.objType, targetType, document.docEntry);
 
             Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
@@ -657,26 +657,23 @@ namespace BP
 
             if (rsDocumento.RecordCount > 0)
             {
-
                 while (!rsDocumento.EoF)
                 {
-                    string valor = rsDocumento.Fields.Item(3).Value.ToString();
-
-                    Create(new ItemDetail()
-                    {
-                        U_objType = document.objType,
-                        U_docNum = document.docNum,
-                        U_itemCode = rsDocumento.Fields.Item(2).Value.ToString(),
-                        U_delivered = 0,
-                        U_returned = int.Parse(rsDocumento.Fields.Item(3).Value.ToString()),
-                        U_maintenance = 0,
-                        U_ready = 0,
-                        U_docEntry = document.docEntry,
-                        U_targetDocEntry = rsDocumento.Fields.Item(4).Value.ToString(),
-                        U_targetDocNum = rsDocumento.Fields.Item(4).Value.ToString(),
-                        U_targetType = int.Parse(rsDocumento.Fields.Item(4).Value.ToString())
-                    });
-
+                    if (int.Parse(rsDocumento.Fields.Item(5).Value.ToString()) == 0)
+                        Create(new ItemDetail()
+                        {
+                            U_objType = document.objType,
+                            U_docNum = document.docNum,
+                            U_itemCode = rsDocumento.Fields.Item(2).Value.ToString(),
+                            U_delivered = 0,
+                            U_returned = int.Parse(rsDocumento.Fields.Item(3).Value.ToString()),
+                            U_maintenance = 0,
+                            U_ready = 0,
+                            U_docEntry = document.docEntry,
+                            U_targetDocEntry = rsDocumento.Fields.Item(4).Value.ToString(),
+                            U_targetDocNum = rsDocumento.Fields.Item(1).Value.ToString(),
+                            U_targetType = int.Parse(rsDocumento.Fields.Item(0).Value.ToString())
+                        });
                     rsDocumento.MoveNext();
                 }
 
@@ -699,12 +696,12 @@ namespace BP
                 query.Append("FROM [@ORK_ENVASE_DEV] ");
 
                 if (targetObjType != 0)
-                    query.Append(string.Format("where U_targetType = ", targetObjType));                
+                    query.Append(string.Format("where U_targetType = {0}", targetObjType));
 
                 rs.DoQuery(query.ToString());
                 rs.MoveFirst();
 
-                noDoc = Convert.ToInt32(rs.Fields.Item(0).Value.ToString());                
+                noDoc = Convert.ToInt32(rs.Fields.Item(0).Value.ToString());
             }
             catch (Exception)
             {
@@ -736,22 +733,24 @@ namespace BP
             queryDoc.Append(string.Format("FROM {0} T0 ", master));
             queryDoc.Append(string.Format("INNER JOIN {0} T1 ON T0.DocEntry = T1.DocEntry ", detail));
             queryDoc.Append(string.Format("where T0.DocEntry = {0} and U_CSS_ENVASEDEVOL = 'SI' ", docEntry));
-            
+
             return queryDoc.ToString();
         }
 
-        private string GetCreditNoteDocumentQuery(string invoiceMaster, string invoiceDetail, string deliveryMaster, string creditNoteMaster, string creditNoteDetail, int baseType, int targetType)
+        private string GetCreditNoteDocumentQuery(string invoiceMaster, string invoiceDetail, string deliveryMaster, string creditNoteMaster, string creditNoteDetail, int baseType, int targetType, string baseEntry)
         {
             StringBuilder queryDoc = new StringBuilder();
-            queryDoc.Append("SELECT T3.ObjType, T3.DocNum, T3.ItemCode, T3.PackQty, T3.DocEntry ");
+            queryDoc.Append("SELECT T3.ObjType, T3.DocNum, T3.ItemCode, T3.PackQty, T3.DocEntry, ");
+            queryDoc.Append("(select COUNT(*) from [@ORK_ENVASE_DEV] t6 ");
+            queryDoc.Append("where t6.U_docEntry = t1.BaseEntry and t6.U_objType = t1.BaseType and t6.U_targetType = t3.ObjType ");
+            queryDoc.Append("and t6.U_targetDocEntry = t3.DocEntry) saved ");
             queryDoc.Append(string.Format("FROM {0} T0 ", invoiceMaster));
             queryDoc.Append(string.Format("INNER JOIN {0} T1 ON T0.DocEntry = T1.DocEntry  ", invoiceDetail));
             queryDoc.Append(string.Format("INNER JOIN {0} T4 on T1.BaseEntry = T4.DocEntry  ", deliveryMaster));
-            queryDoc.Append(string.Format("INNER JOIN {0} T1 ON T0.DocEntry = T1.DocEntry  ", invoiceDetail));
             queryDoc.Append("INNER JOIN (SELECT T10.ObjType, T10.DocEntry, T10.DocNum, T11.ItemCode, T11.PackQty, T11.BaseEntry, T11.BaseType, T11.BaseLine ");
             queryDoc.Append(string.Format("FROM {0} T10 INNER JOIN {1} T11 ON T10.DocEntry = T11.DocEntry) T3 ", creditNoteMaster, creditNoteDetail));
             queryDoc.Append("on T0.ObjType = T3.BaseType and T0.DocEntry = T3.BaseEntry and T1.LineNum = T3.BaseLine ");
-            queryDoc.Append(string.Format("where T1.U_CSS_ENVASEDEVOL = 'SI' and T1.TargetType = {0} and T1.BaseType = {1}  ", targetType, baseType));
+            queryDoc.Append(string.Format("where T1.U_CSS_ENVASEDEVOL = 'SI' and T1.TargetType = {0} and T1.BaseType = {1}  and t1.BaseEntry = {2} ", targetType, baseType, baseEntry));
             queryDoc.Append("order by T3.ObjType, T3.DocEntry");
 
             return queryDoc.ToString();
