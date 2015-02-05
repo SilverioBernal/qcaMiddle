@@ -326,6 +326,7 @@ namespace BP
                 Form frm = (Form)asm.CreateInstance(typeName);
                 frm.MdiParent = unFormulario;
                 frm.Show();
+                frm.Focus();
             }
             catch (Exception ex)
             {

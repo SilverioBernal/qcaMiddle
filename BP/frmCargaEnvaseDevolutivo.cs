@@ -66,33 +66,33 @@ namespace BP
 
         private void SaveWkr_DoWork(object sender, DoWorkEventArgs e)
         {
-            EnvaseDevolutivo envaseDevolutivo = new EnvaseDevolutivo();
+            //EnvaseDevolutivo envaseDevolutivo = new EnvaseDevolutivo();
 
-            int totalRecords = miDataSet.Tables[0].Rows.Count;
-            int processedRecords = 1;
-            int advancePerc = 0;
+            //int totalRecords = miDataSet.Tables[0].Rows.Count;
+            //int processedRecords = 1;
+            //int advancePerc = 0;
 
-            foreach (DataRow item in miDataSet.Tables[0].Rows)
-            {
-                ItemDetail newItem = new ItemDetail()
-                {
-                    //U_date = DateTime.Parse(item[0].ToString()),
-                    U_objType = int.Parse(item[1].ToString()),
-                    U_docNum = item[2].ToString(),
-                    U_itemCode = item[3].ToString(),                    
-                    U_returned = int.Parse(item[4].ToString()),
-                    U_maintenance = int.Parse(item[5].ToString()),
-                    U_ready = int.Parse(item[6].ToString()),
-                    U_targetType = 500                  
-                };
+            //foreach (DataRow item in miDataSet.Tables[0].Rows)
+            //{
+            //    ItemDetail newItem = new ItemDetail()
+            //    {
+            //        //U_date = DateTime.Parse(item[0].ToString()),
+            //        U_objType = int.Parse(item[1].ToString()),
+            //        U_docNum = item[2].ToString(),
+            //        U_itemCode = item[3].ToString(),                    
+            //        U_returned = int.Parse(item[4].ToString()),
+            //        U_maintenance = int.Parse(item[5].ToString()),
+            //        U_ready = int.Parse(item[6].ToString()),
+            //        U_targetType = 500                  
+            //    };
 
-                envaseDevolutivo.Create(newItem);
+            //    envaseDevolutivo.Create(newItem);
 
-                advancePerc = (100 * processedRecords) / totalRecords;
+            //    advancePerc = (100 * processedRecords) / totalRecords;
 
-                SaveWkr.ReportProgress(advancePerc, "Guardando Información");
-                processedRecords++;
-            }
+            //    SaveWkr.ReportProgress(advancePerc, "Guardando Información");
+            //    processedRecords++;
+            //}
         }
 
         private void SaveWkr_ProgressChanged(object sender, ProgressChangedEventArgs e)
