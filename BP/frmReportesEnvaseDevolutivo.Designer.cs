@@ -29,15 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbReporte = new System.Windows.Forms.ComboBox();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dpHasta = new System.Windows.Forms.DateTimePicker();
             this.dpDesde = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbReporte = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.grdReporte = new System.Windows.Forms.DataGridView();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CardCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Retornado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mantenimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Listo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).BeginInit();
             this.SuspendLayout();
@@ -57,28 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(927, 76);
             this.panel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Reporte";
-            // 
-            // cbReporte
-            // 
-            this.cbReporte.FormattingEnabled = true;
-            this.cbReporte.Items.AddRange(new object[] {
-            "Tabla kardex EKA",
-            "Tabla Kardex Genéricos",
-            "Reporte de reacondicionamiento",
-            "Reporte de cartera clientes"});
-            this.cbReporte.Location = new System.Drawing.Point(63, 27);
-            this.cbReporte.Name = "cbReporte";
-            this.cbReporte.Size = new System.Drawing.Size(284, 21);
-            this.cbReporte.TabIndex = 8;
             // 
             // btnExportar
             // 
@@ -134,14 +123,104 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Desde";
             // 
+            // cbReporte
+            // 
+            this.cbReporte.FormattingEnabled = true;
+            this.cbReporte.Items.AddRange(new object[] {
+            "Tabla kardex EKA",
+            "Tabla Kardex Genéricos",
+            "Reporte de reacondicionamiento",
+            "Reporte de cartera clientes",
+            "Reporte de cartera proveedores"});
+            this.cbReporte.Location = new System.Drawing.Point(63, 27);
+            this.cbReporte.Name = "cbReporte";
+            this.cbReporte.Size = new System.Drawing.Size(284, 21);
+            this.cbReporte.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Reporte";
+            // 
             // grdReporte
             // 
             this.grdReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tipo,
+            this.DocNum,
+            this.DocEntry,
+            this.CardCode,
+            this.CardName,
+            this.ItemCode,
+            this.ItemName,
+            this.Entregado,
+            this.Retornado,
+            this.Mantenimiento,
+            this.Listo});
             this.grdReporte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdReporte.Location = new System.Drawing.Point(0, 76);
             this.grdReporte.Name = "grdReporte";
             this.grdReporte.Size = new System.Drawing.Size(927, 440);
             this.grdReporte.TabIndex = 1;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // DocNum
+            // 
+            this.DocNum.HeaderText = "DocNum";
+            this.DocNum.Name = "DocNum";
+            // 
+            // DocEntry
+            // 
+            this.DocEntry.HeaderText = "DocEntry";
+            this.DocEntry.Name = "DocEntry";
+            // 
+            // CardCode
+            // 
+            this.CardCode.HeaderText = "CardCode";
+            this.CardCode.Name = "CardCode";
+            // 
+            // CardName
+            // 
+            this.CardName.HeaderText = "CardName";
+            this.CardName.Name = "CardName";
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.HeaderText = "ItemCode";
+            this.ItemCode.Name = "ItemCode";
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "ItemName";
+            this.ItemName.Name = "ItemName";
+            // 
+            // Entregado
+            // 
+            this.Entregado.HeaderText = "Entregado";
+            this.Entregado.Name = "Entregado";
+            // 
+            // Retornado
+            // 
+            this.Retornado.HeaderText = "Retornado";
+            this.Retornado.Name = "Retornado";
+            // 
+            // Mantenimiento
+            // 
+            this.Mantenimiento.HeaderText = "Mantenimiento";
+            this.Mantenimiento.Name = "Mantenimiento";
+            // 
+            // Listo
+            // 
+            this.Listo.HeaderText = "Listo";
+            this.Listo.Name = "Listo";
             // 
             // frmReportesEnvaseDevolutivo
             // 
@@ -171,5 +250,16 @@
         private System.Windows.Forms.ComboBox cbReporte;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView grdReporte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocEntry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CardCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CardName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Entregado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Retornado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mantenimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Listo;
     }
 }
