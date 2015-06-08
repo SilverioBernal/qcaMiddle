@@ -28,238 +28,523 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.grdCarteraClientes = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.dpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbReporte = new System.Windows.Forms.ComboBox();
+            this.btnExportaRepCartera = new System.Windows.Forms.Button();
+            this.btnGeneraRepCartera = new System.Windows.Forms.Button();
+            this.filtraProveedor = new System.Windows.Forms.CheckBox();
+            this.cboProveedor = new System.Windows.Forms.ComboBox();
+            this.filtraFechaRecibo = new System.Windows.Forms.CheckBox();
+            this.dpReciboHasta = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.grdReporte = new System.Windows.Forms.DataGridView();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CardCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Entregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Retornado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mantenimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Listo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dpReciboDesde = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.filtraFechaRemision = new System.Windows.Forms.CheckBox();
+            this.dpRemisionHasta = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dpRemisionDesde = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExportarKC = new System.Windows.Forms.Button();
+            this.btnGenerarKC = new System.Windows.Forms.Button();
+            this.dpKCHasta = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dpKCDesde = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.grdKardexClientes = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnExportarKP = new System.Windows.Forms.Button();
+            this.btnGenerarKP = new System.Windows.Forms.Button();
+            this.dpKPHasta = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dpKPDesde = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.grdKardexProveedores = new System.Windows.Forms.DataGridView();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCarteraClientes)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdKardexClientes)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdKardexProveedores)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(927, 516);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(919, 490);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Reporte de cartera";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.grdCarteraClientes);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 89);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(913, 398);
+            this.panel2.TabIndex = 1;
+            // 
+            // grdCarteraClientes
+            // 
+            this.grdCarteraClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCarteraClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCarteraClientes.Location = new System.Drawing.Point(0, 0);
+            this.grdCarteraClientes.Name = "grdCarteraClientes";
+            this.grdCarteraClientes.Size = new System.Drawing.Size(913, 398);
+            this.grdCarteraClientes.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnExportar);
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.dpHasta);
-            this.panel1.Controls.Add(this.dpDesde);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cbReporte);
+            this.panel1.Controls.Add(this.btnExportaRepCartera);
+            this.panel1.Controls.Add(this.btnGeneraRepCartera);
+            this.panel1.Controls.Add(this.filtraProveedor);
+            this.panel1.Controls.Add(this.cboProveedor);
+            this.panel1.Controls.Add(this.filtraFechaRecibo);
+            this.panel1.Controls.Add(this.dpReciboHasta);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dpReciboDesde);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.filtraFechaRemision);
+            this.panel1.Controls.Add(this.dpRemisionHasta);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dpRemisionDesde);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 76);
+            this.panel1.Size = new System.Drawing.Size(913, 86);
             this.panel1.TabIndex = 0;
             // 
-            // btnExportar
+            // btnExportaRepCartera
             // 
-            this.btnExportar.Location = new System.Drawing.Point(769, 25);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 23);
-            this.btnExportar.TabIndex = 14;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            this.btnExportaRepCartera.Location = new System.Drawing.Point(726, 32);
+            this.btnExportaRepCartera.Name = "btnExportaRepCartera";
+            this.btnExportaRepCartera.Size = new System.Drawing.Size(75, 23);
+            this.btnExportaRepCartera.TabIndex = 44;
+            this.btnExportaRepCartera.Text = "Exportar";
+            this.btnExportaRepCartera.UseVisualStyleBackColor = true;
+            this.btnExportaRepCartera.Click += new System.EventHandler(this.btnExportaRepCartera_Click);
             // 
-            // btnBuscar
+            // btnGeneraRepCartera
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(674, 25);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 13;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnGeneraRepCartera.Location = new System.Drawing.Point(645, 32);
+            this.btnGeneraRepCartera.Name = "btnGeneraRepCartera";
+            this.btnGeneraRepCartera.Size = new System.Drawing.Size(75, 23);
+            this.btnGeneraRepCartera.TabIndex = 43;
+            this.btnGeneraRepCartera.Text = "Generar";
+            this.btnGeneraRepCartera.UseVisualStyleBackColor = true;
+            this.btnGeneraRepCartera.Click += new System.EventHandler(this.btnGeneraRepCartera_Click);
             // 
-            // dpHasta
+            // filtraProveedor
             // 
-            this.dpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpHasta.Location = new System.Drawing.Point(549, 28);
-            this.dpHasta.Name = "dpHasta";
-            this.dpHasta.Size = new System.Drawing.Size(104, 20);
-            this.dpHasta.TabIndex = 12;
+            this.filtraProveedor.AutoSize = true;
+            this.filtraProveedor.Location = new System.Drawing.Point(5, 54);
+            this.filtraProveedor.Name = "filtraProveedor";
+            this.filtraProveedor.Size = new System.Drawing.Size(120, 17);
+            this.filtraProveedor.TabIndex = 42;
+            this.filtraProveedor.Text = "Filtrar por proveedor";
+            this.filtraProveedor.UseVisualStyleBackColor = true;
+            this.filtraProveedor.CheckedChanged += new System.EventHandler(this.filtraProveedor_CheckedChanged);
             // 
-            // dpDesde
+            // cboProveedor
             // 
-            this.dpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpDesde.Location = new System.Drawing.Point(397, 28);
-            this.dpDesde.Name = "dpDesde";
-            this.dpDesde.Size = new System.Drawing.Size(104, 20);
-            this.dpDesde.TabIndex = 11;
+            this.cboProveedor.Enabled = false;
+            this.cboProveedor.FormattingEnabled = true;
+            this.cboProveedor.Location = new System.Drawing.Point(169, 54);
+            this.cboProveedor.Name = "cboProveedor";
+            this.cboProveedor.Size = new System.Drawing.Size(250, 21);
+            this.cboProveedor.TabIndex = 41;
+            // 
+            // filtraFechaRecibo
+            // 
+            this.filtraFechaRecibo.AutoSize = true;
+            this.filtraFechaRecibo.Location = new System.Drawing.Point(5, 31);
+            this.filtraFechaRecibo.Name = "filtraFechaRecibo";
+            this.filtraFechaRecibo.Size = new System.Drawing.Size(146, 17);
+            this.filtraFechaRecibo.TabIndex = 17;
+            this.filtraFechaRecibo.Text = "Filtrar por fecha de recibo";
+            this.filtraFechaRecibo.UseVisualStyleBackColor = true;
+            this.filtraFechaRecibo.CheckedChanged += new System.EventHandler(this.filtraFechaRecibo_CheckedChanged);
+            // 
+            // dpReciboHasta
+            // 
+            this.dpReciboHasta.Enabled = false;
+            this.dpReciboHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpReciboHasta.Location = new System.Drawing.Point(338, 28);
+            this.dpReciboHasta.Name = "dpReciboHasta";
+            this.dpReciboHasta.Size = new System.Drawing.Size(81, 20);
+            this.dpReciboHasta.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(297, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Hasta";
+            // 
+            // dpReciboDesde
+            // 
+            this.dpReciboDesde.Enabled = false;
+            this.dpReciboDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpReciboDesde.Location = new System.Drawing.Point(210, 28);
+            this.dpReciboDesde.Name = "dpReciboDesde";
+            this.dpReciboDesde.Size = new System.Drawing.Size(81, 20);
+            this.dpReciboDesde.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(166, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Desde";
+            // 
+            // filtraFechaRemision
+            // 
+            this.filtraFechaRemision.AutoSize = true;
+            this.filtraFechaRemision.Location = new System.Drawing.Point(5, 8);
+            this.filtraFechaRemision.Name = "filtraFechaRemision";
+            this.filtraFechaRemision.Size = new System.Drawing.Size(155, 17);
+            this.filtraFechaRemision.TabIndex = 12;
+            this.filtraFechaRemision.Text = "Filtrar por fecha de remisión";
+            this.filtraFechaRemision.UseVisualStyleBackColor = true;
+            this.filtraFechaRemision.CheckedChanged += new System.EventHandler(this.filtraFechaRemision_CheckedChanged);
+            // 
+            // dpRemisionHasta
+            // 
+            this.dpRemisionHasta.Enabled = false;
+            this.dpRemisionHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpRemisionHasta.Location = new System.Drawing.Point(338, 5);
+            this.dpRemisionHasta.Name = "dpRemisionHasta";
+            this.dpRemisionHasta.Size = new System.Drawing.Size(81, 20);
+            this.dpRemisionHasta.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 30);
+            this.label2.Location = new System.Drawing.Point(297, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Hasta";
             // 
+            // dpRemisionDesde
+            // 
+            this.dpRemisionDesde.Enabled = false;
+            this.dpRemisionDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpRemisionDesde.Location = new System.Drawing.Point(210, 5);
+            this.dpRemisionDesde.Name = "dpRemisionDesde";
+            this.dpRemisionDesde.Size = new System.Drawing.Size(81, 20);
+            this.dpRemisionDesde.TabIndex = 9;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(353, 30);
+            this.label1.Location = new System.Drawing.Point(166, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Desde";
             // 
-            // cbReporte
+            // tabPage2
             // 
-            this.cbReporte.FormattingEnabled = true;
-            this.cbReporte.Items.AddRange(new object[] {
-            "Tabla kardex EKA",
-            "Tabla Kardex Genéricos",
-            "Reporte de reacondicionamiento",
-            "Reporte de cartera clientes",
-            "Reporte de cartera proveedores"});
-            this.cbReporte.Location = new System.Drawing.Point(63, 27);
-            this.cbReporte.Name = "cbReporte";
-            this.cbReporte.Size = new System.Drawing.Size(284, 21);
-            this.cbReporte.TabIndex = 8;
+            this.tabPage2.Controls.Add(this.panel4);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(919, 490);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Reporte kardex cliente";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // tabPage3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Reporte";
+            this.tabPage3.Controls.Add(this.panel6);
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(919, 490);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Reporte kardex proveedor";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // grdReporte
+            // panel3
             // 
-            this.grdReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tipo,
-            this.DocNum,
-            this.DocEntry,
-            this.CardCode,
-            this.CardName,
-            this.ItemCode,
-            this.ItemName,
-            this.Entregado,
-            this.Retornado,
-            this.Mantenimiento,
-            this.Listo});
-            this.grdReporte.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdReporte.Location = new System.Drawing.Point(0, 76);
-            this.grdReporte.Name = "grdReporte";
-            this.grdReporte.Size = new System.Drawing.Size(927, 440);
-            this.grdReporte.TabIndex = 1;
+            this.panel3.Controls.Add(this.btnExportarKC);
+            this.panel3.Controls.Add(this.btnGenerarKC);
+            this.panel3.Controls.Add(this.dpKCHasta);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.dpKCDesde);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(913, 86);
+            this.panel3.TabIndex = 1;
             // 
-            // Tipo
+            // btnExportarKC
             // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
+            this.btnExportarKC.Location = new System.Drawing.Point(345, 31);
+            this.btnExportarKC.Name = "btnExportarKC";
+            this.btnExportarKC.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarKC.TabIndex = 44;
+            this.btnExportarKC.Text = "Exportar";
+            this.btnExportarKC.UseVisualStyleBackColor = true;
+            this.btnExportarKC.Click += new System.EventHandler(this.btnExportarKC_Click);
             // 
-            // DocNum
+            // btnGenerarKC
             // 
-            this.DocNum.HeaderText = "DocNum";
-            this.DocNum.Name = "DocNum";
+            this.btnGenerarKC.Location = new System.Drawing.Point(264, 31);
+            this.btnGenerarKC.Name = "btnGenerarKC";
+            this.btnGenerarKC.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerarKC.TabIndex = 43;
+            this.btnGenerarKC.Text = "Generar";
+            this.btnGenerarKC.UseVisualStyleBackColor = true;
+            this.btnGenerarKC.Click += new System.EventHandler(this.btnGenerarKC_Click);
             // 
-            // DocEntry
+            // dpKCHasta
             // 
-            this.DocEntry.HeaderText = "DocEntry";
-            this.DocEntry.Name = "DocEntry";
+            this.dpKCHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpKCHasta.Location = new System.Drawing.Point(177, 32);
+            this.dpKCHasta.Name = "dpKCHasta";
+            this.dpKCHasta.Size = new System.Drawing.Size(81, 20);
+            this.dpKCHasta.TabIndex = 11;
             // 
-            // CardCode
+            // label7
             // 
-            this.CardCode.HeaderText = "CardCode";
-            this.CardCode.Name = "CardCode";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(136, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Hasta";
             // 
-            // CardName
+            // dpKCDesde
             // 
-            this.CardName.HeaderText = "CardName";
-            this.CardName.Name = "CardName";
+            this.dpKCDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpKCDesde.Location = new System.Drawing.Point(49, 32);
+            this.dpKCDesde.Name = "dpKCDesde";
+            this.dpKCDesde.Size = new System.Drawing.Size(81, 20);
+            this.dpKCDesde.TabIndex = 9;
             // 
-            // ItemCode
+            // label8
             // 
-            this.ItemCode.HeaderText = "ItemCode";
-            this.ItemCode.Name = "ItemCode";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Desde";
             // 
-            // ItemName
+            // panel4
             // 
-            this.ItemName.HeaderText = "ItemName";
-            this.ItemName.Name = "ItemName";
+            this.panel4.Controls.Add(this.grdKardexClientes);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 89);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(913, 398);
+            this.panel4.TabIndex = 2;
             // 
-            // Entregado
+            // grdKardexClientes
             // 
-            this.Entregado.HeaderText = "Entregado";
-            this.Entregado.Name = "Entregado";
+            this.grdKardexClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdKardexClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdKardexClientes.Location = new System.Drawing.Point(0, 0);
+            this.grdKardexClientes.Name = "grdKardexClientes";
+            this.grdKardexClientes.Size = new System.Drawing.Size(913, 398);
+            this.grdKardexClientes.TabIndex = 0;
             // 
-            // Retornado
+            // panel5
             // 
-            this.Retornado.HeaderText = "Retornado";
-            this.Retornado.Name = "Retornado";
+            this.panel5.Controls.Add(this.btnExportarKP);
+            this.panel5.Controls.Add(this.btnGenerarKP);
+            this.panel5.Controls.Add(this.dpKPHasta);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.dpKPDesde);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(919, 86);
+            this.panel5.TabIndex = 2;
             // 
-            // Mantenimiento
+            // btnExportarKP
             // 
-            this.Mantenimiento.HeaderText = "Mantenimiento";
-            this.Mantenimiento.Name = "Mantenimiento";
+            this.btnExportarKP.Location = new System.Drawing.Point(345, 31);
+            this.btnExportarKP.Name = "btnExportarKP";
+            this.btnExportarKP.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarKP.TabIndex = 44;
+            this.btnExportarKP.Text = "Exportar";
+            this.btnExportarKP.UseVisualStyleBackColor = true;
+            this.btnExportarKP.Click += new System.EventHandler(this.btnExportarKP_Click);
             // 
-            // Listo
+            // btnGenerarKP
             // 
-            this.Listo.HeaderText = "Listo";
-            this.Listo.Name = "Listo";
+            this.btnGenerarKP.Location = new System.Drawing.Point(264, 31);
+            this.btnGenerarKP.Name = "btnGenerarKP";
+            this.btnGenerarKP.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerarKP.TabIndex = 43;
+            this.btnGenerarKP.Text = "Generar";
+            this.btnGenerarKP.UseVisualStyleBackColor = true;
+            this.btnGenerarKP.Click += new System.EventHandler(this.btnGenerarKP_Click);
+            // 
+            // dpKPHasta
+            // 
+            this.dpKPHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpKPHasta.Location = new System.Drawing.Point(177, 32);
+            this.dpKPHasta.Name = "dpKPHasta";
+            this.dpKPHasta.Size = new System.Drawing.Size(81, 20);
+            this.dpKPHasta.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(136, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Hasta";
+            // 
+            // dpKPDesde
+            // 
+            this.dpKPDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpKPDesde.Location = new System.Drawing.Point(49, 32);
+            this.dpKPDesde.Name = "dpKPDesde";
+            this.dpKPDesde.Size = new System.Drawing.Size(81, 20);
+            this.dpKPDesde.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Desde";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.grdKardexProveedores);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 86);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(919, 404);
+            this.panel6.TabIndex = 3;
+            // 
+            // grdKardexProveedores
+            // 
+            this.grdKardexProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdKardexProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdKardexProveedores.Location = new System.Drawing.Point(0, 0);
+            this.grdKardexProveedores.Name = "grdKardexProveedores";
+            this.grdKardexProveedores.Size = new System.Drawing.Size(919, 404);
+            this.grdKardexProveedores.TabIndex = 0;
             // 
             // frmReportesEnvaseDevolutivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 516);
-            this.Controls.Add(this.grdReporte);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tabControl1);
             this.Name = "frmReportesEnvaseDevolutivo";
-            this.Text = "frmReportesEnvaseDevolutivo";
+            this.Text = "Reportes Envase Devolutivo";
+            this.Load += new System.EventHandler(this.frmReportesEnvaseDevolutivo_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdCarteraClientes)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdKardexClientes)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdKardexProveedores)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExportar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DateTimePicker dpHasta;
-        private System.Windows.Forms.DateTimePicker dpDesde;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbReporte;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox filtraFechaRecibo;
+        private System.Windows.Forms.DateTimePicker dpReciboHasta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView grdReporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocEntry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CardCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CardName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Entregado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Retornado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mantenimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Listo;
+        private System.Windows.Forms.DateTimePicker dpReciboDesde;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox filtraFechaRemision;
+        private System.Windows.Forms.DateTimePicker dpRemisionHasta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dpRemisionDesde;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView grdCarteraClientes;
+        private System.Windows.Forms.Button btnExportaRepCartera;
+        private System.Windows.Forms.Button btnGeneraRepCartera;
+        private System.Windows.Forms.CheckBox filtraProveedor;
+        private System.Windows.Forms.ComboBox cboProveedor;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnExportarKC;
+        private System.Windows.Forms.Button btnGenerarKC;
+        private System.Windows.Forms.DateTimePicker dpKCHasta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dpKCDesde;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView grdKardexClientes;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView grdKardexProveedores;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnExportarKP;
+        private System.Windows.Forms.Button btnGenerarKP;
+        private System.Windows.Forms.DateTimePicker dpKPHasta;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dpKPDesde;
+        private System.Windows.Forms.Label label6;
+
     }
 }

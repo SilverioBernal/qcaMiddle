@@ -122,6 +122,9 @@
     </Compile>
     <Compile Include="CityAndValue.cs" />
     <Compile Include="ClaseDatos.cs" />
+    <Compile Include="ClsEnvaseDevolutivo.cs" />
+    <Compile Include="ClsTransferencia.cs" />
+    <Compile Include="ClsTransferenciaLinea.cs" />
     <Compile Include="EnvaseDevolutivo.cs" />
     <Compile Include="EsquemasReporteFletes\DataSetFletes.cs">
       <DependentUpon>DataSetFletes.xsd</DependentUpon>
@@ -186,11 +189,11 @@
     <Compile Include="frmCupoTecnico.Designer.cs">
       <DependentUpon>frmCupoTecnico.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEnvaseDevolutivo.cs">
+    <Compile Include="FrmEnvaseDevolutivoQCA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEnvaseDevolutivo.Designer.cs">
-      <DependentUpon>frmEnvaseDevolutivo.cs</DependentUpon>
+    <Compile Include="FrmEnvaseDevolutivoQCA.Designer.cs">
+      <DependentUpon>FrmEnvaseDevolutivoQCA.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEstadoPedidos.cs">
       <SubType>Form</SubType>
@@ -349,8 +352,8 @@
       <DependentUpon>frmEditMenuOptions.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEnvaseDevolutivo.resx">
-      <DependentUpon>frmEnvaseDevolutivo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmEnvaseDevolutivoQCA.resx">
+      <DependentUpon>FrmEnvaseDevolutivoQCA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstadoPedidos.resx">
       <DependentUpon>frmEstadoPedidos.cs</DependentUpon>

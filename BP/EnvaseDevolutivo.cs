@@ -59,7 +59,7 @@ namespace BP
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_targetDocEntry").Value = Documento.U_targetDocEntry;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_costoReady").Value = Documento.U_costoReady;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_date").Value = Documento.U_fecha.ToString("yyyy-MM-dd");
-
+                objORK_ENVASE_DEV.UserFields.Fields.Item("U_LineNum").Value = Documento.U_LineNum;
                 noDoc = objORK_ENVASE_DEV.Add();
 
                 if (noDoc < 0)
@@ -98,8 +98,8 @@ namespace BP
 
             StringBuilder query = new StringBuilder();
 
-            query.Append("select U_itemCode, SUM(U_delivered)U_delivered , SUM(U_returned) U_returned, SUM(U_maintenance) U_maintenance, SUM(U_ready) U_ready, SUM(isnull(U_costoReady, 0)) U_costoReady, u_docEntry ");
-            query.Append(string.Format("from [@ORK_ENVASE_DEV] where u_objType = {0} and u_docnum = {1} group by U_itemCode, u_docEntry", objType, docNum));
+            query.Append("select U_itemCode, SUM(U_delivered)U_delivered , SUM(U_returned) U_returned, SUM(U_maintenance) U_maintenance, SUM(U_ready) U_ready, SUM(isnull(U_costoReady, 0)) U_costoReady, u_docEntry, U_LineNum ");
+            query.Append(string.Format("from [@ORK_ENVASE_DEV] where u_objType = {0} and u_docnum = {1} group by U_itemCode, u_docEntry, U_LineNum", objType, docNum));
 
             Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
@@ -118,7 +118,9 @@ namespace BP
                         U_maintenance = int.Parse(rsDocumento.Fields.Item(3).Value.ToString()),
                         U_ready = int.Parse(rsDocumento.Fields.Item(4).Value.ToString()),
                         U_costoReady = int.Parse(rsDocumento.Fields.Item(5).Value.ToString()),
-                        u_docEntry = rsDocumento.Fields.Item(6).Value.ToString()
+                        u_docEntry = rsDocumento.Fields.Item(6).Value.ToString(),
+                        U_LineNum = int.Parse(rsDocumento.Fields.Item(7).Value.ToString()),
+                        lsInvoice = GetRelInvoice(docNum, rsDocumento.Fields.Item(0).Value.ToString(), int.Parse(rsDocumento.Fields.Item(7).Value.ToString()))
                     });
 
                     rsDocumento.MoveNext();
@@ -128,6 +130,41 @@ namespace BP
                 throw new Exception("No se encontró el documento. Es posible que requiera sincronizar. Para sincronizar ahora presione F2");
 
             return itemsDocument;
+        }
+
+        private List<RelDocument> GetRelInvoice(string docNum, string itemCode, int LineNum)
+        {
+            List<RelDocument> relInvoices = new List<RelDocument>();
+
+            StringBuilder query = new StringBuilder();
+            query.AppendLine("select g.DocNumInv DocNum, isnull(g.qtyInv,0) Quantity, g.docDateInv DocDate ");
+            query.AppendLine("from ODLN a inner join DLN1 b on a.DocEntry = b.DocEntry ");
+            query.AppendLine("inner join (select b2.BaseType, b2.BaseEntry, b2.BaseLine, b2.Quantity qtyInv, a2.DocNum docNumInv, a2.DocDate docDateInv ");
+            query.AppendLine("from OINV a2 inner join INV1 b2 on  a2.DocEntry = b2.DocEntry ) g on ");
+            query.AppendLine("b.ObjType = g.BaseType and b.DocEntry = g.BaseEntry and b.LineNum = g.BaseLine ");
+            query.AppendLine(string.Format("where a.DocNum = {0} and b.ItemCode = '{1}' and b.LineNum = {2} order by g.DocNumInv", docNum, itemCode, LineNum));
+
+            Recordset rsFacturas = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+            rsFacturas.DoQuery(query.ToString());
+
+            if (rsFacturas.RecordCount > 0)
+            {
+                while (!rsFacturas.EoF)
+                {
+
+                    relInvoices.Add(new RelDocument()
+                    {
+                        docNum = int.Parse(rsFacturas.Fields.Item(0).Value.ToString()),
+                        Quantity = int.Parse(rsFacturas.Fields.Item(1).Value.ToString()),
+                        DocDate = DateTime.Parse(rsFacturas.Fields.Item(2).Value.ToString())
+                    });
+
+                    rsFacturas.MoveNext();
+                }
+            }
+
+            return relInvoices;
         }
 
         public List<MktDocHeader> GetBaseDocumentsForSync(int objType)
@@ -240,7 +277,8 @@ namespace BP
                         U_targetDocNum = "",
                         U_targetType = 0,
                         U_costoReady = 0,
-                        U_fecha = DateTime.Parse(rsDocumento.Fields.Item(5).Value.ToString())
+                        U_fecha = DateTime.Parse(rsDocumento.Fields.Item(5).Value.ToString()),
+                        U_LineNum = int.Parse(rsDocumento.Fields.Item(6).Value.ToString())
                     });
 
                     rsDocumento.MoveNext();
@@ -420,7 +458,7 @@ namespace BP
         private string GetBaseDocumentQuery(string master, string detail, string docEntry)
         {
             StringBuilder queryDoc = new StringBuilder();
-            queryDoc.Append("SELECT T0.ObjType, T0.DocNum, T1.ItemCode, T1.PackQty delivered, T0.DocEntry, t0.DocDate ");
+            queryDoc.Append("SELECT T0.ObjType, T0.DocNum, T1.ItemCode, T1.PackQty delivered, T0.DocEntry, t0.DocDate, t1.LineNum ");
             queryDoc.Append(string.Format("FROM {0} T0 ", master));
             queryDoc.Append(string.Format("INNER JOIN {0} T1 ON T0.DocEntry = T1.DocEntry ", detail));
             queryDoc.Append(string.Format("where T0.DocEntry = {0} and U_CSS_ENVASEDEVOL = 'SI' ", docEntry));
@@ -446,6 +484,8 @@ namespace BP
 
             return queryDoc.ToString();
         }
+
+
     }
 
     public class ItemDetail
@@ -465,17 +505,26 @@ namespace BP
         public string U_targetDocEntry { get; set; }
         public int U_costoReady { get; set; }
         public DateTime U_fecha{ get; set; }
+        public int U_LineNum { get; set; }
     }
 
     public class ItemSummary
     {
-        public string U_itemCode { get; set; }
+        public string U_itemCode { get; set; }        
         public int U_delivered { get; set; }
         public int U_returned { get; set; }
         public int U_maintenance { get; set; }
         public int U_ready { get; set; }
         public int U_costoReady { get; set; }
-        public string u_docEntry { get; set; }        
+        public string u_docEntry { get; set; }
+        public int U_LineNum { get; set; }
+        //*****
+        public List<RelDocument> lsInvoice { get; set; }
+        
+        public ItemSummary()
+        {
+            lsInvoice = new List<RelDocument>();
+        }
     }
 
     public class MktDocHeader
@@ -485,6 +534,14 @@ namespace BP
         public string docEntry { get; set; }
         public int baseType { get; set; }
         public string baseEntry { get; set; }        
+    }
+
+    public class RelDocument {
+        public int docNum { get; set; }
+        public decimal Quantity { get; set; }
+        public DateTime DocDate { get; set; }
+
+        public List<RelDocument> lsReturn { get; set; }
     }
 
     public class repoKardex
