@@ -282,3 +282,38 @@ C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.Prope
 C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
 C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 C:\Users\css\Documents\Visual Studio 2010\Projects\QCA\BP\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\x86\Debug\BP.exe.config
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.csproj.ResolveComReference.cache
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.exe
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.pdb
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.csprojResolveAssemblyReference.cache
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCargaEnvaseDevolutivo.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCircularizacion.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmContratosConsignacion.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCtrlUsrMiddle.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCupoAsegurado.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCupoGarantia.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCupoRiesgo.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmCupoTecnico.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmEditMenuOptions.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.FrmEnvaseDevolutivoQCA.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmEstadoPedidos.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmEstimadosRecaudo.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmEstimadosVentas.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmEstimadosVentasOld.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmFletes.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmMenuPrincipal.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmPresupuestos.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmPrevisiones.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmProductosControlados.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmProyectaCosto.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmReporteFletes.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmReportesEnvaseDevolutivo.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmReporteVentasAseguradora.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.frmUploadBudget.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.loging.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.PopedCotainer.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.Properties.Resources.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.ArrayControlQCA.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\x86\Debug\BP.csproj.GenerateResource.Cache

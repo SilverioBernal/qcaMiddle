@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Entities;
 
 namespace BP
 {
@@ -17,7 +18,7 @@ namespace BP
         Accion action = Accion.limpiar;
         //int objectType = 0;
 
-        enum Accion { entradaManual, entraReacondicionamiento, saleReacndicionamiento, limpiar }
+        enum Accion { entradaManual, entraReacondicionamiento, saleReacndicionamiento, limpiar, esperando }
 
         public FrmEnvaseDevolutivoQCA()
         {
@@ -128,13 +129,8 @@ namespace BP
         {
             try
             {
-                if (remision != null)
-                {
-                    logicaControles(Accion.entraReacondicionamiento);
-                    action = Accion.entraReacondicionamiento;
-                }
-                else
-                    throw new Exception("No ha buscado una remisión");
+                logicaControles(Accion.entraReacondicionamiento);
+                action = Accion.entraReacondicionamiento;
             }
             catch (Exception ex)
             {
@@ -146,13 +142,8 @@ namespace BP
         {
             try
             {
-                if (remision != null)
-                {
-                    logicaControles(Accion.saleReacndicionamiento);
-                    action = Accion.saleReacndicionamiento;
-                }
-                else
-                    throw new Exception("No ha buscado una remisión");
+                logicaControles(Accion.saleReacndicionamiento);
+                action = Accion.saleReacndicionamiento;                
             }
             catch (Exception ex)
             {
@@ -179,6 +170,8 @@ namespace BP
                         throw new Exception(string.Format("Fecha de remisión {0} inferior a la fecha de corte {1}", remision.docDate.ToString("yyyy-MM.dd"), inicioEnvaseDevolutivo.ToString("yyyy-MM.dd")));
 
                     bindGridRemision();
+
+                    logicaControles(Accion.esperando);
                 }
             }
             catch (Exception ex)
@@ -282,13 +275,23 @@ namespace BP
             txtCantidad.Text = "";
             txtReciboCliente.Text = "";
             txtReciboProveedor.Text = "";
-            txtBaja.Text = "";
+            //txtBaja.Text = "";
             txtObservaciones.Text = "";
-            txtCosto.Text = "";
+            //txtCosto.Text = "";
 
-            //cboProveedor.Items.Clear();
-            //cboProveedor.DataSource = null;
+            List<Proveedor> proveedores = new List<Proveedor>();
+            List<Articulo> articulos = new List<Articulo>();
+            List<Almacen> almacenes = new List<Almacen>();
+            List<Almacen> almacenesDestino = new List<Almacen>();
 
+            proveedores.Add(new Proveedor() { CardCode= string.Empty, CardName="Seleccione uno" });
+            articulos.Add(new Articulo() { ItemCode = string.Empty, ItemName = "Seleccione uno" });
+            almacenes.Add(new Almacen() { WhsCode = string.Empty, WhsName = "Seleccione uno" });
+            
+            proveedores.AddRange(ClsEnvaseDevolutivo.GetProveedores());
+            articulos.AddRange(ClsEnvaseDevolutivo.GetItems("ME"));
+            almacenes.AddRange(ClsEnvaseDevolutivo.GetAlmacenes());
+            almacenesDestino.AddRange(almacenes.ToList()); 
 
             switch (accion)
             {
@@ -299,11 +302,13 @@ namespace BP
                     dpFechaReciboCliente.Enabled = true;
 
                     cboProveedor.Enabled = false;
+                    cboEnvase.Enabled = false;
+                    cboBodegaOrigen.Enabled = false;
+                    TxtCantidadProveedor.Enabled = false;
+                    txtValor.Enabled = false;
                     txtReciboProveedor.Enabled = false;
-                    dpFechaReciboProveedor.Enabled = false;
-                    txtBaja.Enabled = false;
+                    cboBodegaDestino.Enabled = false;
                     txtObservaciones.Enabled = false;
-                    txtCosto.Enabled = false;
 
                     btnBuscar.Enabled = false;
                     btnEntradaManual.Enabled = false;
@@ -312,71 +317,152 @@ namespace BP
                     break;
                 case Accion.entraReacondicionamiento:
                     txtRemision.Enabled = false;
-                    txtCantidad.Enabled = true;
+                    txtCantidad.Enabled = false;
                     txtReciboCliente.Enabled = false;
                     dpFechaReciboCliente.Enabled = false;
 
                     cboProveedor.Enabled = true;
-                    txtReciboProveedor.Enabled = false;
-                    dpFechaReciboProveedor.Enabled = false;
-                    txtBaja.Enabled = false;
+                    cboEnvase.Enabled = true;
+                    cboBodegaOrigen.Enabled = true;
+                    TxtCantidadProveedor.Enabled = true;
+                    txtValor.Enabled = true;
+                    txtReciboProveedor.Enabled = true;
+                    cboBodegaDestino.Enabled = false;
                     txtObservaciones.Enabled = false;
-                    txtCosto.Enabled = false;
 
                     btnBuscar.Enabled = false;
                     btnEntradaManual.Enabled = false;
                     btnReacindicionaIn.Enabled = false;
                     btnReacindicionaOut.Enabled = false;
 
-                    List<Proveedor> proveedores = ClsEnvaseDevolutivo.GetProveedores();
-
+                    
                     cboProveedor.ValueMember = "CardCode";
                     cboProveedor.DisplayMember = "CardName";
                     cboProveedor.DataSource = proveedores;
 
+                    
+                    cboEnvase.ValueMember = "ItemCode";
+                    cboEnvase.DisplayMember = "ItemName";
+                    cboEnvase.DataSource = articulos;
+
+                    
+                    cboBodegaOrigen.ValueMember = "WhsCode";
+                    cboBodegaOrigen.DisplayMember = "WhsName";
+                    cboBodegaOrigen.DataSource = almacenes;
+
                     break;
                 case Accion.saleReacndicionamiento:
                     txtRemision.Enabled = false;
-                    txtCantidad.Enabled = true;
+                    txtCantidad.Enabled = false;
                     txtReciboCliente.Enabled = false;
                     dpFechaReciboCliente.Enabled = false;
 
                     cboProveedor.Enabled = true;
-                    txtReciboProveedor.Enabled = true;
-                    dpFechaReciboProveedor.Enabled = true;
-                    txtBaja.Enabled = true;
+                    cboEnvase.Enabled = true;
+                    cboBodegaOrigen.Enabled = true;
+                    TxtCantidadProveedor.Enabled = true;
+                    txtValor.Enabled = false;
+                    txtReciboProveedor.Enabled = false;
+                    cboBodegaDestino.Enabled = true;
                     txtObservaciones.Enabled = true;
-                    txtCosto.Enabled = true;
 
                     btnBuscar.Enabled = false;
                     btnEntradaManual.Enabled = false;
                     btnReacindicionaIn.Enabled = false;
                     btnReacindicionaOut.Enabled = false;
+
+                    
+                    cboProveedor.ValueMember = "CardCode";
+                    cboProveedor.DisplayMember = "CardName";
+                    cboProveedor.DataSource = proveedores;
+
+                    
+                    cboEnvase.ValueMember = "ItemCode";
+                    cboEnvase.DisplayMember = "ItemName";
+                    cboEnvase.DataSource = articulos;
+                    
+                    cboBodegaOrigen.ValueMember = "WhsCode";
+                    cboBodegaOrigen.DisplayMember = "WhsName";
+                    cboBodegaOrigen.DataSource = almacenes;
+
+                    cboBodegaDestino.ValueMember = "WhsCode";
+                    cboBodegaDestino.DisplayMember = "WhsName";
+                    cboBodegaDestino.DataSource = almacenesDestino;
+
                     break;
                 case Accion.limpiar:
                     txtRemision.Text = "";
+                    txtCantidad.Text = "";
+                    TxtCantidadProveedor.Text = "";
+                    txtValor.Text = "";
+                    txtReciboProveedor.Text = "";
+                    txtObservaciones.Text = "";
+                    txtItemCode.Text = "";
+                    txtCantRemisionada.Text = "";
+                    txtCantDevuelta.Text = "";
+                    txtCantEnReacondicionamiento.Text = "";
+                    txtCantidadReacondicionado.Text = "";
+                    txtCantBaja.Text = "";
+                    dpFechaReciboCliente.Value = DateTime.Now;
+
+                    cboProveedor.DataSource = null;
+                    cboEnvase.DataSource = null;
+                    cboBodegaOrigen.DataSource = null;
+                    cboBodegaDestino.DataSource = null;
+
+                    cboProveedor.Items.Clear();
+                    cboEnvase.Items.Clear();
+                    cboBodegaOrigen.Items.Clear();
+                    cboBodegaDestino.Items.Clear();                                       
+
                     txtRemision.Enabled = true;
                     txtCantidad.Enabled = false;
                     txtReciboCliente.Enabled = false;
                     dpFechaReciboCliente.Enabled = false;
 
                     cboProveedor.Enabled = false;
+                    cboEnvase.Enabled = false;
+                    cboBodegaOrigen.Enabled = false;
+                    TxtCantidadProveedor.Enabled = false;
+                    txtValor.Enabled = false;
                     txtReciboProveedor.Enabled = false;
-                    dpFechaReciboProveedor.Enabled = false;
-                    txtBaja.Enabled = false;
+                    cboBodegaDestino.Enabled = false;
                     txtObservaciones.Enabled = false;
-                    txtCosto.Enabled = false;
 
                     btnBuscar.Enabled = true;
-                    btnEntradaManual.Enabled = true;
-                    btnReacindicionaIn.Enabled = false;
-                    btnReacindicionaOut.Enabled = false;
+                    btnEntradaManual.Enabled = false;
+                    btnReacindicionaIn.Enabled = true;
+                    btnReacindicionaOut.Enabled = true;
 
                     limpiarGrids(grdNotas);
                     limpiarGrids(grdFacturas);
                     limpiarGrids(grdEntradas);
                     limpiarGrids(grdItems);
+                    break;
+                case Accion.esperando:
+                    txtRemision.Enabled = false;
+                    txtCantidad.Enabled = false;
+                    txtReciboCliente.Enabled = false;
+                    dpFechaReciboCliente.Enabled = false;
 
+                    cboProveedor.Enabled = false;
+                    cboEnvase.Enabled = false;
+                    cboBodegaOrigen.Enabled = false;
+                    TxtCantidadProveedor.Enabled = false;
+                    txtValor.Enabled = false;
+                    txtReciboProveedor.Enabled = false;
+                    cboBodegaDestino.Enabled = false;
+                    txtObservaciones.Enabled = false;
+
+                    btnBuscar.Enabled = false;
+
+                    if (txtCantRemisionada.Text != txtCantDevuelta.Text)
+                        btnEntradaManual.Enabled = true;
+                    else
+                        btnEntradaManual.Enabled = false;
+
+                    btnReacindicionaIn.Enabled = false;
+                    btnReacindicionaOut.Enabled = false;
                     break;
                 default:
                     break;
@@ -385,47 +471,87 @@ namespace BP
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            LineasEntradaManual linea = new LineasEntradaManual()
-                    {
-                        quantity = int.Parse(txtCantidad.Text),
-                        baseEntry = remision.docEntry,
-                        baseLine = articulo.lineNum
-                    };
             try
             {
                 switch (action)
                 {
                     case Accion.entradaManual:
-                        if (int.Parse(txtCantidad.Text) > (int.Parse(txtCantRemisionada.Text) - int.Parse(txtCantDevuelta.Text)))
-                            throw new Exception("Cantidad excede el valor permitido");
+                        int cantidadDevuelta = 0;
+                        if (!int.TryParse(txtCantidad.Text, out cantidadDevuelta))
+                            throw new Exception("Ingrese una cantidad válida");
+
+                        LineasEntradaManual linea = new LineasEntradaManual()
+                        {
+                            quantity = int.Parse(txtCantidad.Text),
+                            baseEntry = remision.docEntry,
+                            baseLine = articulo.lineNum
+                        };
+
+                        //if (int.Parse(txtCantidad.Text) > (int.Parse(txtCantRemisionada.Text) - int.Parse(txtCantDevuelta.Text)))
+                        //    throw new Exception("Cantidad excede el valor permitido");
 
                         linea.objType = 90;
                         linea.fechaReciboCliente = dpFechaReciboCliente.Value;
                         linea.numReciboCliente = txtReciboCliente.Text;
                         linea.costoReacondic = 0;
                         linea.itemsBaja = 0;
+                        ClsEnvaseDevolutivo.SaveEntrada(linea);
+                        getRemision();
                         break;
                     case Accion.entraReacondicionamiento:
-                        if (int.Parse(txtCantidad.Text) > (int.Parse(txtCantDevuelta.Text) - int.Parse(txtCantEnReacondicionamiento.Text)))
-                            throw new Exception("Cantidad excede el valor permitido");
+                        int cantidadReacondicionar = 0;
+                        if (!int.TryParse(TxtCantidadProveedor.Text, out cantidadReacondicionar))
+                            throw new Exception("Ingrese una cantidad válida");
 
-                        linea.objType = 91;
-                        linea.cardCode = cboProveedor.SelectedValue.ToString();
-                        linea.fechaReciboProveedor  =new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day);
-                        linea.costoReacondic = 0;
-                        linea.itemsBaja = 0;
+                        int valorReacondicionar = 0;
+                        if (!int.TryParse(txtValor.Text, out valorReacondicionar))
+                            throw new Exception("Ingrese un valor válido");
+
+                        DocumentoMktng doc = new DocumentoMktng()
+                        {
+                            CardCode = cboProveedor.SelectedValue.ToString(),
+                            Comments = "Recibo Cliente No. " + txtReciboCliente.Text
+                        };
+
+                        doc.lineas.Add(new DocumentoLineas()
+                        {
+                            ItemCode = cboEnvase.SelectedValue.ToString(),
+                            WhsCode = cboBodegaOrigen.SelectedValue.ToString(),
+                            Quantity = double.Parse(TxtCantidadProveedor.Text),
+                            Price = double.Parse(txtValor.Text),
+                        });
+
+
+                        int entrada = BusinessDocumento.CrearEntradaMercancia(doc);
+
+                        if (entrada > 0)
+                            escribirTolStrip("Se generó la entrada " + entrada.ToString());
+
                         break;
-                    case Accion.saleReacndicionamiento:
-                        if (int.Parse(txtCantidad.Text) > (int.Parse(txtCantEnReacondicionamiento.Text) - (int.Parse(txtCantidadReacondicionado.Text) + int.Parse(txtCantBaja.Text))))
-                            throw new Exception("Cantidad excede el valor permitido");
+                    case Accion.saleReacndicionamiento:                        
+                        int cantidadReacondicionada = 0;
+                        if (!int.TryParse(TxtCantidadProveedor.Text, out cantidadReacondicionada))
+                            throw new Exception("Ingrese una cantidad válida");
 
-                        linea.objType = 92;
-                        linea.cardCode = cboProveedor.SelectedValue.ToString();
-                        linea.numReciboProveedor = txtReciboProveedor.Text;
-                        linea.fechaReciboProveedor = dpFechaReciboProveedor.Value;
-                        linea.costoReacondic = string.IsNullOrEmpty(txtCosto.Text) ? 0 : int.Parse(txtCosto.Text);
-                        linea.itemsBaja = string.IsNullOrEmpty(txtBaja.Text) ? 0 : int.Parse(txtBaja.Text);
-                        linea.observaciones = txtObservaciones.Text;
+                        Transferencia tr = new Transferencia()
+                        {
+                            DocDate = DateTime.Now,
+                            WhsCode = cboBodegaOrigen.SelectedValue.ToString(),
+                            Comments = txtObservaciones.Text
+                        };
+
+                        tr.lineas.Add(new TransferenciaLinea()
+                        {
+                            ItemCode = cboEnvase.SelectedValue.ToString(),
+                            Quantity = double.Parse(TxtCantidadProveedor.Text),
+                            WhsCode = cboBodegaDestino.SelectedValue.ToString()
+                        });
+
+                        int transDoc = BusinessInventario.CrearTransferenciaInventario(tr);
+
+                        if (transDoc > 0)
+                            escribirTolStrip("Se generó la transferencia " + transDoc.ToString());
+
                         break;
                     case Accion.limpiar:
                         escribirTolStrip("No hay nada para guardar");
@@ -434,9 +560,6 @@ namespace BP
                         break;
                 }
 
-
-                ClsEnvaseDevolutivo.SaveEntrada(linea);
-                getRemision();
                 action = Accion.limpiar;
             }
             catch (Exception ex)

@@ -1,0 +1,8 @@
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entities\bin\Release\Entities.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entities\bin\Release\Entities.pdb
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entities\obj\Release\Entities.dll
+C:\Users\SILVERIO\Source\Repos\qcaMiddle\Entities\obj\Release\Entities.pdb
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\bin\Release\Entities.dll
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\bin\Release\Entities.pdb
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\obj\Release\Entities.dll
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\obj\Release\Entities.pdb

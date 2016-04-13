@@ -141,11 +141,15 @@ namespace BP
             IDataReader miDataReader = null;
             try
             {
+                if (SqlConn.State != ConnectionState.Open)
+                    SqlConn.Open();
+
                 SqlCommand miComando = new SqlCommand(query, SqlConn);
-                miDataReader = miComando.ExecuteReader();
+                miDataReader = miComando.ExecuteReader();                
             }
             catch (Exception er)
             {
+                SqlConn.Close();
                 MessageBox.Show(er.Message, "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return miDataReader;
@@ -169,7 +173,7 @@ namespace BP
             int cRsl;
             SqlCommand cmd = new SqlCommand(query, SqlConn);
             SqlConn.Open();
-            cRsl = 0 + (Int32)cmd.ExecuteScalar();
+            cRsl = 0 + Convert.ToInt32(cmd.ExecuteScalar());
             SqlConn.Close();
 
             if (cRsl == 0 || cRsl == null)
@@ -243,7 +247,7 @@ namespace BP
                         break;
                     default:
                         break;
-                }                
+                }
                 objCompany.CompanyDB = company;
 
 
@@ -333,7 +337,7 @@ namespace BP
                 //MessageBox.Show(ex.Message,"Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);            
             }
         }
-        
+
         public static DataSet ImportaExcel(string query, string ruta)
         {
             DataSet oDs = new DataSet();

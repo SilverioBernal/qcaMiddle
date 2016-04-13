@@ -48,7 +48,7 @@
             this.dpRemisionDesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnExportarKC = new System.Windows.Forms.Button();
             this.btnGenerarKC = new System.Windows.Forms.Button();
@@ -56,37 +56,29 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dpKCDesde = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grdKardexClientes = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnExportarKP = new System.Windows.Forms.Button();
-            this.btnGenerarKP = new System.Windows.Forms.Button();
-            this.dpKPHasta = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dpKPDesde = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.grdKardexProveedores = new System.Windows.Forms.DataGridView();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCarteraClientes)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdKardexClientes)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdKardexProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -292,19 +284,18 @@
             this.tabPage2.Text = "Reporte kardex cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // panel4
             // 
-            this.tabPage3.Controls.Add(this.panel6);
-            this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(919, 490);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Reporte kardex proveedor";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.splitContainer1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 89);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(913, 398);
+            this.panel4.TabIndex = 2;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnPrint);
             this.panel3.Controls.Add(this.btnExportarKC);
             this.panel3.Controls.Add(this.btnGenerarKC);
             this.panel3.Controls.Add(this.dpKCHasta);
@@ -371,14 +362,23 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Desde";
             // 
-            // panel4
+            // splitContainer1
             // 
-            this.panel4.Controls.Add(this.grdKardexClientes);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 89);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(913, 398);
-            this.panel4.TabIndex = 2;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.grdKardexClientes);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.crystalReportViewer1);
+            this.splitContainer1.Panel2.Controls.Add(this.splitter1);
+            this.splitContainer1.Size = new System.Drawing.Size(913, 398);
+            this.splitContainer1.SplitterDistance = 588;
+            this.splitContainer1.TabIndex = 1;
             // 
             // grdKardexClientes
             // 
@@ -386,94 +386,38 @@
             this.grdKardexClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdKardexClientes.Location = new System.Drawing.Point(0, 0);
             this.grdKardexClientes.Name = "grdKardexClientes";
-            this.grdKardexClientes.Size = new System.Drawing.Size(913, 398);
-            this.grdKardexClientes.TabIndex = 0;
+            this.grdKardexClientes.Size = new System.Drawing.Size(588, 398);
+            this.grdKardexClientes.TabIndex = 1;
             // 
-            // panel5
+            // splitter1
             // 
-            this.panel5.Controls.Add(this.btnExportarKP);
-            this.panel5.Controls.Add(this.btnGenerarKP);
-            this.panel5.Controls.Add(this.dpKPHasta);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.dpKPDesde);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(919, 86);
-            this.panel5.TabIndex = 2;
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 398);
+            this.splitter1.TabIndex = 0;
+            this.splitter1.TabStop = false;
             // 
-            // btnExportarKP
+            // crystalReportViewer1
             // 
-            this.btnExportarKP.Location = new System.Drawing.Point(345, 31);
-            this.btnExportarKP.Name = "btnExportarKP";
-            this.btnExportarKP.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarKP.TabIndex = 44;
-            this.btnExportarKP.Text = "Exportar";
-            this.btnExportarKP.UseVisualStyleBackColor = true;
-            this.btnExportarKP.Click += new System.EventHandler(this.btnExportarKP_Click);
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(318, 398);
+            this.crystalReportViewer1.TabIndex = 1;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // btnGenerarKP
+            // btnPrint
             // 
-            this.btnGenerarKP.Location = new System.Drawing.Point(264, 31);
-            this.btnGenerarKP.Name = "btnGenerarKP";
-            this.btnGenerarKP.Size = new System.Drawing.Size(75, 23);
-            this.btnGenerarKP.TabIndex = 43;
-            this.btnGenerarKP.Text = "Generar";
-            this.btnGenerarKP.UseVisualStyleBackColor = true;
-            this.btnGenerarKP.Click += new System.EventHandler(this.btnGenerarKP_Click);
-            // 
-            // dpKPHasta
-            // 
-            this.dpKPHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpKPHasta.Location = new System.Drawing.Point(177, 32);
-            this.dpKPHasta.Name = "dpKPHasta";
-            this.dpKPHasta.Size = new System.Drawing.Size(81, 20);
-            this.dpKPHasta.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Hasta";
-            // 
-            // dpKPDesde
-            // 
-            this.dpKPDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpKPDesde.Location = new System.Drawing.Point(49, 32);
-            this.dpKPDesde.Name = "dpKPDesde";
-            this.dpKPDesde.Size = new System.Drawing.Size(81, 20);
-            this.dpKPDesde.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Desde";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.grdKardexProveedores);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 86);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(919, 404);
-            this.panel6.TabIndex = 3;
-            // 
-            // grdKardexProveedores
-            // 
-            this.grdKardexProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdKardexProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdKardexProveedores.Location = new System.Drawing.Point(0, 0);
-            this.grdKardexProveedores.Name = "grdKardexProveedores";
-            this.grdKardexProveedores.Size = new System.Drawing.Size(919, 404);
-            this.grdKardexProveedores.TabIndex = 0;
+            this.btnPrint.Location = new System.Drawing.Point(426, 32);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 45;
+            this.btnPrint.Text = "Imprimir";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmReportesEnvaseDevolutivo
             // 
@@ -491,15 +435,13 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdKardexClientes)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdKardexProveedores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +453,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.CheckBox filtraFechaRecibo;
         private System.Windows.Forms.DateTimePicker dpReciboHasta;
         private System.Windows.Forms.Label label3;
@@ -535,16 +476,11 @@
         private System.Windows.Forms.DateTimePicker dpKCDesde;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView grdKardexClientes;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DataGridView grdKardexProveedores;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnExportarKP;
-        private System.Windows.Forms.Button btnGenerarKP;
-        private System.Windows.Forms.DateTimePicker dpKPHasta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dpKPDesde;
-        private System.Windows.Forms.Label label6;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button btnPrint;
 
     }
 }

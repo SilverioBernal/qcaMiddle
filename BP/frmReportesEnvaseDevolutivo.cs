@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using SAPbobsCOM;
+using BP.AppData;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace BP
 {
@@ -20,6 +22,7 @@ namespace BP
 
         private void frmReportesEnvaseDevolutivo_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             dpRemisionDesde.Value = DateTime.Now;
             dpRemisionHasta.Value = DateTime.Now;
 
@@ -126,7 +129,7 @@ namespace BP
             grdCarteraClientes.Columns.Add("nombreArticulo", "Artículo");
             grdCarteraClientes.Columns.Add("entregado", "Cant. Entregada");
             grdCarteraClientes.Columns.Add("retornado", "Cant. Retornada");
-            grdCarteraClientes.Columns.Add("enReacondicionamiento", "Cant.Reacondicionado");
+            //grdCarteraClientes.Columns.Add("enReacondicionamiento", "Cant.Reacondicionado");
             grdCarteraClientes.Columns.Add("saldo", "Saldo");
 
             grdCarteraClientes.Columns[0].DataPropertyName = "fecha";
@@ -138,8 +141,8 @@ namespace BP
             grdCarteraClientes.Columns[6].DataPropertyName = "nombreArticulo";
             grdCarteraClientes.Columns[7].DataPropertyName = "entregado";
             grdCarteraClientes.Columns[8].DataPropertyName = "retornado";
-            grdCarteraClientes.Columns[9].DataPropertyName = "enReacondicionamiento";
-            grdCarteraClientes.Columns[10].DataPropertyName = "saldo";
+            //grdCarteraClientes.Columns[9].DataPropertyName = "enReacondicionamiento";
+            grdCarteraClientes.Columns[9].DataPropertyName = "saldo";
 
 
             grdCarteraClientes.DataSource = reporte;
@@ -189,40 +192,7 @@ namespace BP
             grid.AutoGenerateColumns = false;
             grid.Columns.Clear();
         }
-
-        private void btnGenerarKP_Click(object sender, EventArgs e)
-        {
-            List<reporteKardex> reporte = new List<reporteKardex>();
-
-            reporte = ClsEnvaseDevolutivo.GetReporteKardexCliente(dpKCDesde.Value, dpKCHasta.Value);
-
-            limpiarGrids(grdKardexProveedores);
-
-            grdKardexProveedores.Columns.Add("tipoDocumento", "Tipo de documento");
-            grdKardexProveedores.Columns.Add("fechaDocumento", "fecha documento");
-            grdKardexProveedores.Columns.Add("numeroDocumento", "Numero documento");
-            grdKardexProveedores.Columns.Add("codigoSocioNegocio", "Cod SN");
-            grdKardexProveedores.Columns.Add("socioNegocio", "Nombre SN");
-            grdKardexProveedores.Columns.Add("codigoArticulo", "Cod. artículo");
-            grdKardexProveedores.Columns.Add("nombreArticulo", "Nombre artículo");
-            grdKardexProveedores.Columns.Add("entradas", "Entradas");
-            grdKardexProveedores.Columns.Add("salidas", "Salidas");
-            grdKardexProveedores.Columns.Add("saldo", "Saldo");
-
-            grdKardexProveedores.Columns[0].DataPropertyName = "tipoDocumento";
-            grdKardexProveedores.Columns[1].DataPropertyName = "fechaDocumento";
-            grdKardexProveedores.Columns[2].DataPropertyName = "numeroDocumento";
-            grdKardexProveedores.Columns[3].DataPropertyName = "codigoSocioNegocio";
-            grdKardexProveedores.Columns[4].DataPropertyName = "socioNegocio";
-            grdKardexProveedores.Columns[5].DataPropertyName = "codigoArticulo";
-            grdKardexProveedores.Columns[6].DataPropertyName = "nombreArticulo";
-            grdKardexProveedores.Columns[7].DataPropertyName = "entradas";
-            grdKardexProveedores.Columns[8].DataPropertyName = "salidas";
-            grdKardexProveedores.Columns[9].DataPropertyName = "saldo";
-
-
-            grdKardexProveedores.DataSource = reporte;
-        }
+        
 
         private void btnExportaRepCartera_Click(object sender, EventArgs e)
         {
@@ -248,16 +218,47 @@ namespace BP
             }
         }
 
-        private void btnExportarKP_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Excel Documents (*.xls)|*.xls";
-            sfd.FileName = "Vendedor.xls";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            try
             {
-                //ToCsV(dataGridView1, @"c:\export.xls");
-                ToCsV(grdKardexProveedores, sfd.FileName); // Here dataGridview1 is your grid view name 
+                DsReporteEnvDev ds = new DsReporteEnvDev();
+
+                foreach (DataGridViewRow item in grdKardexClientes.Rows)
+                {
+                    DsReporteEnvDev.extractoEnvaseDevolutivoRow fila = ds.extractoEnvaseDevolutivo.NewextractoEnvaseDevolutivoRow();
+
+                    fila.tipoDocumento = item.Cells["tipoDocumento"].Value.ToString();
+                    fila.fechaDocumento = item.Cells["fechaDocumento"].Value.ToString();
+                    fila.numeroDocumento = item.Cells["numeroDocumento"].Value.ToString();
+                    fila.fechaFactura = item.Cells["fechaFactura"].Value == null ? "" : item.Cells["fechaFactura"].Value.ToString();
+                    fila.numeroFactura = item.Cells["numeroFactura"].Value == null ? "" : item.Cells["numeroFactura"].Value.ToString();
+                    fila.codigoSN = item.Cells["codigoSocioNegocio"].Value.ToString();
+                    fila.nombreSN = item.Cells["socioNegocio"].Value.ToString();
+                    fila.codigoArticulo = item.Cells["codigoArticulo"].Value.ToString();
+                    fila.nombreArticulo = item.Cells["nombreArticulo"].Value.ToString();
+                    fila.entradas = int.Parse(item.Cells["entradas"].Value.ToString());
+                    fila.salidas = int.Parse(item.Cells["salidas"].Value.ToString());
+                    fila.saldo = int.Parse(item.Cells["saldo"].Value.ToString());
+
+                    ds.extractoEnvaseDevolutivo.AddextractoEnvaseDevolutivoRow(fila);
+                }
+
+                string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+                string rutaRpt = string.Format(@"{0}\ExtractoEnvase.rpt", appPath);
+
+                ReportDocument rpt;
+
+                rpt = new ReportDocument();
+                rpt.Load(rutaRpt);
+                rpt.SetDataSource(ds.Tables[0]);
+
+                crystalReportViewer1.ReportSource = rpt;
             }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Se presentó un error inesperado: {0} en {1}", ex.Message, ex.StackTrace));
+            }   
         }
 
         private void ToCsV(DataGridView dGV, string filename)
@@ -286,6 +287,7 @@ namespace BP
             bw.Close();
             fs.Close();
         }
+
 
         //private void btnBuscar_Click(object sender, EventArgs e)
         //{

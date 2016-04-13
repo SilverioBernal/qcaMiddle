@@ -1,0 +1,4 @@
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\bin\Debug\Entities.dll
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\bin\Debug\Entities.pdb
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\obj\Debug\Entities.dll
+C:\Users\Aguila1\Source\Repos\qcaMiddle\Entities\obj\Debug\Entities.pdb

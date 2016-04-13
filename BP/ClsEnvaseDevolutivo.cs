@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SAPbobsCOM;
+using Entities;
 
 namespace BP
 {
@@ -265,32 +266,6 @@ namespace BP
             return reporte;
         }
 
-        private static reporteCarteraCliente calculaReporteCarteraCliente(Remision remision)
-        {
-            reporteCarteraCliente reporte = null;
-
-            foreach (LineasRemision item in remision.Lineas)
-            {
-                reporte = new reporteCarteraCliente()
-               {
-                   numeroDocumento = remision.docNum.ToString(),
-                   fecha = remision.docDate.ToString("yyyy-MM-dd"),
-                   codigoSocioNegocio = remision.CardCode,
-                   socioNegocio = remision.CardName,
-                   nombreVendedor = GetNombreVendedor(remision.SlpCode),
-                   codigoArticulo = item.itemCode,
-                   nombreArticulo = item.itemName,
-                   entregado = item.quantity,
-                   retornado = GetCantidadRetornada(item),
-                   enReacondicionamiento = item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity),
-                   saldo = item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity) - item.lineasEntradaManual.Where(x => x.objType.Equals(92)).Sum(x => x.quantity)
-               };
-            }
-
-
-            return reporte;
-        }
-
         public static List<reporteKardex> GetReporteKardexCliente(DateTime desdeRemision, DateTime hastaRemision)
         {
             List<reporteKardex> reporte = new List<reporteKardex>();
@@ -319,6 +294,73 @@ namespace BP
 
             return reporte;
         }
+
+        public static List<reporteKardex> GetReporteKardexProveedor(DateTime desdeRemision, DateTime hastaRemision)
+        {
+            List<reporteKardex> reporte = new List<reporteKardex>();
+
+            try
+            {
+                string query = QueryBusquedaRemisiones(desdeRemision, hastaRemision);
+
+                Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+                rsDocumento.DoQuery(query);
+
+                if (rsDocumento.RecordCount > 0)
+                {
+                    while (!rsDocumento.EoF)
+                    {
+                        reporte.AddRange(calculaReporteKardexCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(1).Value.ToString()))));
+                        rsDocumento.MoveNext();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return reporte;
+        }
+
+        public static List<Almacen> GetAlmacenes() {
+            return BusinessInventario.ListarAlmacenes();
+        }
+
+        public static List<Articulo> GetItems(string familia)
+        {
+            return BusinessInventario.ListarArticulos(familia);
+        }
+
+        
+
+        private static reporteCarteraCliente calculaReporteCarteraCliente(Remision remision)
+        {
+            reporteCarteraCliente reporte = null;
+
+            foreach (LineasRemision item in remision.Lineas)
+            {
+                reporte = new reporteCarteraCliente()
+               {
+                   numeroDocumento = remision.docNum.ToString(),
+                   fecha = remision.docDate.ToString("yyyy-MM-dd"),
+                   codigoSocioNegocio = remision.CardCode,
+                   socioNegocio = remision.CardName,
+                   nombreVendedor = GetNombreVendedor(remision.SlpCode),
+                   codigoArticulo = item.itemCode,
+                   nombreArticulo = item.itemName,
+                   entregado = item.quantity,
+                   retornado = GetCantidadRetornada(item),
+                   //enReacondicionamiento = item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity),
+                   saldo = item.quantity - GetCantidadRetornada(item) 
+                   //item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity) - item.lineasEntradaManual.Where(x => x.objType.Equals(92)).Sum(x => x.quantity)
+               };
+            }
+
+
+            return reporte;
+        }        
 
         private static List<reporteKardex> calculaReporteKardexCliente(Remision remision)
         {
@@ -399,36 +441,7 @@ namespace BP
             }
 
             return reporte;
-        }
-
-        public static List<reporteKardex> GetReporteKardexProveedor(DateTime desdeRemision, DateTime hastaRemision)
-        {
-            List<reporteKardex> reporte = new List<reporteKardex>();
-
-            try
-            {
-                string query = QueryBusquedaRemisiones(desdeRemision, hastaRemision);
-
-                Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
-
-                rsDocumento.DoQuery(query);
-
-                if (rsDocumento.RecordCount > 0)
-                {
-                    while (!rsDocumento.EoF)
-                    {
-                        reporte.AddRange(calculaReporteKardexCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(1).Value.ToString()))));
-                        rsDocumento.MoveNext();
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return reporte;
-        }
+        }        
 
         private static List<reporteKardex> calculaReporteKardexProveedor(Remision remision)
         {
@@ -484,7 +497,7 @@ namespace BP
             }
 
             return reporte;
-        }
+        }        
 
         private static int GetCantidadRetornada(LineasRemision lineaRemision)
         {

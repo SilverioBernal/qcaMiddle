@@ -49,13 +49,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -120,12 +121,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEstimadosVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AppData\DsConsignacion.cs">
+      <DependentUpon>DsConsignacion.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppData\DsConsignacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsConsignacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\DsReporteEnvDev.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsReporteEnvDev.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessDocumento.cs" />
+    <Compile Include="BusinessInventario.cs" />
+    <Compile Include="ClsDataBusinessPartner.cs" />
     <Compile Include="CityAndValue.cs" />
     <Compile Include="ClaseDatos.cs" />
+    <Compile Include="ClsCommonData.cs" />
+    <Compile Include="ClsDataDocumentos.cs" />
+    <Compile Include="ClsDataInventario.cs" />
     <Compile Include="ClsEnvaseDevolutivo.cs" />
-    <Compile Include="ClsTransferencia.cs" />
-    <Compile Include="ClsTransferenciaLinea.cs" />
-    <Compile Include="EnvaseDevolutivo.cs" />
+    <Compile Include="ClsReporteConsignacion.cs" />
     <Compile Include="EsquemasReporteFletes\DataSetFletes.cs">
       <DependentUpon>DataSetFletes.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -146,6 +165,18 @@
     </Compile>
     <Compile Include="EsquemasReporteFletes\EsquemaDatosReporteFletesDetalle.cs">
       <DependentUpon>EsquemaDatosReporteFletesDetalle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExtractoEnvase1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtractoEnvase.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmBatchDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchDistribution.Designer.cs">
+      <DependentUpon>frmBatchDistribution.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCargaEnvaseDevolutivo.cs">
       <SubType>Form</SubType>
@@ -267,6 +298,12 @@
     <Compile Include="frmProyectaCosto.Designer.cs">
       <DependentUpon>frmProyectaCosto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteConsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteConsignacion.Designer.cs">
+      <DependentUpon>FrmReporteConsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteFletes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +354,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExtractoEnvase.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExtractoEnvase1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchDistribution.resx">
+      <DependentUpon>frmBatchDistribution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCargaEnvaseDevolutivo.resx">
       <DependentUpon>frmCargaEnvaseDevolutivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +437,9 @@
       <DependentUpon>frmProyectaCosto.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteConsignacion.resx">
+      <DependentUpon>FrmReporteConsignacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteFletes.resx">
       <DependentUpon>frmReporteFletes.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -424,6 +471,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RptConsignacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptConsignacion.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlMenu.resx">
       <DependentUpon>UserControlMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +484,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="AppData\DsConsignacion.xsc">
+      <DependentUpon>DsConsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="AppData\DsConsignacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsConsignacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppData\DsConsignacion.xss">
+      <DependentUpon>DsConsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="AppData\DsReporteEnvDev.xsc">
+      <DependentUpon>DsReporteEnvDev.xsd</DependentUpon>
+    </None>
+    <None Include="AppData\DsReporteEnvDev.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsReporteEnvDev.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AppData\DsReporteEnvDev.xss">
+      <DependentUpon>DsReporteEnvDev.xsd</DependentUpon>
+    </None>
     <None Include="bmp\E_Css_Blancol_WMF.wmf" />
     <None Include="bmp\FOXUSER.DBF" />
     <None Include="bmp\FOXUSER.FPT" />
@@ -503,6 +577,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RptConsignacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptConsignacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="UserControlMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -554,6 +635,9 @@
     <Content Include="Librerias\Telerik.WinControls.Themes.Windows7.dll" />
     <Content Include="Librerias\Telerik.WinControls.UI.dll" />
     <Content Include="Librerias\TelerikCommon.dll" />
+    <Content Include="TxtQueryConsignacion.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TxtQueryEstadistica.txt" />
     <Content Include="bmp\104.ICO" />
     <Content Include="bmp\147.ICO" />
@@ -644,6 +728,12 @@
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{A1FD0ACE-EBB8-4C32-8EA5-F4779FEEBA09}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="SAPbobsCOM">

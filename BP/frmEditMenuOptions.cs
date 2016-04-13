@@ -142,7 +142,7 @@ namespace BP
             if (cboPadre.Text != "" && txthijo.Text != "" && txtTextoMenu.Text != "" && cboIcono.Text != "")
             {
                 cQuery =
-                    "select count(*) +1 from [@css_menu_middle]";
+                    "select MAX(cast(Code as int)) + 1 from [@css_menu_middle]";
                 next = ClaseDatos.scalarIntSql(cQuery);
 
                 cQuery =

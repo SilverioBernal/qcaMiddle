@@ -1,0 +1,296 @@
+﻿declare  @fromdate as datetime, @Todate as datetime
+select @fromdate = '{0}', @Todate = '{1}'
+
+declare @orders table (
+OrderType varchar(5),
+OrderEntry int, 
+OrderLine int,
+DeliveryType varchar(5),
+DeliveryEntry int, 
+DeliveryLine int,
+ReturnType varchar(5),
+ReturnEntry int, 
+ReturnLine int,
+InvoiceType varchar(5),
+InvoiceEntry int, 
+InvoiceLine int,
+CreditNoteType varchar(5),
+CreditNoteEntry int, 
+CreditNoteLine int,
+[Order] int, 
+[Delivery] int null, 
+[Return] int null, 
+[Invoice] int null, 
+[CreditNote] int null,
+slpCode int,
+slpName varchar(250),
+docDate datetime,
+CardCode varchar(50),
+CardName varchar(250),
+ItemCode varchar(40),
+ItemName varchar(250),
+OrderQuantity numeric(14,2)null,
+DeliveryQuantity numeric(14,2)null,
+ReturnQuantity numeric(14,2)null,
+InvoiceQuantity numeric(14,2) null,
+CreditNoteQuantity numeric(14,2)null,
+DocStatus char(1) null,
+terCode int null,
+terName varchar(250)
+)
+
+declare @deliverys table (
+OrderType varchar(5),
+OrderEntry int, 
+OrderLine int,
+DeliveryType varchar(5),
+DeliveryEntry int, 
+DeliveryLine int,
+ReturnType varchar(5),
+ReturnEntry int, 
+ReturnLine int,
+InvoiceType varchar(5),
+InvoiceEntry int, 
+InvoiceLine int,
+CreditNoteType varchar(5),
+CreditNoteEntry int, 
+CreditNoteLine int,
+[Order] int, 
+[Delivery] int null, 
+[Return] int null, 
+[Invoice] int null, 
+[CreditNote] int null, 
+slpCode int,
+slpName varchar(250),
+docDate datetime,
+CardCode varchar(50),
+CardName varchar(250),
+ItemCode varchar(40),
+ItemName varchar(250),
+OrderQuantity numeric(14,2)null,
+DeliveryQuantity numeric(14,2)null,
+ReturnQuantity numeric(14,2)null,
+InvoiceQuantity numeric(14,2) null,
+CreditNoteQuantity numeric(14,2)null,
+DocStatus char(1) null,
+terCode int null,
+terName varchar(250),
+avgPrice numeric(14,2),
+unitPrice numeric(14,2)
+)
+
+declare @returns table (
+OrderType varchar(5),
+OrderEntry int, 
+OrderLine int,
+DeliveryType varchar(5),
+DeliveryEntry int, 
+DeliveryLine int,
+ReturnType varchar(5),
+ReturnEntry int, 
+ReturnLine int,
+InvoiceType varchar(5),
+InvoiceEntry int, 
+InvoiceLine int,
+CreditNoteType varchar(5),
+CreditNoteEntry int, 
+CreditNoteLine int,
+[Order] int, 
+[Delivery] int null, 
+[Return] int null, 
+[Invoice] int null, 
+[CreditNote] int null, 
+slpCode int,
+slpName varchar(250),
+docDate datetime,
+CardCode varchar(50),
+CardName varchar(250),
+ItemCode varchar(40),
+ItemName varchar(250),
+OrderQuantity numeric(14,2)null,
+DeliveryQuantity numeric(14,2)null,
+ReturnQuantity numeric(14,2)null,
+InvoiceQuantity numeric(14,2) null,
+CreditNoteQuantity numeric(14,2)null,
+DocStatus char(1) null,
+terCode int null,
+terName varchar(250),
+avgPrice numeric(14,2),
+unitPrice numeric(14,2)
+)
+
+declare @invoices table (
+OrderType varchar(5),
+OrderEntry int, 
+OrderLine int,
+DeliveryType varchar(5),
+DeliveryEntry int, 
+DeliveryLine int,
+ReturnType varchar(5),
+ReturnEntry int, 
+ReturnLine int,
+InvoiceType varchar(5),
+InvoiceEntry int, 
+InvoiceLine int,
+CreditNoteType varchar(5),
+CreditNoteEntry int, 
+CreditNoteLine int,
+[Order] int, 
+[Delivery] int null, 
+[Return] int null, 
+[Invoice] int null, 
+[CreditNote] int null, 
+slpCode int,
+slpName varchar(250),
+docDate datetime,
+CardCode varchar(50),
+CardName varchar(250),
+ItemCode varchar(40),
+ItemName varchar(250),
+OrderQuantity numeric(14,2)null,
+DeliveryQuantity numeric(14,2)null,
+ReturnQuantity numeric(14,2)null,
+InvoiceQuantity numeric(14,2) null,
+CreditNoteQuantity numeric(14,2)null,
+DocStatus char(1) null,
+terCode int null,
+terName varchar(250),
+avgPrice numeric(14,2),
+unitPrice numeric(14,2)
+)
+
+declare @creditNotes table (
+OrderType varchar(5),
+OrderEntry int, 
+OrderLine int,
+DeliveryType varchar(5),
+DeliveryEntry int, 
+DeliveryLine int,
+ReturnType varchar(5),
+ReturnEntry int, 
+ReturnLine int,
+InvoiceType varchar(5),
+InvoiceEntry int, 
+InvoiceLine int,
+CreditNoteType varchar(5),
+CreditNoteEntry int, 
+CreditNoteLine int,
+[Order] int, 
+[Delivery] int null, 
+[Return] int null, 
+[Invoice] int null, 
+[CreditNote] int null, 
+slpCode int,
+slpName varchar(250),
+docDate datetime,
+CardCode varchar(50),
+CardName varchar(250),
+ItemCode varchar(40),
+ItemName varchar(250),
+OrderQuantity numeric(14,2)null,
+DeliveryQuantity numeric(14,2)null,
+ReturnQuantity numeric(14,2)null,
+InvoiceQuantity numeric(14,2) null,
+CreditNoteQuantity numeric(14,2)null,
+DocStatus char(1) null,
+terCode int null,
+terName varchar(250),
+avgPrice numeric(14,2),
+unitPrice numeric(14,2)
+)
+
+
+insert into @orders 
+ select a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, null, null, null, null, null, null, a.DocNum, null, null, null, null, e.SlpCode, d.SlpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, c.ItemName, b.Quantity, 0, 0, 0, 0, null, e.Territory, f.descript 
+ from 
+   ORDR a 
+     inner join RDR1 b on 
+       a.DocEntry = b.DocEntry
+	   inner join OITM c on 
+	     b.ItemCode = c.ItemCode
+	 inner join OCRD e on 
+	   a.CardCode = e.CardCode
+	   left join OTER f on 
+	     e.Territory = f.territryID
+	   inner join OSLP d on 
+	     e.SlpCode = d.SlpCode 
+
+ where 
+   a.DocDate between @fromdate and @Todate and 
+   a.Series = 72		  
+
+insert into @deliverys 
+  select distinct b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, null, null, null, c.[Order], DocNum, null, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, b.Quantity, 0, 0, 0, a.DocStatus, e.Territory, f.descript, g.AvgPrice, b.Price
+  from ODLN a 
+    inner join DLN1 b on 
+	  a.DocEntry = b.DocEntry
+  	  inner join @orders c on 
+	    b.BaseType = c.OrderType
+	    and b.BaseEntry = c.OrderEntry
+	    and b.BaseLine = c.OrderLine
+      inner join OITM d on 
+	     b.ItemCode = d.ItemCode	    		  
+	  inner join OCRD e on 
+	    a.CardCode = e.CardCode
+	    left join OTER f on 
+	      e.Territory = f.territryID
+	  inner join OITW g on 
+	    b.ItemCode = g.ItemCode and 
+		b.WhsCode = g.WhsCode 
+
+insert into @returns 
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, c.[Order], c.Delivery, DocNum, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, b.Quantity, 0, 0, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  from ORDN a 
+    inner join RDN1 b on 
+	  a.DocEntry = b.DocEntry
+  	  inner join @deliverys c on 
+	    b.BaseType = c.DeliveryType
+	    and b.BaseEntry = c.DeliveryEntry
+	    and b.BaseLine = c.DeliveryLine
+      inner join OITM d on 
+	     b.ItemCode = d.ItemCode
+	  inner join OCRD e on 
+	    a.CardCode = e.CardCode
+	    left join OTER f on 
+	      e.Territory = f.territryID
+
+insert into @invoices 
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, null, null, null, a.ObjType, a.DocEntry, b.LineNum, null, null, null, c.[Order], c.Delivery, null, DocNum, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, b.Quantity, 0, c.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  from OINV a 
+    inner join INV1 b on 
+	  a.DocEntry = b.DocEntry
+	  inner join @deliverys c on 
+	    b.BaseType = c.DeliveryType
+	    and b.BaseEntry = c.DeliveryEntry
+	    and b.BaseLine = c.DeliveryLine
+      inner join OITM d on 
+	     b.ItemCode = d.ItemCode
+	  inner join OCRD e on 
+	    a.CardCode = e.CardCode
+	    left join OTER f on 
+	      e.Territory = f.territryID
+
+insert into @creditNotes 
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, c.DeliveryType, c.DeliveryEntry, c.DeliveryLine, c.ReturnType, c.ReturnEntry, c.ReturnLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, c.[Order], c.Delivery, c.[Return], c.Invoice, DocNum, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, c.InvoiceQuantity, b.Quantity, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  from ORIN a 
+    inner join RIN1 b on 
+	  a.DocEntry = b.DocEntry
+  	  inner join @invoices c on 
+	    b.BaseType = c.InvoiceType
+	    and b.BaseEntry = c.InvoiceEntry
+	    and b.BaseLine = c.InvoiceLine
+      inner join OITM d on 
+	     b.ItemCode = d.ItemCode
+	  inner join OCRD e on 
+	    a.CardCode = e.CardCode
+	    left join OTER f on 
+	      e.Territory = f.territryID
+
+select *from @deliverys b
+union all
+select *from @returns c
+union all 
+select *from @invoices d
+union all 
+select *from @creditNotes e
+order by OrderEntry, orderLine, DeliveryEntry, DeliveryLine, ReturnEntry, ReturnLine, InvoiceEntry, InvoiceLine, CreditNoteEntry, CreditNoteLine

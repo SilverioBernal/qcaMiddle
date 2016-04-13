@@ -44,31 +44,37 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.dpFechaReciboProveedor = new System.Windows.Forms.DateTimePicker();
-            this.txtReciboProveedor = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cboProveedor = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtRemision = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboBodegaDestino = new System.Windows.Forms.ComboBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtBaja = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dpFechaReciboCliente = new System.Windows.Forms.DateTimePicker();
-            this.txtReciboCliente = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtCosto = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtReciboProveedor = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TxtCantidadProveedor = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cboBodegaOrigen = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cboEnvase = new System.Windows.Forms.ComboBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtReciboCliente = new System.Windows.Forms.TextBox();
+            this.dpFechaReciboCliente = new System.Windows.Forms.DateTimePicker();
             this.btnReacindicionaOut = new System.Windows.Forms.Button();
             this.btnReacindicionaIn = new System.Windows.Forms.Button();
             this.btnEntradaManual = new System.Windows.Forms.Button();
@@ -100,6 +106,8 @@
             this.panel9.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -158,6 +166,7 @@
             this.txtCantidadReacondicionado.ReadOnly = true;
             this.txtCantidadReacondicionado.Size = new System.Drawing.Size(65, 20);
             this.txtCantidadReacondicionado.TabIndex = 48;
+            this.txtCantidadReacondicionado.Visible = false;
             // 
             // txtCantEnReacondicionamiento
             // 
@@ -167,6 +176,7 @@
             this.txtCantEnReacondicionamiento.ReadOnly = true;
             this.txtCantEnReacondicionamiento.Size = new System.Drawing.Size(65, 20);
             this.txtCantEnReacondicionamiento.TabIndex = 46;
+            this.txtCantEnReacondicionamiento.Visible = false;
             // 
             // panel13
             // 
@@ -196,6 +206,7 @@
             this.txtCantBaja.ReadOnly = true;
             this.txtCantBaja.Size = new System.Drawing.Size(65, 20);
             this.txtCantBaja.TabIndex = 50;
+            this.txtCantBaja.Visible = false;
             // 
             // label16
             // 
@@ -205,6 +216,7 @@
             this.label16.Size = new System.Drawing.Size(28, 13);
             this.label16.TabIndex = 49;
             this.label16.Text = "Baja";
+            this.label16.Visible = false;
             // 
             // label12
             // 
@@ -214,6 +226,7 @@
             this.label12.Size = new System.Drawing.Size(91, 13);
             this.label12.TabIndex = 47;
             this.label12.Text = "Reacondicionado";
+            this.label12.Visible = false;
             // 
             // label11
             // 
@@ -223,6 +236,7 @@
             this.label11.Size = new System.Drawing.Size(121, 13);
             this.label11.TabIndex = 45;
             this.label11.Text = "En reacondicionamiento";
+            this.label11.Visible = false;
             // 
             // txtCantDevuelta
             // 
@@ -278,50 +292,46 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Producto";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(960, 151);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 39;
-            this.btnSalir.TabStop = false;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Visible = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.Location = new System.Drawing.Point(879, 151);
+            this.btnLimpiar.Location = new System.Drawing.Point(966, 155);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiar.TabIndex = 38;
+            this.btnLimpiar.TabIndex = 52;
             this.btnLimpiar.TabStop = false;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // dpFechaReciboProveedor
+            // btnGuardar
             // 
-            this.dpFechaReciboProveedor.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaReciboProveedor.Location = new System.Drawing.Point(664, 43);
-            this.dpFechaReciboProveedor.Name = "dpFechaReciboProveedor";
-            this.dpFechaReciboProveedor.Size = new System.Drawing.Size(81, 20);
-            this.dpFechaReciboProveedor.TabIndex = 8;
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(885, 155);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 51;
+            this.btnGuardar.TabStop = false;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtReciboProveedor
+            // btnSalir
             // 
-            this.txtReciboProveedor.Location = new System.Drawing.Point(502, 43);
-            this.txtReciboProveedor.Name = "txtReciboProveedor";
-            this.txtReciboProveedor.Size = new System.Drawing.Size(81, 20);
-            this.txtReciboProveedor.TabIndex = 7;
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(963, 6);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 53;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(361, 16);
+            this.label13.Location = new System.Drawing.Point(6, 26);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 40;
@@ -329,23 +339,12 @@
             // 
             // cboProveedor
             // 
+            this.cboProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboProveedor.FormattingEnabled = true;
-            this.cboProveedor.Location = new System.Drawing.Point(502, 14);
+            this.cboProveedor.Location = new System.Drawing.Point(68, 24);
             this.cboProveedor.Name = "cboProveedor";
-            this.cboProveedor.Size = new System.Drawing.Size(243, 21);
+            this.cboProveedor.Size = new System.Drawing.Size(321, 21);
             this.cboProveedor.TabIndex = 6;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(798, 151);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 37;
-            this.btnGuardar.TabStop = false;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtRemision
             // 
@@ -376,156 +375,225 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.txtObservaciones);
-            this.panel14.Controls.Add(this.label15);
-            this.panel14.Controls.Add(this.txtBaja);
-            this.panel14.Controls.Add(this.label14);
-            this.panel14.Controls.Add(this.cboProveedor);
-            this.panel14.Controls.Add(this.label13);
-            this.panel14.Controls.Add(this.btnSalir);
             this.panel14.Controls.Add(this.btnLimpiar);
+            this.panel14.Controls.Add(this.groupBox8);
             this.panel14.Controls.Add(this.btnGuardar);
-            this.panel14.Controls.Add(this.dpFechaReciboProveedor);
-            this.panel14.Controls.Add(this.txtReciboProveedor);
-            this.panel14.Controls.Add(this.label6);
-            this.panel14.Controls.Add(this.label7);
-            this.panel14.Controls.Add(this.dpFechaReciboCliente);
-            this.panel14.Controls.Add(this.txtReciboCliente);
-            this.panel14.Controls.Add(this.label1);
-            this.panel14.Controls.Add(this.label3);
-            this.panel14.Controls.Add(this.txtCantidad);
-            this.panel14.Controls.Add(this.txtCosto);
-            this.panel14.Controls.Add(this.label4);
-            this.panel14.Controls.Add(this.label5);
-            this.panel14.Controls.Add(this.btnReacindicionaOut);
-            this.panel14.Controls.Add(this.btnReacindicionaIn);
-            this.panel14.Controls.Add(this.btnEntradaManual);
+            this.panel14.Controls.Add(this.groupBox7);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(3, 16);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1044, 183);
             this.panel14.TabIndex = 13;
             // 
-            // txtObservaciones
+            // groupBox8
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(502, 95);
-            this.txtObservaciones.MaxLength = 254;
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(243, 59);
-            this.txtObservaciones.TabIndex = 45;
+            this.groupBox8.Controls.Add(this.txtValor);
+            this.groupBox8.Controls.Add(this.label6);
+            this.groupBox8.Controls.Add(this.cboBodegaDestino);
+            this.groupBox8.Controls.Add(this.txtObservaciones);
+            this.groupBox8.Controls.Add(this.label15);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.txtReciboProveedor);
+            this.groupBox8.Controls.Add(this.label20);
+            this.groupBox8.Controls.Add(this.label19);
+            this.groupBox8.Controls.Add(this.TxtCantidadProveedor);
+            this.groupBox8.Controls.Add(this.label18);
+            this.groupBox8.Controls.Add(this.cboBodegaOrigen);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.cboEnvase);
+            this.groupBox8.Controls.Add(this.label13);
+            this.groupBox8.Controls.Add(this.cboProveedor);
+            this.groupBox8.Location = new System.Drawing.Point(222, 5);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(813, 144);
+            this.groupBox8.TabIndex = 47;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Reacondicionamiento";
             // 
-            // label15
+            // txtValor
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(361, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Observaciones";
-            // 
-            // txtBaja
-            // 
-            this.txtBaja.Location = new System.Drawing.Point(664, 69);
-            this.txtBaja.Name = "txtBaja";
-            this.txtBaja.Size = new System.Drawing.Size(81, 20);
-            this.txtBaja.TabIndex = 10;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(592, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 13);
-            this.label14.TabIndex = 42;
-            this.label14.Text = "Baja envase";
+            this.txtValor.Location = new System.Drawing.Point(159, 118);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(81, 20);
+            this.txtValor.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(361, 43);
+            this.label6.Location = new System.Drawing.Point(395, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "No. recibo proveedor";
+            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "Bod. Destino";
             // 
-            // label7
+            // cboBodegaDestino
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(589, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 13);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Fecha recibo";
+            this.cboBodegaDestino.FormattingEnabled = true;
+            this.cboBodegaDestino.Location = new System.Drawing.Point(473, 23);
+            this.cboBodegaDestino.Name = "cboBodegaDestino";
+            this.cboBodegaDestino.Size = new System.Drawing.Size(321, 21);
+            this.cboBodegaDestino.TabIndex = 12;
             // 
-            // dpFechaReciboCliente
+            // txtObservaciones
             // 
-            this.dpFechaReciboCliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaReciboCliente.Location = new System.Drawing.Point(269, 69);
-            this.dpFechaReciboCliente.Name = "dpFechaReciboCliente";
-            this.dpFechaReciboCliente.Size = new System.Drawing.Size(81, 20);
-            this.dpFechaReciboCliente.TabIndex = 5;
+            this.txtObservaciones.Location = new System.Drawing.Point(473, 55);
+            this.txtObservaciones.MaxLength = 254;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(321, 83);
+            this.txtObservaciones.TabIndex = 13;
             // 
-            // txtReciboCliente
+            // label15
             // 
-            this.txtReciboCliente.Location = new System.Drawing.Point(269, 43);
-            this.txtReciboCliente.Name = "txtReciboCliente";
-            this.txtReciboCliente.Size = new System.Drawing.Size(81, 20);
-            this.txtReciboCliente.TabIndex = 4;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(395, 61);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 13);
+            this.label15.TabIndex = 55;
+            this.label15.Text = "Observaciones";
             // 
-            // label1
+            // label21
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "No. recibo cliente";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(246, 121);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(56, 13);
+            this.label21.TabIndex = 50;
+            this.label21.Text = "No. recibo";
+            // 
+            // txtReciboProveedor
+            // 
+            this.txtReciboProveedor.Location = new System.Drawing.Point(308, 118);
+            this.txtReciboProveedor.Name = "txtReciboProveedor";
+            this.txtReciboProveedor.Size = new System.Drawing.Size(81, 20);
+            this.txtReciboProveedor.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(123, 121);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(31, 13);
+            this.label20.TabIndex = 48;
+            this.label20.Text = "Valor";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 121);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 13);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "Cantidad";
+            // 
+            // TxtCantidadProveedor
+            // 
+            this.TxtCantidadProveedor.Location = new System.Drawing.Point(68, 118);
+            this.TxtCantidadProveedor.Name = "TxtCantidadProveedor";
+            this.TxtCantidadProveedor.Size = new System.Drawing.Size(49, 20);
+            this.TxtCantidadProveedor.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 86);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Bodega";
+            // 
+            // cboBodegaOrigen
+            // 
+            this.cboBodegaOrigen.FormattingEnabled = true;
+            this.cboBodegaOrigen.Location = new System.Drawing.Point(68, 84);
+            this.cboBodegaOrigen.Name = "cboBodegaOrigen";
+            this.cboBodegaOrigen.Size = new System.Drawing.Size(321, 21);
+            this.cboBodegaOrigen.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(43, 13);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "Envase";
+            // 
+            // cboEnvase
+            // 
+            this.cboEnvase.FormattingEnabled = true;
+            this.cboEnvase.Location = new System.Drawing.Point(68, 53);
+            this.cboEnvase.Name = "cboEnvase";
+            this.cboEnvase.Size = new System.Drawing.Size(321, 21);
+            this.cboEnvase.TabIndex = 7;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Controls.Add(this.txtCantidad);
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Controls.Add(this.txtReciboCliente);
+            this.groupBox7.Controls.Add(this.dpFechaReciboCliente);
+            this.groupBox7.Location = new System.Drawing.Point(9, 5);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(207, 144);
+            this.groupBox7.TabIndex = 46;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Entrada manual";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Cantidad recibida";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(126, 24);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(54, 20);
+            this.txtCantidad.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 70);
+            this.label3.Location = new System.Drawing.Point(6, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 31;
             this.label3.Text = "Fecha recibo";
             // 
-            // txtCantidad
+            // label1
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(269, 14);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(81, 20);
-            this.txtCantidad.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "No. recibo cliente";
             // 
-            // txtCosto
+            // txtReciboCliente
             // 
-            this.txtCosto.Location = new System.Drawing.Point(502, 69);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(81, 20);
-            this.txtCosto.TabIndex = 9;
+            this.txtReciboCliente.Location = new System.Drawing.Point(99, 53);
+            this.txtReciboCliente.Name = "txtReciboCliente";
+            this.txtReciboCliente.Size = new System.Drawing.Size(81, 20);
+            this.txtReciboCliente.TabIndex = 4;
             // 
-            // label4
+            // dpFechaReciboCliente
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Cantidad";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(361, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 13);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Costo reacondicionamiento";
+            this.dpFechaReciboCliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaReciboCliente.Location = new System.Drawing.Point(99, 79);
+            this.dpFechaReciboCliente.Name = "dpFechaReciboCliente";
+            this.dpFechaReciboCliente.Size = new System.Drawing.Size(81, 20);
+            this.dpFechaReciboCliente.TabIndex = 5;
             // 
             // btnReacindicionaOut
             // 
-            this.btnReacindicionaOut.Location = new System.Drawing.Point(9, 102);
+            this.btnReacindicionaOut.Location = new System.Drawing.Point(642, 4);
             this.btnReacindicionaOut.Name = "btnReacindicionaOut";
             this.btnReacindicionaOut.Size = new System.Drawing.Size(159, 23);
             this.btnReacindicionaOut.TabIndex = 2;
@@ -536,7 +604,7 @@
             // 
             // btnReacindicionaIn
             // 
-            this.btnReacindicionaIn.Location = new System.Drawing.Point(9, 59);
+            this.btnReacindicionaIn.Location = new System.Drawing.Point(477, 4);
             this.btnReacindicionaIn.Name = "btnReacindicionaIn";
             this.btnReacindicionaIn.Size = new System.Drawing.Size(159, 23);
             this.btnReacindicionaIn.TabIndex = 1;
@@ -547,7 +615,7 @@
             // 
             // btnEntradaManual
             // 
-            this.btnEntradaManual.Location = new System.Drawing.Point(9, 16);
+            this.btnEntradaManual.Location = new System.Drawing.Point(312, 4);
             this.btnEntradaManual.Name = "btnEntradaManual";
             this.btnEntradaManual.Size = new System.Drawing.Size(159, 23);
             this.btnEntradaManual.TabIndex = 0;
@@ -790,9 +858,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtRemision);
+            this.panel1.Controls.Add(this.btnEntradaManual);
+            this.panel1.Controls.Add(this.btnReacindicionaIn);
+            this.panel1.Controls.Add(this.btnReacindicionaOut);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -818,7 +890,10 @@
             this.panel9.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -862,27 +937,18 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.DateTimePicker dpFechaReciboProveedor;
-        private System.Windows.Forms.TextBox txtReciboProveedor;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cboProveedor;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtRemision;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dpFechaReciboCliente;
         private System.Windows.Forms.TextBox txtReciboCliente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnReacindicionaOut;
         private System.Windows.Forms.Button btnReacindicionaIn;
         private System.Windows.Forms.Button btnEntradaManual;
@@ -898,10 +964,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView grdItems;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtBaja;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Panel panel16;
@@ -916,6 +978,25 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TextBox txtCantBaja;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboBodegaDestino;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtReciboProveedor;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox TxtCantidadProveedor;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cboBodegaOrigen;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cboEnvase;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox txtValor;
 
     }
 }
