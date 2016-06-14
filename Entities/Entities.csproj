@@ -46,6 +46,8 @@
     <Compile Include="CardType.cs" />
     <Compile Include="DocumentoMktng.cs" />
     <Compile Include="DocumentoLineas.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="Flete.cs" />
     <Compile Include="GenericBusinessPartner.cs" />
     <Compile Include="Lote.cs" />
     <Compile Include="LoteoArticulo.cs" />
@@ -56,6 +58,9 @@
     <Compile Include="Territory.cs" />
     <Compile Include="Transferencia.cs" />
     <Compile Include="TransferenciaLinea.cs" />
+    <Compile Include="Transporter.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

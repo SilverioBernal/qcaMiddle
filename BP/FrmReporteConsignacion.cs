@@ -67,7 +67,23 @@ namespace BP
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            DateTime from, to ;
+            DsConsignacion dsReport = buildReport();
+
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
+            string rutaRpt = string.Format(@"{0}\RptConsignacion.rpt", appPath);
+
+            ReportDocument rpt;
+
+            rpt = new ReportDocument();
+            rpt.Load(rutaRpt);
+            rpt.SetDataSource(dsReport.Tables[0]);
+
+            crystalReportViewer1.ReportSource = rpt;
+        }        
+
+        public DsConsignacion buildReport()
+        {
+            DateTime from, to;
             string cardCode, itemCode, territoryCode, docStatus;
 
             from = dpFrom.Value;
@@ -113,7 +129,7 @@ namespace BP
                 row.CreditNote = item.CreditNote;
                 row.SlpCode = item.SlpCode;
                 row.SlpName = item.SlpName;
-                row.DocDate = (DateTime) item.DocDate;
+                row.DocDate = (DateTime)item.DocDate;
                 row.CardCode = item.CardCode;
                 row.CardName = item.CardName;
                 row.ItemCode = item.ItemCode;
@@ -135,21 +151,7 @@ namespace BP
                 dsReport.DtReporteConsignacion.AddDtReporteConsignacionRow(row);
             }
 
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
-            string rutaRpt = string.Format(@"{0}\RptConsignacion.rpt", appPath);
-
-            ReportDocument rpt;
-
-            rpt = new ReportDocument();
-            rpt.Load(rutaRpt);
-            rpt.SetDataSource(dsReport.Tables[0]);
-
-            crystalReportViewer1.ReportSource = rpt;
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
+            return dsReport;
         }
     }
 }

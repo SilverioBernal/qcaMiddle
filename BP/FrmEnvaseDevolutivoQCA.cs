@@ -62,6 +62,11 @@ namespace BP
 
                 bindGridFacturas();
                 bindGridEntregas();
+
+                if (obtenerCantidadRetornada(articulo) < articulo.quantity)
+                    btnEntradaManual.Enabled = true;
+                else
+                    btnEntradaManual.Enabled = false;
             }
         }
 
@@ -129,8 +134,17 @@ namespace BP
         {
             try
             {
-                logicaControles(Accion.entraReacondicionamiento);
-                action = Accion.entraReacondicionamiento;
+                if (!string.IsNullOrEmpty(txtRemision.Text))
+                {
+                    int numRemision = 0;
+                    if (!int.TryParse(txtRemision.Text, out numRemision))
+                        throw new Exception("Ingrese un número válido de remisión");
+
+                    remision = ClsEnvaseDevolutivo.GetRemision(int.Parse(txtRemision.Text));
+
+                    logicaControles(Accion.entraReacondicionamiento);
+                    action = Accion.entraReacondicionamiento;
+                }
             }
             catch (Exception ex)
             {
@@ -143,7 +157,7 @@ namespace BP
             try
             {
                 logicaControles(Accion.saleReacndicionamiento);
-                action = Accion.saleReacndicionamiento;                
+                action = Accion.saleReacndicionamiento;
             }
             catch (Exception ex)
             {
@@ -284,14 +298,14 @@ namespace BP
             List<Almacen> almacenes = new List<Almacen>();
             List<Almacen> almacenesDestino = new List<Almacen>();
 
-            proveedores.Add(new Proveedor() { CardCode= string.Empty, CardName="Seleccione uno" });
+            proveedores.Add(new Proveedor() { CardCode = string.Empty, CardName = "Seleccione uno" });
             articulos.Add(new Articulo() { ItemCode = string.Empty, ItemName = "Seleccione uno" });
             almacenes.Add(new Almacen() { WhsCode = string.Empty, WhsName = "Seleccione uno" });
-            
+
             proveedores.AddRange(ClsEnvaseDevolutivo.GetProveedores());
             articulos.AddRange(ClsEnvaseDevolutivo.GetItems("ME"));
             almacenes.AddRange(ClsEnvaseDevolutivo.GetAlmacenes());
-            almacenesDestino.AddRange(almacenes.ToList()); 
+            almacenesDestino.AddRange(almacenes.ToList());
 
             switch (accion)
             {
@@ -308,7 +322,7 @@ namespace BP
                     txtValor.Enabled = false;
                     txtReciboProveedor.Enabled = false;
                     cboBodegaDestino.Enabled = false;
-                    txtObservaciones.Enabled = false;
+                    txtObservaciones.Enabled = true;
 
                     btnBuscar.Enabled = false;
                     btnEntradaManual.Enabled = false;
@@ -328,24 +342,24 @@ namespace BP
                     txtValor.Enabled = true;
                     txtReciboProveedor.Enabled = true;
                     cboBodegaDestino.Enabled = false;
-                    txtObservaciones.Enabled = false;
+                    txtObservaciones.Enabled = true;
 
                     btnBuscar.Enabled = false;
                     btnEntradaManual.Enabled = false;
                     btnReacindicionaIn.Enabled = false;
                     btnReacindicionaOut.Enabled = false;
 
-                    
+
                     cboProveedor.ValueMember = "CardCode";
                     cboProveedor.DisplayMember = "CardName";
                     cboProveedor.DataSource = proveedores;
 
-                    
+
                     cboEnvase.ValueMember = "ItemCode";
                     cboEnvase.DisplayMember = "ItemName";
                     cboEnvase.DataSource = articulos;
 
-                    
+
                     cboBodegaOrigen.ValueMember = "WhsCode";
                     cboBodegaOrigen.DisplayMember = "WhsName";
                     cboBodegaOrigen.DataSource = almacenes;
@@ -371,16 +385,16 @@ namespace BP
                     btnReacindicionaIn.Enabled = false;
                     btnReacindicionaOut.Enabled = false;
 
-                    
+
                     cboProveedor.ValueMember = "CardCode";
                     cboProveedor.DisplayMember = "CardName";
                     cboProveedor.DataSource = proveedores;
 
-                    
+
                     cboEnvase.ValueMember = "ItemCode";
                     cboEnvase.DisplayMember = "ItemName";
                     cboEnvase.DataSource = articulos;
-                    
+
                     cboBodegaOrigen.ValueMember = "WhsCode";
                     cboBodegaOrigen.DisplayMember = "WhsName";
                     cboBodegaOrigen.DataSource = almacenes;
@@ -413,7 +427,7 @@ namespace BP
                     cboProveedor.Items.Clear();
                     cboEnvase.Items.Clear();
                     cboBodegaOrigen.Items.Clear();
-                    cboBodegaDestino.Items.Clear();                                       
+                    cboBodegaDestino.Items.Clear();
 
                     txtRemision.Enabled = true;
                     txtCantidad.Enabled = false;
@@ -495,6 +509,8 @@ namespace BP
                         linea.numReciboCliente = txtReciboCliente.Text;
                         linea.costoReacondic = 0;
                         linea.itemsBaja = 0;
+                        linea.observaciones = txtObservaciones.Text;
+
                         ClsEnvaseDevolutivo.SaveEntrada(linea);
                         getRemision();
                         break;
@@ -510,7 +526,7 @@ namespace BP
                         DocumentoMktng doc = new DocumentoMktng()
                         {
                             CardCode = cboProveedor.SelectedValue.ToString(),
-                            Comments = "Recibo Cliente No. " + txtReciboCliente.Text
+                            Comments = string.Format("Recibo Cliente No. {0} - Comentarios: {1}", txtReciboProveedor.Text, txtObservaciones.Text)
                         };
 
                         doc.lineas.Add(new DocumentoLineas()
@@ -526,9 +542,21 @@ namespace BP
 
                         if (entrada > 0)
                             escribirTolStrip("Se generó la entrada " + entrada.ToString());
+                        
+                        LineasEntradaManual lineaReacond = new LineasEntradaManual()
+                        {
+                            baseEntry = remision.docEntry,
+                            objType = 92,
+                            numReciboProveedor = txtReciboProveedor.Text,
+                            cardCode = cboProveedor.SelectedValue.ToString(),
+                            fechaReciboProveedor = DateTime.Now,
+                            observaciones = txtObservaciones.Text,
+                        };
+
+                        ClsEnvaseDevolutivo.SaveEntrada(lineaReacond);
 
                         break;
-                    case Accion.saleReacndicionamiento:                        
+                    case Accion.saleReacndicionamiento:
                         int cantidadReacondicionada = 0;
                         if (!int.TryParse(TxtCantidadProveedor.Text, out cantidadReacondicionada))
                             throw new Exception("Ingrese una cantidad válida");

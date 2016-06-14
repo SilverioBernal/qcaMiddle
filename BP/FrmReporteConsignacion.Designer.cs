@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.rbAll = new System.Windows.Forms.RadioButton();
             this.rbClosed = new System.Windows.Forms.RadioButton();
@@ -56,7 +55,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnRun);
             this.panel1.Controls.Add(this.rbAll);
             this.panel1.Controls.Add(this.rbClosed);
@@ -89,17 +87,6 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Reporte de producto en consignación";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(995, 92);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnRun
             // 
@@ -298,7 +285,6 @@
         private System.Windows.Forms.DateTimePicker dpFrom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.RadioButton rbAll;
         private System.Windows.Forms.RadioButton rbClosed;

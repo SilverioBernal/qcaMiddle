@@ -45,6 +45,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_116393A57B024113B7D11043478F59F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_14DBF26B2916B7EDB667DB86028D986E"
         "OwnerKey" = "8:_08F74D21CADC4A8098138DDB8BD1523D"
         "MsmSig" = "8:_UNDEFINED"
@@ -997,6 +1003,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_116393A57B024113B7D11043478F59F5"
+            {
+            "SourcePath" = "8:..\\BP\\RptConsignacionNoCost.rpt"
+            "TargetName" = "8:RptConsignacionNoCost.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_FBDE9D2FF2E5477E8A45965F606C8498"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_14DBF26B2916B7EDB667DB86028D986E"
             {
             "SourcePath" = "8:SAPbobsCOM90.dll"
@@ -1938,7 +1964,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bretano Middleware"
         "ProductCode" = "8:{C5FA9C53-E3E8-4E78-B606-BD93EB893917}"
-        "PackageCode" = "8:{B30CABCD-0C36-449A-AE35-124BE68E42F8}"
+        "PackageCode" = "8:{4F400397-0439-490B-A2B0-8C100062323A}"
         "UpgradeCode" = "8:{C1C89595-9E90-4144-ADB5-A4126E7D3EB1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

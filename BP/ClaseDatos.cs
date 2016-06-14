@@ -159,7 +159,10 @@ namespace BP
         public static string scalarStringSql(string query)
         {
             string cRsl;
-            SqlConn.Open();
+
+            if (SqlConn.State != ConnectionState.Open)
+                SqlConn.Open();
+            
             SqlCommand cmd = new SqlCommand(query, SqlConn);
             cRsl = cmd.ExecuteScalar().ToString();
             SqlConn.Close();
@@ -172,7 +175,10 @@ namespace BP
 
             int cRsl;
             SqlCommand cmd = new SqlCommand(query, SqlConn);
-            SqlConn.Open();
+
+            if (SqlConn.State != ConnectionState.Open)
+                SqlConn.Open();
+
             cRsl = 0 + Convert.ToInt32(cmd.ExecuteScalar());
             SqlConn.Close();
 

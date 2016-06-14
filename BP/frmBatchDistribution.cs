@@ -133,7 +133,7 @@ namespace BP
                 finallyBatchNumber = txtRealBatch.Text,
                 iqNumber = txtIq.Text,
                 quantity = double.Parse(txtQty.Text),
-                AvgPrice = double.Parse(grdItem.SelectedRows[0].Cells["AvgPrice"].Value.ToString())
+                AvgPrice = double.Parse(grdItem.SelectedRows[0].Cells["AvgPrice"].Value.ToString())                
             };
 
             if (grdBatch.SelectedRows[0].Cells["ExpDate"].Value != null)
@@ -155,6 +155,7 @@ namespace BP
             grdTrn.Columns.Add("ExpDate", "Expira");
             grdTrn.Columns.Add("MfnDate", "Fabricado");
             grdTrn.Columns.Add("AvgPrice", "Costo");
+            //grdTrn.Columns.Add("comments", "Observaciones");
 
             grdTrn.Columns[0].DataPropertyName = "itemCode";
             grdTrn.Columns[1].DataPropertyName = "originalBatchNumber";
@@ -165,8 +166,16 @@ namespace BP
             grdTrn.Columns[6].DataPropertyName = "ExpDate";
             grdTrn.Columns[7].DataPropertyName = "MfnDate";
             grdTrn.Columns[8].DataPropertyName = "AvgPrice";
+            //grdTrn.Columns[9].DataPropertyName = "comments";
 
             grdTrn.DataSource = loteoArticulo.lineas;
+
+            cboWhTo.SelectedIndex = 0;
+            
+            txtIq.Text = "";
+            txtQty.Text = "";
+            txtRealBatch.Text = "";
+            txtComments.Text = "";
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
@@ -180,6 +189,7 @@ namespace BP
             loteoArticulo.FromWhsCode = cboWhFrom.SelectedValue.ToString();
             loteoArticulo.DocDate = DateTime.Now;
             loteoArticulo.TaxDate = DateTime.Now;
+            loteoArticulo.Comments = txtComments.Text;
 
             try
             {
@@ -264,6 +274,7 @@ namespace BP
             txtIq.Text = "";
             txtQty.Text = "";
             txtRealBatch.Text = "";
+            txtComments.Text = "";
 
             loteoArticulo = new LoteoArticulo();
         }

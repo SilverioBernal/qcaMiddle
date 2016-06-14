@@ -32,6 +32,6 @@ namespace Entities
 
         public string ExpDate { get; set; }
 
-        public double AvgPrice { get; set; }
+        public double AvgPrice { get; set; }        
     }
 }

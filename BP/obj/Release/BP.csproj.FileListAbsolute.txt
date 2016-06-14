@@ -248,3 +248,9 @@ C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\Release\BP.FrmReporteConsignacion
 C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\TxtQueryConsignacion.txt
 C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\RptConsignacion.rpt
 C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\RptConsignacion.cs
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\RptConsignacionNoCost.rpt
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\RptConsignacionNoCost.cs
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\Release\BP.frmGestionFletes.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\obj\Release\BP.FrmReporteConsignacionNoCost.resources
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\ExtractoEnvase.rpt
+C:\Users\Aguila1\Source\Repos\qcaMiddle\BP\bin\Release\ExtractoEnvase1.cs

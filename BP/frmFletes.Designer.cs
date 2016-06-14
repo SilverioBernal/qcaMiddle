@@ -201,7 +201,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGrabar.Location = new System.Drawing.Point(99, 389);
+            this.btnGrabar.Location = new System.Drawing.Point(99, 430);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 23);
             this.btnGrabar.TabIndex = 16;
@@ -212,7 +212,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnImprimir.Location = new System.Drawing.Point(181, 389);
+            this.btnImprimir.Location = new System.Drawing.Point(181, 430);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 17;
@@ -223,7 +223,7 @@
             // btnAnular
             // 
             this.btnAnular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAnular.Location = new System.Drawing.Point(263, 389);
+            this.btnAnular.Location = new System.Drawing.Point(263, 430);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(75, 23);
             this.btnAnular.TabIndex = 18;
@@ -252,7 +252,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBuscar.Location = new System.Drawing.Point(18, 389);
+            this.btnBuscar.Location = new System.Drawing.Point(18, 430);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 21;
@@ -264,9 +264,9 @@
             // 
             this.dgvResultados.AllowUserToAddRows = false;
             this.dgvResultados.AllowUserToDeleteRows = false;
-            this.dgvResultados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvResultados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Zona,
@@ -282,7 +282,7 @@
             this.dgvResultados.Location = new System.Drawing.Point(13, 150);
             this.dgvResultados.Name = "dgvResultados";
             this.dgvResultados.RowHeadersVisible = false;
-            this.dgvResultados.Size = new System.Drawing.Size(533, 200);
+            this.dgvResultados.Size = new System.Drawing.Size(681, 241);
             this.dgvResultados.TabIndex = 22;
             this.dgvResultados.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultados_CellValueChanged);
             this.dgvResultados.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvResultados_CurrentCellDirtyStateChanged);
@@ -373,7 +373,7 @@
             this.dgvTotales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Titulo,
             this.ColValor});
-            this.dgvTotales.Location = new System.Drawing.Point(344, 356);
+            this.dgvTotales.Location = new System.Drawing.Point(492, 397);
             this.dgvTotales.Name = "dgvTotales";
             this.dgvTotales.ReadOnly = true;
             this.dgvTotales.RowHeadersVisible = false;
@@ -419,20 +419,20 @@
             // 
             this.txt_Comentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_Comentario.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_Comentario.Location = new System.Drawing.Point(13, 357);
+            this.txt_Comentario.Location = new System.Drawing.Point(13, 398);
             this.txt_Comentario.Multiline = true;
             this.txt_Comentario.Name = "txt_Comentario";
             this.txt_Comentario.Size = new System.Drawing.Size(325, 26);
             this.txt_Comentario.TabIndex = 28;
             this.txt_Comentario.Text = "Digite las Observaciones aqui..";
-            this.txt_Comentario.TextChanged += new System.EventHandler(this.txt_Comentario_TextChanged);
             this.txt_Comentario.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_Comentario_MouseClick);
+            this.txt_Comentario.TextChanged += new System.EventHandler(this.txt_Comentario_TextChanged);
             // 
             // frmFletes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 424);
+            this.ClientSize = new System.Drawing.Size(706, 465);
             this.Controls.Add(this.txt_Comentario);
             this.Controls.Add(this.cmbTipoVehiculo);
             this.Controls.Add(this.lblTipoVehiculo);

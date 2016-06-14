@@ -118,7 +118,7 @@ namespace BP
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_itemsBaja").Value = linea.itemsBaja;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_observaciones").Value = string.IsNullOrEmpty(linea.observaciones) ? "" : linea.observaciones;
 
-
+                    
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_fechaReciboCliente").Value = new DateTime(1980, 1, 1);
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_fechaReciboProv").Value = new DateTime(1980, 1, 1);
 
@@ -129,6 +129,46 @@ namespace BP
                     objORK_ENVASE_DEV.UserFields.Fields.Item("U_fechaReciboProv").Value = linea.fechaReciboProveedor.ToString("yyyy-MM-dd");
 
                 noDoc = objORK_ENVASE_DEV.Add();
+
+                if (noDoc < 0)
+                {
+                    throw new Exception(ClaseDatos.objCompany.GetLastErrorDescription());
+                }
+
+                if (ClaseDatos.objCompany.InTransaction)
+                {
+                    ClaseDatos.objCompany.EndTransaction(BoWfTransOpt.wf_Commit);
+                }
+            }
+            catch (Exception ex)
+            {
+                ClaseDatos.objCompany.EndTransaction(BoWfTransOpt.wf_RollBack);
+
+                throw (new Exception(ex.Message));
+            }
+            return noDoc;
+        }
+
+        public static int SaveEntrada(int odlnDocEntry, int opdnDocEntry)
+        {
+            int noDoc = 0;
+            string masterCode = "";
+
+            try
+            {
+                ClaseDatos.objCompany.StartTransaction();
+
+                UserTable objORK_ENV_DEV_REACON = ClaseDatos.objCompany.UserTables.Item("ORK_ENV_DEV_REACON");
+
+                masterCode = GetNextLineNum();
+
+                objORK_ENV_DEV_REACON.Code = masterCode;
+                objORK_ENV_DEV_REACON.Name = masterCode;
+
+                objORK_ENV_DEV_REACON.UserFields.Fields.Item("U_odlnDocEntry").Value = odlnDocEntry;
+                objORK_ENV_DEV_REACON.UserFields.Fields.Item("U_opdnDocEntry").Value = opdnDocEntry;
+                
+                noDoc = objORK_ENV_DEV_REACON.Add();
 
                 if (noDoc < 0)
                 {
@@ -208,6 +248,35 @@ namespace BP
             return reporte;
         }
 
+        public static List<reporteCarteraCliente> GetReporteCarteraCliente(DateTime desdeRemision, DateTime hastaRemision, string proveedor)
+        {
+            List<reporteCarteraCliente> reporte = new List<reporteCarteraCliente>();
+
+            try
+            {
+                string query = QueryBusquedaRemisiones(desdeRemision, hastaRemision, proveedor);
+
+                Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+                rsDocumento.DoQuery(query);
+
+                if (rsDocumento.RecordCount > 0)
+                {
+                    while (!rsDocumento.EoF)
+                    {
+                        reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(1).Value.ToString()))));
+                        rsDocumento.MoveNext();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return reporte;
+        }
+
         public static List<reporteCarteraCliente> GetReporteCarteraClienteRecibos(DateTime desdeRecibo, DateTime hastaRecibo)
         {
             List<reporteCarteraCliente> reporte = new List<reporteCarteraCliente>();
@@ -215,6 +284,35 @@ namespace BP
             try
             {
                 string query = QueryBusquedaRemisionesRecibo(desdeRecibo, hastaRecibo);
+
+                Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+                rsDocumento.DoQuery(query);
+
+                if (rsDocumento.RecordCount > 0)
+                {
+                    while (!rsDocumento.EoF)
+                    {
+                        reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(0).Value.ToString()))));
+                        rsDocumento.MoveNext();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return reporte;
+        }
+
+        public static List<reporteCarteraCliente> GetReporteCarteraClienteRecibos(DateTime desdeRecibo, DateTime hastaRecibo, string proveedor)
+        {
+            List<reporteCarteraCliente> reporte = new List<reporteCarteraCliente>();
+
+            try
+            {
+                string query = QueryBusquedaRemisionesRecibo(desdeRecibo, hastaRecibo, proveedor);
 
                 Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
 
@@ -293,6 +391,35 @@ namespace BP
             }
 
             return reporte;
+        }
+
+        public static List<reporteKardex> GetReporteKardexCliente(DateTime desdeRemision, DateTime hastaRemision, string cliente)
+        {
+            List<reporteKardex> reporte = new List<reporteKardex>();
+
+            try
+            {
+                string query = QueryBusquedaRemisiones(desdeRemision, hastaRemision);
+
+                Recordset rsDocumento = (Recordset)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.BoRecordset);
+
+                rsDocumento.DoQuery(query);
+
+                if (rsDocumento.RecordCount > 0)
+                {
+                    while (!rsDocumento.EoF)
+                    {
+                        reporte.AddRange(calculaReporteKardexCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(1).Value.ToString()))));
+                        rsDocumento.MoveNext();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return reporte.Where(x => x.codigoSocioNegocio== cliente).ToList();
         }
 
         public static List<reporteKardex> GetReporteKardexProveedor(DateTime desdeRemision, DateTime hastaRemision)
@@ -794,12 +921,35 @@ namespace BP
             return query.ToString();
         }
 
+        private static string QueryBusquedaRemisiones(DateTime desde, DateTime hasta, string cardCode)
+        {
+            StringBuilder query = new StringBuilder();
+            query.AppendLine("select distinct a.DocEntry, a.DocNum  ");
+            query.AppendLine("from odln a inner join DLN1 b on a.DocEntry = b.DocEntry left join  [@ORK_ENVASE_DEV] c on  a.DocEntry = c.U_baseEntry ");
+            query.AppendLine("where b.U_CSS_ENVASEDEVOL = 'SI' and a.DocDate >= (select U_inicioEnvDev from [@ORK_ENV_DEV_INICIO]) ");
+            query.AppendLine(string.Format("and (a.DocDate between '{0}' and '{1}') ", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
+            query.AppendLine(string.Format("and c.U_cardCode = '{0}'", cardCode));
+            query.AppendLine("order by a.DocNum");
+
+            return query.ToString();
+        }
+
         private static string QueryBusquedaRemisionesRecibo(DateTime desde, DateTime hasta)
         {
             StringBuilder query = new StringBuilder();
             query.AppendLine("select distinct b.DocNum ");
             query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
-            query.AppendLine(string.Format("where a.U_fechaReciboCliente between '{0}' and '{1}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
+            query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
+
+            return query.ToString();
+        }
+
+        private static string QueryBusquedaRemisionesRecibo(DateTime desde, DateTime hasta, string cardCode)
+        {
+            StringBuilder query = new StringBuilder();
+            query.AppendLine("select distinct b.DocNum ");
+            query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
+            query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}' and a.U_cardcode = '{2}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"), cardCode));
 
             return query.ToString();
         }

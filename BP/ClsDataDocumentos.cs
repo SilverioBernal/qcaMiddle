@@ -77,6 +77,8 @@ namespace BP
             }
             documento.DocEntry = Convert.ToInt32(ClaseDatos.objCompany.GetNewObjectKey());
 
+
+
         }
 
         public static int GetSeriesDocumento(string parametro)

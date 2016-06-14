@@ -10,6 +10,7 @@ using System.IO;
 using SAPbobsCOM;
 using BP.AppData;
 using CrystalDecisions.CrystalReports.Engine;
+using Entities;
 
 namespace BP
 {
@@ -22,12 +23,22 @@ namespace BP
 
         private void frmReportesEnvaseDevolutivo_Load(object sender, EventArgs e)
         {
+            ClsDataBusinessPartner bizPartner = new ClsDataBusinessPartner();
+
             this.WindowState = FormWindowState.Maximized;
             dpRemisionDesde.Value = DateTime.Now;
             dpRemisionHasta.Value = DateTime.Now;
 
             dpReciboDesde.Value = DateTime.Now;
             dpReciboHasta.Value = DateTime.Now;
+
+            List<GenericBusinessPartner> clientes = new List<GenericBusinessPartner>();
+            clientes.Add(new GenericBusinessPartner() { cardName = "Todos los clientes" });
+            clientes.AddRange(bizPartner.GetList(CardType.Customer).OrderBy(x => x.cardName).ToList());
+
+            cbKCCliente.DataSource = clientes;
+            cbKCCliente.ValueMember = "cardCode";
+            cbKCCliente.DisplayMember = "cardName";
         }
 
         private void filtraFechaRemision_CheckedChanged(object sender, EventArgs e)
@@ -37,16 +48,13 @@ namespace BP
                 dpRemisionDesde.Enabled = true;
                 dpRemisionHasta.Enabled = true;
 
-
                 filtraFechaRecibo.Checked = false;
                 dpReciboDesde.Enabled = false;
                 dpReciboHasta.Enabled = false;
 
-
-                filtraProveedor.Checked = false;
-                cboProveedor.Items.Clear();
-                cboProveedor.DataSource = null;
                 cboProveedor.Enabled = false;
+                cboProveedor.DataSource = null;
+                cboProveedor.Items.Clear();
             }
             else
             {
@@ -66,44 +74,28 @@ namespace BP
                 dpRemisionDesde.Enabled = false;
                 dpRemisionHasta.Enabled = false;
 
-
-                filtraProveedor.Checked = false;
-                cboProveedor.Items.Clear();
+                cboProveedor.Enabled = true;
                 cboProveedor.DataSource = null;
-                cboProveedor.Enabled = false;
-            }
-            else
-            {
-                dpReciboDesde.Enabled = false;
-                dpReciboHasta.Enabled = false;
-            }
-        }
+                cboProveedor.Items.Clear();
 
-        private void filtraProveedor_CheckedChanged(object sender, EventArgs e)
-        {
-            if (filtraProveedor.Checked)
-            {
-                List<Proveedor> proveedores = ClsEnvaseDevolutivo.GetProveedores();
+                List<Proveedor> proveedores = new List<Proveedor>();
+                proveedores.Add(new Proveedor() { CardName = "Seleccione" });
+                proveedores.AddRange(ClsEnvaseDevolutivo.GetProveedores());
 
                 cboProveedor.ValueMember = "CardCode";
                 cboProveedor.DisplayMember = "CardName";
                 cboProveedor.DataSource = proveedores;
 
                 cboProveedor.Enabled = true;
-
-                filtraFechaRemision.Checked = false;
-                dpRemisionDesde.Enabled = false;
-                dpRemisionHasta.Enabled = false;
-
-                filtraFechaRecibo.Checked = false;
-                dpReciboDesde.Enabled = false;
-                dpReciboHasta.Enabled = false;
             }
             else
             {
-                cboProveedor.Items.Clear();
-                cboProveedor.DataSource = null;
+                dpReciboDesde.Enabled = false;
+                dpReciboHasta.Enabled = false;
+
                 cboProveedor.Enabled = false;
+                cboProveedor.DataSource = null;
+                cboProveedor.Items.Clear();
             }
         }
 
@@ -112,11 +104,14 @@ namespace BP
             List<reporteCarteraCliente> reporte = new List<reporteCarteraCliente>();
             if (filtraFechaRemision.Checked)
                 reporte = ClsEnvaseDevolutivo.GetReporteCarteraCliente(dpRemisionDesde.Value, dpRemisionHasta.Value);
+            else
+            {
+                if (filtraFechaRecibo.Checked && cboProveedor.SelectedValue == null)
+                    reporte = ClsEnvaseDevolutivo.GetReporteCarteraClienteRecibos(dpReciboDesde.Value, dpReciboHasta.Value);
 
-            if (filtraFechaRecibo.Checked)
-                reporte = ClsEnvaseDevolutivo.GetReporteCarteraClienteRecibos(dpReciboDesde.Value, dpReciboHasta.Value);
-
-
+                if (filtraFechaRecibo.Checked && cboProveedor.SelectedValue != null)
+                    reporte = ClsEnvaseDevolutivo.GetReporteCarteraClienteRecibos(dpReciboDesde.Value, dpReciboHasta.Value, cboProveedor.SelectedValue.ToString());
+            }
 
             limpiarGrids(grdCarteraClientes);
 
@@ -152,7 +147,10 @@ namespace BP
         {
             List<reporteKardex> reporte = new List<reporteKardex>();
 
-            reporte = ClsEnvaseDevolutivo.GetReporteKardexCliente(dpKCDesde.Value, dpKCHasta.Value);
+            if (cbKCCliente.SelectedValue == null)
+                reporte = ClsEnvaseDevolutivo.GetReporteKardexCliente(dpKCDesde.Value, dpKCHasta.Value);
+            else
+                reporte = ClsEnvaseDevolutivo.GetReporteKardexCliente(dpKCDesde.Value, dpKCHasta.Value, cbKCCliente.SelectedValue.ToString());
 
             limpiarGrids(grdKardexClientes);
 
@@ -192,7 +190,7 @@ namespace BP
             grid.AutoGenerateColumns = false;
             grid.Columns.Clear();
         }
-        
+
 
         private void btnExportaRepCartera_Click(object sender, EventArgs e)
         {
@@ -258,7 +256,7 @@ namespace BP
             catch (Exception ex)
             {
                 throw new Exception(string.Format("Se presentó un error inesperado: {0} en {1}", ex.Message, ex.StackTrace));
-            }   
+            }
         }
 
         private void ToCsV(DataGridView dGV, string filename)
@@ -357,7 +355,7 @@ namespace BP
         //    }
         //}
 
-        
+
 
     }
 }
