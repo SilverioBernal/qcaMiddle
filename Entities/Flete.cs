@@ -19,5 +19,7 @@ namespace Entities
         public string origen { get; set; }
         public string estado { get; set; }
         public bool seleccionado { get; set; }
+        public string transportadora { get; set; }
+        public string tipoVehiculo { get; set; }
     }
 }

@@ -101,9 +101,13 @@ namespace BP
 
         private void btnGeneraRepCartera_Click(object sender, EventArgs e)
         {
+            bool mostrarSaldo = false;
             List<reporteCarteraCliente> reporte = new List<reporteCarteraCliente>();
             if (filtraFechaRemision.Checked)
+            {
+                mostrarSaldo = true;
                 reporte = ClsEnvaseDevolutivo.GetReporteCarteraCliente(dpRemisionDesde.Value, dpRemisionHasta.Value);
+            }
             else
             {
                 if (filtraFechaRecibo.Checked && cboProveedor.SelectedValue == null)
@@ -115,29 +119,53 @@ namespace BP
 
             limpiarGrids(grdCarteraClientes);
 
-            grdCarteraClientes.Columns.Add("fecha", "Linea Entrega");
-            grdCarteraClientes.Columns.Add("numeroDocumento", "Remisión");
-            grdCarteraClientes.Columns.Add("codigoSocioNegocio", "Cod. SN");
-            grdCarteraClientes.Columns.Add("socioNegocio", "Nombre SN");
-            grdCarteraClientes.Columns.Add("nombreVendedor", "Vendedor");
-            grdCarteraClientes.Columns.Add("codigoArticulo", "Cod. Artículo");
-            grdCarteraClientes.Columns.Add("nombreArticulo", "Artículo");
-            grdCarteraClientes.Columns.Add("entregado", "Cant. Entregada");
-            grdCarteraClientes.Columns.Add("retornado", "Cant. Retornada");
-            //grdCarteraClientes.Columns.Add("enReacondicionamiento", "Cant.Reacondicionado");
-            grdCarteraClientes.Columns.Add("saldo", "Saldo");
+            if (mostrarSaldo)
+            {
+                grdCarteraClientes.Columns.Add("fecha", "Linea Entrega");
+                grdCarteraClientes.Columns.Add("numeroDocumento", "Remisión");
+                grdCarteraClientes.Columns.Add("codigoSocioNegocio", "Cod. SN");
+                grdCarteraClientes.Columns.Add("socioNegocio", "Nombre SN");
+                grdCarteraClientes.Columns.Add("nombreVendedor", "Vendedor");
+                grdCarteraClientes.Columns.Add("codigoArticulo", "Cod. Artículo");
+                grdCarteraClientes.Columns.Add("nombreArticulo", "Artículo");
+                grdCarteraClientes.Columns.Add("entregado", "Cant. Entregada");
+                grdCarteraClientes.Columns.Add("retornado", "Cant. Retornada");
+                //grdCarteraClientes.Columns.Add("enReacondicionamiento", "Cant.Reacondicionado");
+                grdCarteraClientes.Columns.Add("saldo", "Saldo");
 
-            grdCarteraClientes.Columns[0].DataPropertyName = "fecha";
-            grdCarteraClientes.Columns[1].DataPropertyName = "numeroDocumento";
-            grdCarteraClientes.Columns[2].DataPropertyName = "codigoSocioNegocio";
-            grdCarteraClientes.Columns[3].DataPropertyName = "socioNegocio";
-            grdCarteraClientes.Columns[4].DataPropertyName = "nombreVendedor";
-            grdCarteraClientes.Columns[5].DataPropertyName = "codigoArticulo";
-            grdCarteraClientes.Columns[6].DataPropertyName = "nombreArticulo";
-            grdCarteraClientes.Columns[7].DataPropertyName = "entregado";
-            grdCarteraClientes.Columns[8].DataPropertyName = "retornado";
-            //grdCarteraClientes.Columns[9].DataPropertyName = "enReacondicionamiento";
-            grdCarteraClientes.Columns[9].DataPropertyName = "saldo";
+                grdCarteraClientes.Columns[0].DataPropertyName = "fecha";
+                grdCarteraClientes.Columns[1].DataPropertyName = "numeroDocumento";
+                grdCarteraClientes.Columns[2].DataPropertyName = "codigoSocioNegocio";
+                grdCarteraClientes.Columns[3].DataPropertyName = "socioNegocio";
+                grdCarteraClientes.Columns[4].DataPropertyName = "nombreVendedor";
+                grdCarteraClientes.Columns[5].DataPropertyName = "codigoArticulo";
+                grdCarteraClientes.Columns[6].DataPropertyName = "nombreArticulo";
+                grdCarteraClientes.Columns[7].DataPropertyName = "entregado";
+                grdCarteraClientes.Columns[8].DataPropertyName = "retornado";
+                //grdCarteraClientes.Columns[9].DataPropertyName = "enReacondicionamiento";
+                grdCarteraClientes.Columns[9].DataPropertyName = "saldo";
+
+            }
+            else
+            {
+                grdCarteraClientes.Columns.Add("fecha", "Fecha entrada");
+                grdCarteraClientes.Columns.Add("numeroDocumento", "Entrada");
+                grdCarteraClientes.Columns.Add("codigoSocioNegocio", "Cod. SN");
+                grdCarteraClientes.Columns.Add("socioNegocio", "Proveedor");
+                grdCarteraClientes.Columns.Add("nombreVendedor", "Recibo");
+                grdCarteraClientes.Columns.Add("codigoArticulo", "Cod. Artículo");
+                grdCarteraClientes.Columns.Add("nombreArticulo", "Artículo");
+                grdCarteraClientes.Columns.Add("entregado", "Cantidad");                
+
+                grdCarteraClientes.Columns[0].DataPropertyName = "fecha";
+                grdCarteraClientes.Columns[1].DataPropertyName = "numeroDocumento";
+                grdCarteraClientes.Columns[2].DataPropertyName = "codigoSocioNegocio";
+                grdCarteraClientes.Columns[3].DataPropertyName = "socioNegocio";
+                grdCarteraClientes.Columns[4].DataPropertyName = "nombreVendedor";
+                grdCarteraClientes.Columns[5].DataPropertyName = "codigoArticulo";
+                grdCarteraClientes.Columns[6].DataPropertyName = "nombreArticulo";
+                grdCarteraClientes.Columns[7].DataPropertyName = "entregado";
+            }
 
 
             grdCarteraClientes.DataSource = reporte;

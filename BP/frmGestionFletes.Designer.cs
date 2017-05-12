@@ -81,13 +81,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1044, 64);
+            this.panel1.Size = new System.Drawing.Size(1072, 64);
             this.panel1.TabIndex = 0;
             // 
             // txtMacroguia
             // 
             this.txtMacroguia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMacroguia.Location = new System.Drawing.Point(932, 30);
+            this.txtMacroguia.Location = new System.Drawing.Point(960, 30);
             this.txtMacroguia.Name = "txtMacroguia";
             this.txtMacroguia.Size = new System.Drawing.Size(95, 20);
             this.txtMacroguia.TabIndex = 37;
@@ -96,7 +96,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(792, 30);
+            this.btnSearch.Location = new System.Drawing.Point(820, 30);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 21);
             this.btnSearch.TabIndex = 35;
@@ -108,7 +108,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(869, 34);
+            this.label9.Location = new System.Drawing.Point(897, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 36;
@@ -121,7 +121,7 @@
             this.cboWharehouse.FormattingEnabled = true;
             this.cboWharehouse.Location = new System.Drawing.Point(217, 30);
             this.cboWharehouse.Name = "cboWharehouse";
-            this.cboWharehouse.Size = new System.Drawing.Size(569, 21);
+            this.cboWharehouse.Size = new System.Drawing.Size(597, 21);
             this.cboWharehouse.TabIndex = 23;
             // 
             // label4
@@ -140,7 +140,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1020, 18);
+            this.label7.Size = new System.Drawing.Size(1048, 18);
             this.label7.TabIndex = 21;
             this.label7.Text = "Gestión de fletes";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -165,7 +165,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(661, 116);
+            this.btnCancel.Location = new System.Drawing.Point(689, 116);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 34;
@@ -176,7 +176,7 @@
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Location = new System.Drawing.Point(580, 116);
+            this.btnPrint.Location = new System.Drawing.Point(608, 116);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 33;
@@ -187,7 +187,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(499, 116);
+            this.btnSave.Location = new System.Drawing.Point(527, 116);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 32;
@@ -237,7 +237,7 @@
             this.cboTransporter.FormattingEnabled = true;
             this.cboTransporter.Location = new System.Drawing.Point(526, 3);
             this.cboTransporter.Name = "cboTransporter";
-            this.cboTransporter.Size = new System.Drawing.Size(491, 21);
+            this.cboTransporter.Size = new System.Drawing.Size(519, 21);
             this.cboTransporter.TabIndex = 27;
             this.cboTransporter.SelectedIndexChanged += new System.EventHandler(this.cboTransporter_SelectedIndexChanged);
             // 
@@ -272,9 +272,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 503);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1044, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1072, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -292,7 +292,7 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Location = new System.Drawing.Point(12, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1020, 266);
+            this.panel2.Size = new System.Drawing.Size(1048, 273);
             this.panel2.TabIndex = 2;
             // 
             // dgDeliverys
@@ -302,7 +302,7 @@
             this.dgDeliverys.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDeliverys.Location = new System.Drawing.Point(0, 60);
             this.dgDeliverys.Name = "dgDeliverys";
-            this.dgDeliverys.Size = new System.Drawing.Size(1020, 206);
+            this.dgDeliverys.Size = new System.Drawing.Size(1048, 213);
             this.dgDeliverys.TabIndex = 2;
             this.dgDeliverys.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgDeliverys_CellMouseUp);
             // 
@@ -319,7 +319,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1020, 60);
+            this.panel5.Size = new System.Drawing.Size(1048, 60);
             this.panel5.TabIndex = 1;
             // 
             // panel4
@@ -331,9 +331,9 @@
             this.panel4.Controls.Add(this.txtObservaciones);
             this.panel4.Controls.Add(this.btnPrint);
             this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Location = new System.Drawing.Point(12, 342);
+            this.panel4.Location = new System.Drawing.Point(12, 349);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(741, 151);
+            this.panel4.Size = new System.Drawing.Size(769, 151);
             this.panel4.TabIndex = 4;
             // 
             // label2
@@ -352,14 +352,14 @@
             this.txtObservaciones.Location = new System.Drawing.Point(6, 28);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(731, 73);
+            this.txtObservaciones.Size = new System.Drawing.Size(759, 73);
             this.txtObservaciones.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.dgTotals);
-            this.panel3.Location = new System.Drawing.Point(755, 342);
+            this.panel3.Location = new System.Drawing.Point(783, 349);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(276, 151);
             this.panel3.TabIndex = 3;
@@ -381,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 518);
+            this.ClientSize = new System.Drawing.Size(1072, 525);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

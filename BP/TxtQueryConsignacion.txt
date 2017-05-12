@@ -76,7 +76,8 @@ DocStatus char(1) null,
 terCode int null,
 terName varchar(250),
 avgPrice numeric(14,2),
-unitPrice numeric(14,2)
+unitPrice numeric(14,2),
+invUnitPrice numeric(14,2)
 )
 
 declare @returns table (
@@ -116,7 +117,8 @@ DocStatus char(1) null,
 terCode int null,
 terName varchar(250),
 avgPrice numeric(14,2),
-unitPrice numeric(14,2)
+unitPrice numeric(14,2),
+invUnitPrice numeric(14,2)
 )
 
 declare @invoices table (
@@ -156,7 +158,8 @@ DocStatus char(1) null,
 terCode int null,
 terName varchar(250),
 avgPrice numeric(14,2),
-unitPrice numeric(14,2)
+unitPrice numeric(14,2),
+invUnitPrice numeric(14,2)
 )
 
 declare @creditNotes table (
@@ -196,7 +199,8 @@ DocStatus char(1) null,
 terCode int null,
 terName varchar(250),
 avgPrice numeric(14,2),
-unitPrice numeric(14,2)
+unitPrice numeric(14,2),
+invUnitPrice numeric(14,2)
 )
 
 
@@ -220,7 +224,8 @@ insert into @orders
    a.Series = 72		  
 
 insert into @deliverys 
-  select distinct b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, null, null, null, c.[Order], DocNum, null, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, b.Quantity, 0, 0, 0, a.DocStatus, e.Territory, f.descript, g.AvgPrice, b.Price
+  --select distinct b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, null, null, null, c.[Order], DocNum, null, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, b.Quantity, 0, 0, 0, a.DocStatus, e.Territory, f.descript, g.AvgPrice, b.Price, 0
+  select distinct b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, null, null, null, c.[Order], DocNum, null, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, b.Quantity, 0, 0, 0, a.DocStatus, e.Territory, f.descript, b.GrossBuyPr, b.Price, 0
   from ODLN a 
     inner join DLN1 b on 
 	  a.DocEntry = b.DocEntry
@@ -239,7 +244,7 @@ insert into @deliverys
 		b.WhsCode = g.WhsCode 
 
 insert into @returns 
-  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, c.[Order], c.Delivery, DocNum, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, b.Quantity, 0, 0, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, null, null, null, null, null, null, c.[Order], c.Delivery, DocNum, null, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, b.Quantity, 0, 0, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice, 0
   from ORDN a 
     inner join RDN1 b on 
 	  a.DocEntry = b.DocEntry
@@ -255,7 +260,7 @@ insert into @returns
 	      e.Territory = f.territryID
 
 insert into @invoices 
-  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, null, null, null, a.ObjType, a.DocEntry, b.LineNum, null, null, null, c.[Order], c.Delivery, null, DocNum, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, b.Quantity, 0, c.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, b.BaseType, b.BaseEntry, b.BaseLine, null, null, null, a.ObjType, a.DocEntry, b.LineNum, null, null, null, c.[Order], c.Delivery, null, DocNum, null, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, b.Quantity, 0, c.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice, b.price
   from OINV a 
     inner join INV1 b on 
 	  a.DocEntry = b.DocEntry
@@ -271,7 +276,7 @@ insert into @invoices
 	      e.Territory = f.territryID
 
 insert into @creditNotes 
-  select distinct c.OrderType, c.OrderEntry, c.OrderLine, c.DeliveryType, c.DeliveryEntry, c.DeliveryLine, c.ReturnType, c.ReturnEntry, c.ReturnLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, c.[Order], c.Delivery, c.[Return], c.Invoice, DocNum, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, c.InvoiceQuantity, b.Quantity, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice
+  select distinct c.OrderType, c.OrderEntry, c.OrderLine, c.DeliveryType, c.DeliveryEntry, c.DeliveryLine, c.ReturnType, c.ReturnEntry, c.ReturnLine, b.BaseType, b.BaseEntry, b.BaseLine, a.ObjType, a.DocEntry, b.LineNum, c.[Order], c.Delivery, c.[Return], c.Invoice, DocNum, c.slpCode, c.slpName, a.DocDate, a.CardCode, a.CardName, b.ItemCode, d.ItemName, c.OrderQuantity, c.DeliveryQuantity, c.ReturnQuantity, c.InvoiceQuantity, b.Quantity, a.DocStatus, e.Territory, f.descript, c.avgPrice, c.unitPrice, 0
   from ORIN a 
     inner join RIN1 b on 
 	  a.DocEntry = b.DocEntry

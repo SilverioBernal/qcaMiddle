@@ -21,6 +21,8 @@ namespace BP
         List<Driver> conductores = new List<Driver>();
         List<VehicleType> tiposVehiculo = new List<VehicleType>();
         List<Almacen> almacenes = new List<Almacen>();
+        List<Flete> fletes = new List<Flete>();
+        List<Flete> tarifasFlete = new List<Flete>();
 
         public frmGestionFletes()
         {
@@ -34,8 +36,11 @@ namespace BP
             btnPrint.Enabled = false;
             btnCancel.Enabled = false;
 
+            tarifasFlete = gestionFletes.GetTarifasFlete();
+
             almacenes.Add(new Almacen() { WhsName = "Seleccione" });
-            almacenes.AddRange(inventario.ListarAlmacenes());
+            almacenes.AddRange(gestionFletes.GetZonas().ToList());
+            //almacenes.AddRange(inventario.ListarAlmacenes());
 
             tiposVehiculo.Add(new VehicleType() { name = "Seleccione" });
             tiposVehiculo.AddRange(gestionFletes.GetTiposVehiculo().OrderBy(x => x.name).ToList());
@@ -95,45 +100,55 @@ namespace BP
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<Flete> fletes = gestionFletes.GetDeliverys(dpFrom.Value, cboWharehouse.SelectedValue.ToString());
-            limpiarGrids(dgDeliverys);
+            try
+            {
+                statusLabel.Text = "";
 
-            dgDeliverys.Columns.Add("destino", "Destino");
-            dgDeliverys.Columns.Add("tipo", "Tipo");
-            dgDeliverys.Columns.Add("cliente", "Cliente");
-            dgDeliverys.Columns.Add("vendedor", "Rep. ventas");
-            dgDeliverys.Columns.Add("orden", "No. orden");
-            dgDeliverys.Columns.Add("serie", "Serie");
-            dgDeliverys.Columns.Add("peso", "Cant. kilos");
-            dgDeliverys.Columns.Add("tarifa", "Tarifa");
-            dgDeliverys.Columns.Add("docEntry", "docEntry");
+                fletes = gestionFletes.GetDeliverys(dpFrom.Value, cboWharehouse.SelectedValue.ToString());
+                limpiarGrids(dgDeliverys);
 
-            dgDeliverys.Columns[0].DataPropertyName = "destino";
-            dgDeliverys.Columns[1].DataPropertyName = "tipo";
-            dgDeliverys.Columns[2].DataPropertyName = "cliente";
-            dgDeliverys.Columns[3].DataPropertyName = "vendedor";
-            dgDeliverys.Columns[4].DataPropertyName = "orden";
-            dgDeliverys.Columns[5].DataPropertyName = "serie";
-            dgDeliverys.Columns[6].DataPropertyName = "peso";
-            dgDeliverys.Columns[7].DataPropertyName = "tarifa";
-            dgDeliverys.Columns[8].DataPropertyName = "docEntry";
+                dgDeliverys.Columns.Add("destino", "Destino");
+                dgDeliverys.Columns.Add("tipo", "Tipo");
+                dgDeliverys.Columns.Add("cliente", "Cliente");
+                dgDeliverys.Columns.Add("vendedor", "Rep. ventas");
+                dgDeliverys.Columns.Add("orden", "No. orden");
+                dgDeliverys.Columns.Add("serie", "Serie");
+                dgDeliverys.Columns.Add("peso", "Cant. kilos");
+                dgDeliverys.Columns.Add("tarifa", "Tarifa");
+                dgDeliverys.Columns.Add("docEntry", "docEntry");
 
-            dgDeliverys.Columns[0].ReadOnly = true;
-            dgDeliverys.Columns[1].ReadOnly = true;
-            dgDeliverys.Columns[2].ReadOnly = true;
-            dgDeliverys.Columns[3].ReadOnly = true;
-            dgDeliverys.Columns[4].ReadOnly = true;
-            dgDeliverys.Columns[5].ReadOnly = true;
-            dgDeliverys.Columns[6].ReadOnly = true;
-            dgDeliverys.Columns[7].ReadOnly = true;
+                dgDeliverys.Columns[0].DataPropertyName = "destino";
+                dgDeliverys.Columns[1].DataPropertyName = "tipo";
+                dgDeliverys.Columns[2].DataPropertyName = "cliente";
+                dgDeliverys.Columns[3].DataPropertyName = "vendedor";
+                dgDeliverys.Columns[4].DataPropertyName = "orden";
+                dgDeliverys.Columns[5].DataPropertyName = "serie";
+                dgDeliverys.Columns[6].DataPropertyName = "peso";
+                dgDeliverys.Columns[7].DataPropertyName = "tarifa";
+                dgDeliverys.Columns[8].DataPropertyName = "docEntry";
 
-            dgDeliverys.Columns[8].Visible = false;
+                dgDeliverys.Columns[0].ReadOnly = true;
+                dgDeliverys.Columns[1].ReadOnly = true;
+                dgDeliverys.Columns[2].ReadOnly = true;
+                dgDeliverys.Columns[3].ReadOnly = true;
+                dgDeliverys.Columns[4].ReadOnly = true;
+                dgDeliverys.Columns[5].ReadOnly = true;
+                dgDeliverys.Columns[6].ReadOnly = true;
+                dgDeliverys.Columns[7].ReadOnly = true;
 
-            dgDeliverys.DataSource = fletes;
+                dgDeliverys.Columns[5].Visible = false;
+                dgDeliverys.Columns[8].Visible = false;
 
-            DataGridViewCheckBoxColumn dch = new DataGridViewCheckBoxColumn();
-            dch.HeaderText = "Selección";
-            dgDeliverys.Columns.Add(dch);
+                dgDeliverys.DataSource = fletes;
+
+                DataGridViewCheckBoxColumn dch = new DataGridViewCheckBoxColumn();
+                dch.HeaderText = "Selección";
+                dgDeliverys.Columns.Add(dch);
+            }
+            catch (Exception ex)
+            {
+                statusLabel.Text = ex.Message;
+            }
         }
 
         private void txtMacroguia_KeyPress(object sender, KeyPressEventArgs e)
@@ -185,33 +200,33 @@ namespace BP
 
                     foreach (DataGridViewRow item in dgDeliverys.Rows)
                     {
-                        bool seleccionado = Convert.ToBoolean(item.Cells[8].EditedFormattedValue);
-                        string documento = item.Cells[4].Value.ToString();
+                        bool seleccionado = Convert.ToBoolean(item.Cells[9].EditedFormattedValue);
+                        string documento = item.Cells["orden"].Value.ToString();
 
                         if (seleccionado)
                         {
-                            double tarifa = Convert.ToDouble(item.Cells[7].Value.ToString());
+                            double tarifa = Convert.ToDouble(item.Cells["tarifa"].Value.ToString());
 
                             if (tarifa > 0)
                             {
                                 Flete flete = new Flete()
                                 {
                                     origen = cboWharehouse.SelectedValue.ToString(),
-                                    destino = item.Cells[0].Value.ToString(),
-                                    tipo = item.Cells[1].Value.ToString(),
-                                    cliente = item.Cells[2].Value.ToString(),
-                                    vendedor = item.Cells[3].Value.ToString(),
-                                    orden = item.Cells[4].Value.ToString(),
-                                    serie = item.Cells[5].Value.ToString(),
-                                    peso = double.Parse(item.Cells[6].Value.ToString()),
-                                    tarifa = double.Parse(item.Cells[7].Value.ToString()),
-                                    docEntry = item.Cells[8].Value.ToString(),
+                                    destino = item.Cells["destino"].Value.ToString(),
+                                    tipo = item.Cells["tipo"].Value.ToString(),
+                                    cliente = item.Cells["cliente"].Value.ToString(),
+                                    vendedor = item.Cells["vendedor"].Value.ToString(),
+                                    orden = item.Cells["orden"].Value.ToString(),
+                                    serie = item.Cells["serie"].Value.ToString(),
+                                    peso = double.Parse(item.Cells["peso"].Value.ToString()),
+                                    tarifa = double.Parse(item.Cells["tarifa"].Value.ToString()),
+                                    docEntry = item.Cells["docEntry"].Value.ToString(),
                                 };
                                 fletes.Add(flete);
                             }
                             else
                             {
-                                throw new Exception(string.Format("El documento {0} tiene tarifa con valor cero", documento));
+                                throw new Exception(string.Format("Existen acuerdos tarifarios NO validos. Por favor verificar", documento));
                             }
                         }
                     }
@@ -226,6 +241,7 @@ namespace BP
                 catch (Exception ex)
                 {
                     statusLabel.Text = ex.Message;
+                    MessageBox.Show(ex.Message, "Error tarifario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -256,6 +272,16 @@ namespace BP
             {
                 statusLabel.Text = string.Format("Error al anular el documento de transporte: {0} ", ex.Message);
             }
+
+            txtMacroguia.Text = string.Empty;
+
+            cboWharehouse.SelectedIndex = 0;
+            cboVehicleType.SelectedIndex = 0;
+            cboTransporter.SelectedIndex = 0;
+            cboDriver.SelectedIndex = 0;
+            cboVehicle.SelectedIndex = 0;
+            
+            dgDeliverys.DataSource = null;
         }
 
         private void limpiarGrids(DataGridView grid)
@@ -274,7 +300,7 @@ namespace BP
             {
                 limpiarGrids(dgDeliverys);
 
-                List<Flete> fletes = gestionFletes.GetMacroGiude(macroguiaId);
+                fletes = gestionFletes.GetMacroGiude(macroguiaId);
 
                 dgDeliverys.Columns.Add("destino", "Destino");
                 dgDeliverys.Columns.Add("tipo", "Tipo");
@@ -293,6 +319,8 @@ namespace BP
                 dgDeliverys.Columns[5].DataPropertyName = "serie";
                 dgDeliverys.Columns[6].DataPropertyName = "peso";
                 dgDeliverys.Columns[7].DataPropertyName = "seleccionado";
+
+                dgDeliverys.Columns[5].Visible = false;
 
                 dgDeliverys.DataSource = fletes;
 
@@ -316,6 +344,74 @@ namespace BP
                             x.tipoVehiculo == cboVehicleType.SelectedValue.ToString() &&
                             x.transportadora == cboTransporter.SelectedValue.ToString())
                             .ToList();
+
+                    bool tarifaOk = false, tarifasOk = true;
+
+                    foreach (Flete item in fletes)
+                    {
+                        tarifaOk = tarifasFlete.Any(x => x.origen == item.origen 
+                            && x.destino == item.destino 
+                            && x.tipoVehiculo == cboVehicleType.SelectedValue.ToString()
+                            && x.transportadora == cboTransporter.SelectedValue.ToString());
+
+                        if (tarifaOk)
+                        {
+                            double tarifa = tarifasFlete.Where(x => x.origen == item.origen
+                            && x.destino == item.destino
+                            && x.tipoVehiculo == cboVehicleType.SelectedValue.ToString()
+                            && x.transportadora == cboTransporter.SelectedValue.ToString()).Select(x=> x.tarifa).FirstOrDefault();
+
+                            item.tarifa = tarifa * item.peso;
+                        }
+                        else
+                        {
+                            tarifasOk = false;
+                            item.tarifa = -1;
+                        }
+                    }
+
+                    if (!tarifasOk)
+                        statusLabel.Text = "Revise sus acuerdos tarifarios.";
+
+                    limpiarGrids(dgDeliverys);
+
+                    dgDeliverys.Columns.Add("destino", "Destino");
+                    dgDeliverys.Columns.Add("tipo", "Tipo");
+                    dgDeliverys.Columns.Add("cliente", "Cliente");
+                    dgDeliverys.Columns.Add("vendedor", "Rep. ventas");
+                    dgDeliverys.Columns.Add("orden", "No. orden");
+                    dgDeliverys.Columns.Add("serie", "Serie");
+                    dgDeliverys.Columns.Add("peso", "Cant. kilos");
+                    dgDeliverys.Columns.Add("tarifa", "Tarifa");
+                    dgDeliverys.Columns.Add("docEntry", "docEntry");
+
+                    dgDeliverys.Columns[0].DataPropertyName = "destino";
+                    dgDeliverys.Columns[1].DataPropertyName = "tipo";
+                    dgDeliverys.Columns[2].DataPropertyName = "cliente";
+                    dgDeliverys.Columns[3].DataPropertyName = "vendedor";
+                    dgDeliverys.Columns[4].DataPropertyName = "orden";
+                    dgDeliverys.Columns[5].DataPropertyName = "serie";
+                    dgDeliverys.Columns[6].DataPropertyName = "peso";
+                    dgDeliverys.Columns[7].DataPropertyName = "tarifa";
+                    dgDeliverys.Columns[8].DataPropertyName = "docEntry";
+
+                    dgDeliverys.Columns[0].ReadOnly = true;
+                    dgDeliverys.Columns[1].ReadOnly = true;
+                    dgDeliverys.Columns[2].ReadOnly = true;
+                    dgDeliverys.Columns[3].ReadOnly = true;
+                    dgDeliverys.Columns[4].ReadOnly = true;
+                    dgDeliverys.Columns[5].ReadOnly = true;
+                    dgDeliverys.Columns[6].ReadOnly = true;
+                    dgDeliverys.Columns[7].ReadOnly = true;
+
+                    dgDeliverys.Columns[5].Visible = false;
+                    dgDeliverys.Columns[8].Visible = false;
+
+                    dgDeliverys.DataSource = fletes;
+
+                    DataGridViewCheckBoxColumn dch = new DataGridViewCheckBoxColumn();
+                    dch.HeaderText = "Selección";
+                    dgDeliverys.Columns.Add(dch);
                 }                
 
                 if (cboVehicleType.SelectedValue != null && cboTransporter.SelectedValue == null)

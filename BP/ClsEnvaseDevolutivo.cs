@@ -118,7 +118,7 @@ namespace BP
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_itemsBaja").Value = linea.itemsBaja;
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_observaciones").Value = string.IsNullOrEmpty(linea.observaciones) ? "" : linea.observaciones;
 
-                    
+
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_fechaReciboCliente").Value = new DateTime(1980, 1, 1);
                 objORK_ENVASE_DEV.UserFields.Fields.Item("U_fechaReciboProv").Value = new DateTime(1980, 1, 1);
 
@@ -167,7 +167,7 @@ namespace BP
 
                 objORK_ENV_DEV_REACON.UserFields.Fields.Item("U_odlnDocEntry").Value = odlnDocEntry;
                 objORK_ENV_DEV_REACON.UserFields.Fields.Item("U_opdnDocEntry").Value = opdnDocEntry;
-                
+
                 noDoc = objORK_ENV_DEV_REACON.Add();
 
                 if (noDoc < 0)
@@ -293,7 +293,21 @@ namespace BP
                 {
                     while (!rsDocumento.EoF)
                     {
-                        reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(0).Value.ToString()))));
+                        //reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(0).Value.ToString()))));
+
+                        if (rsDocumento.Fields.Item(4).Value.ToString().Contains("Recibo Cliente No."))
+                            reporte.Add(new reporteCarteraCliente()
+                            {
+                                fecha = DateTime.Parse(rsDocumento.Fields.Item(0).Value.ToString()).ToString("yyyy-MM-dd"),
+                                numeroDocumento = rsDocumento.Fields.Item(1).Value.ToString(),
+                                codigoSocioNegocio = rsDocumento.Fields.Item(2).Value.ToString(),
+                                socioNegocio = rsDocumento.Fields.Item(3).Value.ToString(),
+                                nombreVendedor = rsDocumento.Fields.Item(4).Value.ToString().Split('-')[0].Replace("Recibo Cliente No.", " "),
+                                codigoArticulo = rsDocumento.Fields.Item(5).Value.ToString(),
+                                nombreArticulo = rsDocumento.Fields.Item(6).Value.ToString(),
+                                entregado = int.Parse(rsDocumento.Fields.Item(7).Value.ToString())
+                            });
+
                         rsDocumento.MoveNext();
                     }
                 }
@@ -322,7 +336,19 @@ namespace BP
                 {
                     while (!rsDocumento.EoF)
                     {
-                        reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(0).Value.ToString()))));
+                        //reporte.Add(calculaReporteCarteraCliente(GetRemision(int.Parse(rsDocumento.Fields.Item(0).Value.ToString()))));
+                        if (rsDocumento.Fields.Item(4).Value.ToString().Contains("Recibo Cliente No."))
+                            reporte.Add(new reporteCarteraCliente()
+                            {
+                                fecha = DateTime.Parse(rsDocumento.Fields.Item(0).Value.ToString()).ToString("yyyy-MM-dd"),
+                                numeroDocumento = rsDocumento.Fields.Item(1).Value.ToString(),
+                                codigoSocioNegocio = rsDocumento.Fields.Item(2).Value.ToString(),
+                                socioNegocio = rsDocumento.Fields.Item(3).Value.ToString(),
+                                nombreVendedor = rsDocumento.Fields.Item(4).Value.ToString().Split('-')[0].Replace("Recibo Cliente No.", " "),
+                                codigoArticulo = rsDocumento.Fields.Item(5).Value.ToString(),
+                                nombreArticulo = rsDocumento.Fields.Item(6).Value.ToString(),
+                                entregado = int.Parse(rsDocumento.Fields.Item(7).Value.ToString())
+                            });
                         rsDocumento.MoveNext();
                     }
                 }
@@ -419,7 +445,7 @@ namespace BP
                 throw;
             }
 
-            return reporte.Where(x => x.codigoSocioNegocio== cliente).ToList();
+            return reporte.Where(x => x.codigoSocioNegocio == cliente).ToList();
         }
 
         public static List<reporteKardex> GetReporteKardexProveedor(DateTime desdeRemision, DateTime hastaRemision)
@@ -451,7 +477,8 @@ namespace BP
             return reporte;
         }
 
-        public static List<Almacen> GetAlmacenes() {
+        public static List<Almacen> GetAlmacenes()
+        {
             return BusinessInventario.ListarAlmacenes();
         }
 
@@ -460,7 +487,7 @@ namespace BP
             return BusinessInventario.ListarArticulos(familia);
         }
 
-        
+
 
         private static reporteCarteraCliente calculaReporteCarteraCliente(Remision remision)
         {
@@ -480,14 +507,14 @@ namespace BP
                    entregado = item.quantity,
                    retornado = GetCantidadRetornada(item),
                    //enReacondicionamiento = item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity),
-                   saldo = item.quantity - GetCantidadRetornada(item) 
+                   saldo = item.quantity - GetCantidadRetornada(item)
                    //item.lineasEntradaManual.Where(x => x.objType.Equals(91)).Sum(x => x.quantity) - item.lineasEntradaManual.Where(x => x.objType.Equals(92)).Sum(x => x.quantity)
                };
             }
 
 
             return reporte;
-        }        
+        }
 
         private static List<reporteKardex> calculaReporteKardexCliente(Remision remision)
         {
@@ -554,7 +581,7 @@ namespace BP
                             salidas = 0,
                             saldo = 0
                         });
-                }                
+                }
             }
 
             reporte.AddRange(reporteBorrador.OrderBy(x => x.fecha).ToList());
@@ -568,7 +595,7 @@ namespace BP
             }
 
             return reporte;
-        }        
+        }
 
         private static List<reporteKardex> calculaReporteKardexProveedor(Remision remision)
         {
@@ -576,7 +603,7 @@ namespace BP
             List<reporteKardex> reporte = new List<reporteKardex>();
 
             foreach (LineasRemision item in remision.Lineas)
-            {                
+            {
                 foreach (LineasEntradaManual lineaEM in item.lineasEntradaManual)
                 {
                     if (lineaEM.objType == 91)
@@ -624,7 +651,7 @@ namespace BP
             }
 
             return reporte;
-        }        
+        }
 
         private static int GetCantidadRetornada(LineasRemision lineaRemision)
         {
@@ -937,9 +964,14 @@ namespace BP
         private static string QueryBusquedaRemisionesRecibo(DateTime desde, DateTime hasta)
         {
             StringBuilder query = new StringBuilder();
-            query.AppendLine("select distinct b.DocNum ");
-            query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
-            query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
+            //query.AppendLine("select distinct b.DocNum ");
+            //query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
+            //query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
+
+            query.AppendLine("select a.docdate, a.docnum, a.cardCode, a.cardName, a.comments, b.itemCode, c.itemName, b.quantity from opdn a ");
+            query.AppendLine("inner join pdn1 b on a.docentry = b.docentry ");
+            query.AppendLine("inner join oitm c on b.itemcode = c.itemcode ");
+            query.AppendLine(string.Format("where a.series = 272 and a.docdate between '{0}' and '{1}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
 
             return query.ToString();
         }
@@ -947,9 +979,14 @@ namespace BP
         private static string QueryBusquedaRemisionesRecibo(DateTime desde, DateTime hasta, string cardCode)
         {
             StringBuilder query = new StringBuilder();
-            query.AppendLine("select distinct b.DocNum ");
-            query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
-            query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}' and a.U_cardcode = '{2}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"), cardCode));
+            //query.AppendLine("select distinct b.DocNum ");
+            //query.AppendLine("from [@ORK_ENVASE_DEV] a inner join ODLN b on a.U_baseEntry = b.DocEntry ");
+            //query.AppendLine(string.Format("where a.U_fechaReciboProv between '{0}' and '{1}' and a.U_cardcode = '{2}'", desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd"), cardCode));
+
+            query.AppendLine("select a.docdate, a.docnum, a.cardCode, a.cardName, a.comments, b.itemCode, c.itemName, b.quantity from opdn a ");
+            query.AppendLine("inner join pdn1 b on a.docentry = b.docentry ");
+            query.AppendLine("inner join oitm c on b.itemcode = c.itemcode ");
+            query.AppendLine(string.Format("where a.series = 272 and a.cardCode = '{0}' and a.docdate between '{1}' and '{2}'", cardCode, desde.ToString("yyyy-MM-dd"), hasta.ToString("yyyy-MM-dd")));
 
             return query.ToString();
         }
@@ -1094,6 +1131,8 @@ namespace BP
         public string numeroDocumento { get; set; }
         public string codigoSocioNegocio { get; set; }
         public string socioNegocio { get; set; }
+        //public string codigoProveedor { get; set; }
+        //public string proveedor { get; set; }
         public string nombreVendedor { get; set; }
         public string codigoArticulo { get; set; }
         public string nombreArticulo { get; set; }

@@ -134,17 +134,19 @@ namespace BP
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtRemision.Text))
-                {
-                    int numRemision = 0;
-                    if (!int.TryParse(txtRemision.Text, out numRemision))
-                        throw new Exception("Ingrese un número válido de remisión");
+                logicaControles(Accion.entraReacondicionamiento);
+                action = Accion.entraReacondicionamiento;
 
-                    remision = ClsEnvaseDevolutivo.GetRemision(int.Parse(txtRemision.Text));
+                //if (!string.IsNullOrEmpty(txtRemision.Text))
+                //{
+                //    int numRemision = 0;
+                //    if (!int.TryParse(txtRemision.Text, out numRemision))
+                //        throw new Exception("Ingrese un número válido de remisión");
 
-                    logicaControles(Accion.entraReacondicionamiento);
-                    action = Accion.entraReacondicionamiento;
-                }
+                //    remision = ClsEnvaseDevolutivo.GetRemision(int.Parse(txtRemision.Text));
+
+                    
+                //}
             }
             catch (Exception ex)
             {
@@ -158,6 +160,17 @@ namespace BP
             {
                 logicaControles(Accion.saleReacndicionamiento);
                 action = Accion.saleReacndicionamiento;
+
+                //if (!string.IsNullOrEmpty(txtRemision.Text))
+                //{
+                //    int numRemision = 0;
+                //    if (!int.TryParse(txtRemision.Text, out numRemision))
+                //        throw new Exception("Ingrese un número válido de remisión");
+
+                //    remision = ClsEnvaseDevolutivo.GetRemision(int.Parse(txtRemision.Text));
+
+                    
+                //}
             }
             catch (Exception ex)
             {
@@ -543,17 +556,17 @@ namespace BP
                         if (entrada > 0)
                             escribirTolStrip("Se generó la entrada " + entrada.ToString());
                         
-                        LineasEntradaManual lineaReacond = new LineasEntradaManual()
-                        {
-                            baseEntry = remision.docEntry,
-                            objType = 92,
-                            numReciboProveedor = txtReciboProveedor.Text,
-                            cardCode = cboProveedor.SelectedValue.ToString(),
-                            fechaReciboProveedor = DateTime.Now,
-                            observaciones = txtObservaciones.Text,
-                        };
+                        //LineasEntradaManual lineaReacond = new LineasEntradaManual()
+                        //{
+                        //    baseEntry = remision.docEntry,
+                        //    objType = 91,
+                        //    numReciboProveedor = txtReciboProveedor.Text,
+                        //    cardCode = cboProveedor.SelectedValue.ToString(),
+                        //    fechaReciboProveedor = DateTime.Now,
+                        //    observaciones = txtObservaciones.Text,
+                        //};
 
-                        ClsEnvaseDevolutivo.SaveEntrada(lineaReacond);
+                        //ClsEnvaseDevolutivo.SaveEntrada(lineaReacond);
 
                         break;
                     case Accion.saleReacndicionamiento:
@@ -579,6 +592,19 @@ namespace BP
 
                         if (transDoc > 0)
                             escribirTolStrip("Se generó la transferencia " + transDoc.ToString());
+
+                        //LineasEntradaManual lineaSaleReacond = new LineasEntradaManual()
+                        //{
+                        //    baseEntry = remision.docEntry,
+                        //    objType = 92,
+                        //    //numReciboProveedor = txtReciboProveedor.Text,
+                        //    cardCode = cboProveedor.SelectedValue.ToString(),
+                        //    fechaReciboProveedor = DateTime.Now,
+                        //    observaciones = txtObservaciones.Text,
+                        //};
+
+                        //ClsEnvaseDevolutivo.SaveEntrada(lineaSaleReacond);
+
 
                         break;
                     case Accion.limpiar:

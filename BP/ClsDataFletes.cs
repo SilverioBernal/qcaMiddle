@@ -42,6 +42,27 @@ namespace BP
             return coleccion;
         }
 
+        public List<Almacen> GetZonas()
+        {
+            List<Almacen> coleccion = new List<Almacen>();
+
+            string oSql = "select code, name from [@css_zona] order by name ";
+
+            using (this.reader = ClaseDatos.procesaDataReader(oSql))
+            {
+                while (this.reader.Read())
+                {
+                    Almacen zona = new Almacen();
+                    zona.WhsCode = this.reader.IsDBNull(0) ? "" : this.reader.GetValue(0).ToString();
+                    zona.WhsName = this.reader.IsDBNull(1) ? "" : this.reader.GetValue(1).ToString();
+                    
+                    coleccion.Add(zona);
+                }
+            }
+
+            return coleccion;
+        }
+
         public List<Vehicle> GetPlacas()
         {
             List<Vehicle> coleccion = new List<Vehicle>();
@@ -105,15 +126,39 @@ namespace BP
             return coleccion;
         }
 
+        public List<Flete> GetTarifasFlete()
+        {
+            List<Flete> coleccion = new List<Flete>();
+
+            string oSql = "select distinct t0.U_CSS_Zona_Origen, t0.U_CSS_Zona_Destino, t0.U_CSS_Transportadora, t0.U_CSS_Tipo_Vehiculo, isnull(t0.U_CSS_Tarifa , 0) from [@css_tarifa_flete] t0 ";
+
+            using (this.reader = ClaseDatos.procesaDataReader(oSql))
+            {
+                while (this.reader.Read())
+                {
+                    Flete item = new Flete();
+                    item.origen = this.reader.IsDBNull(0) ? "" : this.reader.GetValue(0).ToString();
+                    item.destino = this.reader.IsDBNull(1) ? "" : this.reader.GetValue(1).ToString();
+                    item.transportadora = this.reader.IsDBNull(2) ? "" : this.reader.GetValue(2).ToString();
+                    item.tipoVehiculo = this.reader.IsDBNull(3) ? "" : this.reader.GetValue(3).ToString();
+                    item.tarifa = this.reader.IsDBNull(4) ? 0 : Convert.ToDouble(this.reader.GetValue(4).ToString());
+                    coleccion.Add(item);
+                }
+            }
+
+            return coleccion;
+        }
+
         public List<Flete> GetDeliverys(DateTime fecha, string bodega)
         {
             List<Flete> coleccion = new List<Flete>();
 
             StringBuilder oSql = new StringBuilder();
-            oSql.Append("SELECT DISTINCT T0.Destino,T0.Tipo,T0.CardName,T0.SlpName,T0.DocNum,T0.Series,T0.Peso, T1.U_CSS_Tarifa,T0.DocEntry,T0.Origen ");
-            oSql.Append("FROM CSS_ZONA_FLETE T0 LEFT JOIN [@CSS_TARIFA_FLETE] T1 ON ");
-            oSql.Append("T0.Peso >= T1.U_CSS_Peso_Inicial AND T0.Peso <= T1.U_CSS_Peso_Final AND T0.Origen=T1.U_CSS_Zona_Origen AND T0.Destino=T1.U_CSS_Zona_Destino ");
-            oSql.Append(string.Format("WHERE T0.DocDueDate='{0}' AND WhsCode='{1}' ORDER BY T0.Destino,T0.Tipo", fecha.ToString("yyyy-MM-dd"), bodega));
+            //oSql.Append("SELECT DISTINCT T0.Destino,T0.Tipo,T0.CardName,T0.SlpName,T0.DocNum,T0.Series,T0.Peso, (select U_CSS_Tarifa from [@css_tarifa_flete] where U_CSS_Zona_Origen = T0.ORIGEN and U_CSS_Zona_Destino = T0.DESTINO ) * T0.Peso U_CSS_Tarifa,T0.DocEntry,T0.Origen ");
+            oSql.Append("SELECT DISTINCT T0.Destino,T0.Tipo,T0.CardName,T0.SlpName,T0.DocNum,T0.Series,T0.Peso, 0,T0.DocEntry,T0.Origen ");
+            oSql.Append("FROM CSS_ZONA_FLETE T0 ");
+            oSql.Append(string.Format("WHERE T0.DocDueDate='{0}' AND origen='{1}' ORDER BY T0.Destino,T0.Tipo", fecha.ToString("yyyy-MM-dd"), bodega));
+            //oSql.Append(string.Format("WHERE T0.DocDueDate='{0}' AND WhsCode='{1}' ORDER BY T0.Destino,T0.Tipo", fecha.ToString("yyyy-MM-dd"), bodega));
 
             using (this.reader = ClaseDatos.procesaDataReader(oSql.ToString()))
             {
@@ -127,7 +172,7 @@ namespace BP
                     item.orden = this.reader.IsDBNull(4) ? "" : this.reader.GetValue(4).ToString();
                     item.serie = this.reader.IsDBNull(5) ? "" : this.reader.GetValue(5).ToString();
                     item.peso = this.reader.IsDBNull(6) ? 0 : Convert.ToDouble(this.reader.GetValue(6).ToString());
-                    item.tarifa = this.reader.IsDBNull(7) ? 0 : Convert.ToDouble(this.reader.GetValue(7).ToString());
+                    item.tarifa = 0;//this.reader.IsDBNull(7) ? 0 : Convert.ToDouble(this.reader.GetValue(7).ToString());
                     item.docEntry = this.reader.IsDBNull(8) ? "" : this.reader.GetValue(8).ToString();
                     item.origen = this.reader.IsDBNull(9) ? "" : this.reader.GetValue(9).ToString();
 
@@ -135,18 +180,21 @@ namespace BP
                 }
             }
 
-            foreach (Flete item in coleccion)
-            {
-                Dictionary<double, double> tarifaPeso = GetTarifaPeso(item.origen, item.destino);
-                double tarifaUnitaria = 0, tarifa = 0, peso = 0;
+            //foreach (Flete item in coleccion)
+            //{
+            //    if (item.tarifa == null || item.tarifa == 0)
+            //    {
+            //        Dictionary<double, double> tarifaPeso = GetTarifaPeso(item.origen, item.destino);
+            //        double tarifaUnitaria = 0, tarifa = 0, peso = 0;
 
-                tarifa = tarifaPeso.Select(x => x.Key).FirstOrDefault();
-                peso = tarifaPeso.Select(x => x.Value).FirstOrDefault();
+            //        tarifa = tarifaPeso.Select(x => x.Key).FirstOrDefault();
+            //        peso = tarifaPeso.Select(x => x.Value).FirstOrDefault();
 
-                tarifaUnitaria = peso == 0 ? 0 : tarifa / peso;
+            //        tarifaUnitaria = peso == 0 ? 0 : tarifa / peso;
 
-                item.tarifa = Math.Round(tarifaUnitaria * item.peso, 0);
-            }
+            //        item.tarifa = Math.Round(tarifaUnitaria * item.peso, 0);
+            //    }
+            //}
 
             return coleccion;
         }
@@ -212,14 +260,14 @@ namespace BP
         {
             string oSql = "SELECT ISNULL(MAX(CONVERT(INT,U_CSS_Macroguia)),0) FROM [@CSS_MOVIMIENTO]";
 
-            return ClaseDatos.scalarIntSql(oSql);
+            return ClaseDatos.scalarIntSql(oSql)+1;
         }
 
         public int GetNexMacroGuideCode()
         {
             string oSql = "SELECT ISNULL(MAX(CONVERT(INT,Code)),0) FROM [@CSS_MOVIMIENTO]";
 
-            return ClaseDatos.scalarIntSql(oSql);
+            return ClaseDatos.scalarIntSql(oSql)+1;
         }
 
         public int SaveMacroGuide(List<Flete> fletes, Vehicle vehiculo, string conductor, string observaciones)
@@ -229,15 +277,14 @@ namespace BP
             Documents entregaVentas = (Documents)ClaseDatos.objCompany.GetBusinessObject(BoObjectTypes.oDeliveryNotes);
 
             int nextMacroGuide = GetNexMacroGuideNumber();
+            int nextCode = GetNexMacroGuideCode();
 
             try
             {
                 ClaseDatos.objCompany.StartTransaction();
 
                 foreach (Flete flete in fletes)
-                {
-                    int nextCode = GetNexMacroGuideCode();
-
+                {                    
                     movimiento.Code = nextCode.ToString();
                     movimiento.Name = nextCode.ToString();
                     movimiento.UserFields.Fields.Item("U_CSS_Macroguia").Value = nextMacroGuide;
@@ -247,11 +294,11 @@ namespace BP
                     movimiento.UserFields.Fields.Item("U_CSS_Estado").Value = "Activo";
                     movimiento.UserFields.Fields.Item("U_CSS_Zona_Origen").Value = flete.origen;
                     movimiento.UserFields.Fields.Item("U_CSS_Zona_Destino").Value = flete.destino;
-                    movimiento.UserFields.Fields.Item("U_CSS_Tarifa").Value = flete.tarifa;
-                    movimiento.UserFields.Fields.Item("U_CSS_Peso").Value = flete.peso;
+                    movimiento.UserFields.Fields.Item("U_CSS_Tarifa").Value = flete.tarifa.ToString();
+                    movimiento.UserFields.Fields.Item("U_CSS_Peso").Value = flete.peso.ToString();
                     movimiento.UserFields.Fields.Item("U_CSS_Cliente").Value = flete.cliente;
                     movimiento.UserFields.Fields.Item("U_CSS_Representante").Value = flete.vendedor;
-                    movimiento.UserFields.Fields.Item("U_CSS_DocEntry").Value = flete.docEntry;
+                    movimiento.UserFields.Fields.Item("U_CSS_DocEntry").Value = flete.docEntry.ToString();
                     movimiento.UserFields.Fields.Item("U_CSS_Fecha").Value = DateTime.Now.ToString("yyyyMMdd hh:mm tt");
                     movimiento.UserFields.Fields.Item("U_CSS_Transportadora").Value = vehiculo.transportadora;
                     movimiento.UserFields.Fields.Item("U_CSS_Vehiculo").Value = vehiculo.code;
@@ -261,10 +308,12 @@ namespace BP
                     if (movimiento.Add() < 0)
                         throw new Exception(ClaseDatos.objCompany.GetLastErrorDescription());
 
+                    nextCode++;
+
                     if (flete.tipo == "T")
                     {
                         movimientoInventario.GetByKey(int.Parse(flete.docEntry));
-                        movimientoInventario.UserFields.Fields.Item("U_CSS_Valor_Flete").Value = flete.tarifa;
+                        movimientoInventario.UserFields.Fields.Item("U_CSS_Valor_Flete").Value = flete.tarifa.ToString();
                         movimientoInventario.UserFields.Fields.Item("U_CSS_Vehiculo").Value = vehiculo.code;
                         movimientoInventario.UserFields.Fields.Item("U_CSS_Transportadora").Value = vehiculo.transportadora;
                         movimientoInventario.UserFields.Fields.Item("U_CSS_Conductor").Value = conductor;
@@ -277,7 +326,7 @@ namespace BP
                     else
                     {
                         entregaVentas.GetByKey(int.Parse(flete.docEntry));
-                        entregaVentas.UserFields.Fields.Item("U_CSS_Valor_Flete").Value = flete.tarifa;
+                        entregaVentas.UserFields.Fields.Item("U_CSS_Valor_Flete").Value = flete.tarifa.ToString();
                         entregaVentas.UserFields.Fields.Item("U_CSS_Vehiculo").Value = vehiculo.code;
                         entregaVentas.UserFields.Fields.Item("U_CSS_Transportadora").Value = vehiculo.transportadora;
                         entregaVentas.UserFields.Fields.Item("U_CSS_Conductor").Value = conductor;
@@ -294,6 +343,9 @@ namespace BP
             }
             catch (Exception)
             {
+                if (ClaseDatos.objCompany.InTransaction)
+                    ClaseDatos.objCompany.EndTransaction(BoWfTransOpt.wf_RollBack);
+                
                 throw;
             }
             finally
@@ -358,12 +410,12 @@ namespace BP
 
 
             ClaseDatos.SqlConnex(ClaseDatos.objCompany.CompanyDB);
-            using (ClaseDatos.SqlConn)
-            {
+            //using (ClaseDatos.SqlConn)
+            //{
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = new SqlCommand(oSqlReport.ToString(), ClaseDatos.SqlConn);
                 adapter.Fill(dsFletes);
-            }
+            //}
 
             Macroguia reporte = new Macroguia();
             reporte.SetDataSource(dsFletes.Tables[2]);

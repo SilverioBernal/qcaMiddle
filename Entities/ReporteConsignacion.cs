@@ -47,5 +47,6 @@ namespace Entities
         public double PendingCost { get; set; }
         public double ConsigmentDays { get; set; }
         public double itemPrice { get; set; }
+        public double invItemPrice { get; set; }
     }
 }

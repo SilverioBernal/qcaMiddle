@@ -146,6 +146,7 @@ namespace BP
                 row.PendingCost = item.PendingCost.ToString();
                 row.avgPrice = item.AvgPrice;
                 row.itemPrice = item.itemPrice;
+                row.invItemPrice = item.invItemPrice;
                 row.ConsigmentDays = item.ConsigmentDays.ToString();
 
                 dsReport.DtReporteConsignacion.AddDtReporteConsignacionRow(row);

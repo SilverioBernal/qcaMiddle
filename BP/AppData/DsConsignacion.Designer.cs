@@ -359,6 +359,8 @@ namespace BP.AppData {
             
             private global::System.Data.DataColumn columnitemPrice;
             
+            private global::System.Data.DataColumn columninvItemPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DtReporteConsignacionDataTable() {
@@ -714,6 +716,14 @@ namespace BP.AppData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn invItemPriceColumn {
+                get {
+                    return this.columninvItemPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -789,7 +799,8 @@ namespace BP.AppData {
                         string PendingQuantity, 
                         string ConsigmentDays, 
                         string PendingCost, 
-                        double itemPrice) {
+                        double itemPrice, 
+                        double invItemPrice) {
                 DtReporteConsignacionRow rowDtReporteConsignacionRow = ((DtReporteConsignacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         orderType,
@@ -831,7 +842,8 @@ namespace BP.AppData {
                         PendingQuantity,
                         ConsigmentDays,
                         PendingCost,
-                        itemPrice};
+                        itemPrice,
+                        invItemPrice};
                 rowDtReporteConsignacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDtReporteConsignacionRow);
                 return rowDtReporteConsignacionRow;
@@ -894,6 +906,7 @@ namespace BP.AppData {
                 this.columnConsigmentDays = base.Columns["ConsigmentDays"];
                 this.columnPendingCost = base.Columns["PendingCost"];
                 this.columnitemPrice = base.Columns["itemPrice"];
+                this.columninvItemPrice = base.Columns["invItemPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -979,6 +992,8 @@ namespace BP.AppData {
                 base.Columns.Add(this.columnPendingCost);
                 this.columnitemPrice = new global::System.Data.DataColumn("itemPrice", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitemPrice);
+                this.columninvItemPrice = new global::System.Data.DataColumn("invItemPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvItemPrice);
                 this.columnInvoiceType.Caption = "ReturnType";
                 this.columnInvoiceEntry.Caption = "ReturnEntry";
                 this.columnInvoiceLine.Caption = "ReturnLine";
@@ -1776,6 +1791,22 @@ namespace BP.AppData {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double invItemPrice {
+                get {
+                    try {
+                        return ((double)(this[this.tableDtReporteConsignacion.invItemPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'invItemPrice\' in table \'DtReporteConsignacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDtReporteConsignacion.invItemPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsorderTypeNull() {
                 return this.IsNull(this.tableDtReporteConsignacion.orderTypeColumn);
             }
@@ -2252,6 +2283,18 @@ namespace BP.AppData {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetitemPriceNull() {
                 this[this.tableDtReporteConsignacion.itemPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsinvItemPriceNull() {
+                return this.IsNull(this.tableDtReporteConsignacion.invItemPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetinvItemPriceNull() {
+                this[this.tableDtReporteConsignacion.invItemPriceColumn] = global::System.Convert.DBNull;
             }
         }
         

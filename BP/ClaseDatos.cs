@@ -90,7 +90,7 @@ namespace BP
 
                 //hago la conexion con los datos obtenidos en el XML
                 SqlConn =
-                new SqlConnection("server=" + cSvrDb + ";uid=" + cUserDb + ";pwd=" + cPassDb + ";database= " + db + ";max pool size=60;min pool size=5;Connect Timeout=55");
+                new SqlConnection("server=" + cSvrDb + ";uid=" + cUserDb + ";pwd=" + cPassDb + ";database= " + db + ";max pool size=60;min pool size=5;Connect Timeout=200");
                 SqlConn.Open();
             }
             catch (Exception er)
@@ -119,6 +119,9 @@ namespace BP
             SqlDataAdapter oDataAdapter = new SqlDataAdapter();
             try
             {
+                if (SqlConn.State != ConnectionState.Open)
+                    SqlConn.Open();
+
                 oDataAdapter.SelectCommand = new SqlCommand(query, SqlConn);
                 oDataAdapter.Fill(oDs);
                 //ClaseDatos.SqlConn.Close();
@@ -130,7 +133,7 @@ namespace BP
             }
             finally
             {
-                SqlConn.Close();
+                //SqlConn.Close();
             }
             return oDs;
         }
@@ -142,14 +145,14 @@ namespace BP
             try
             {
                 if (SqlConn.State != ConnectionState.Open)
-                    SqlConn.Open();
+                    SqlConn.Open();                
 
                 SqlCommand miComando = new SqlCommand(query, SqlConn);
-                miDataReader = miComando.ExecuteReader();                
+                miDataReader = miComando.ExecuteReader();
             }
             catch (Exception er)
             {
-                SqlConn.Close();
+                //SqlConn.Close();
                 MessageBox.Show(er.Message, "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return miDataReader;
@@ -158,41 +161,49 @@ namespace BP
         //ejecucion de consultyas escalares que devuelven strings
         public static string scalarStringSql(string query)
         {
-            string cRsl;
+            string cRsl = string.Empty;
 
-            if (SqlConn.State != ConnectionState.Open)
-                SqlConn.Open();
-            
-            SqlCommand cmd = new SqlCommand(query, SqlConn);
-            cRsl = cmd.ExecuteScalar().ToString();
-            SqlConn.Close();
+            try
+            {
+                if (SqlConn.State != ConnectionState.Open)
+                    SqlConn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, SqlConn);
+                cRsl = cmd.ExecuteScalar().ToString();
+            }
+            catch (Exception er)
+            {
+                //SqlConn.Close();
+                MessageBox.Show(er.Message, "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return cRsl;
         }
 
         //ejecucion de consultyas escalares que devuelven integer
         public static int scalarIntSql(string query)
         {
+            int cRsl = 0;
 
-            int cRsl;
-            SqlCommand cmd = new SqlCommand(query, SqlConn);
+            try
+            {                
+                SqlCommand cmd = new SqlCommand(query, SqlConn);
 
-            if (SqlConn.State != ConnectionState.Open)
-                SqlConn.Open();
+                if (SqlConn.State != ConnectionState.Open)
+                    SqlConn.Open();
 
-            cRsl = 0 + Convert.ToInt32(cmd.ExecuteScalar());
-            SqlConn.Close();
+                cRsl = Convert.ToInt32(cmd.ExecuteScalar());                
 
-            if (cRsl == 0 || cRsl == null)
+                if (cRsl == null)
+                    cRsl = 0;
+            }
+            catch (Exception er)
             {
-
-                cRsl = 0;
-                return cRsl;
-
+                //SqlConn.Close();
+                MessageBox.Show(er.Message, "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
             return cRsl;
-
         }
 
 
@@ -202,19 +213,21 @@ namespace BP
         public static string nonQuery(string query)
         {
 
-            string cRsl;
+            string cRsl = string.Empty;
             try
             {
                 SqlCommand cmd = new SqlCommand(query, SqlConn);
-                SqlConn.Open();
-                cmd.ExecuteNonQuery();
-                SqlConn.Close();
+
+                if (SqlConn.State != ConnectionState.Open)
+                    SqlConn.Open();
+
+                cmd.ExecuteNonQuery();                
                 cRsl = "Datos actualizados con exito";
             }
             catch (Exception er)
             {
-                SqlConn.Close();
-                cRsl = er.Message;
+                //SqlConn.Close();
+                MessageBox.Show(er.Message, "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return cRsl;
         }

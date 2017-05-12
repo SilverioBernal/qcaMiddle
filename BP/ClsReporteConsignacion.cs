@@ -72,6 +72,7 @@ namespace BP
                     linea.TerritoryName = this.reader.IsDBNull(34) ? "" : this.reader.GetValue(34).ToString();
                     linea.AvgPrice = this.reader.IsDBNull(35) ? 0 : double.Parse(this.reader.GetValue(35).ToString());
                     linea.itemPrice = this.reader.IsDBNull(36) ? 0 : double.Parse(this.reader.GetValue(36).ToString());
+                    linea.invItemPrice = this.reader.IsDBNull(37) ? 0 : double.Parse(this.reader.GetValue(37).ToString());
                     linea.PendingQuantity = 0;
                     linea.ConsigmentDays = 0;
                     linea.PendingCost = 0;                    
