@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="BusinessDocumento.cs" />
     <Compile Include="BusinessInventario.cs" />
+    <Compile Include="BusinessParametroAplicacion.cs" />
     <Compile Include="ClsDataBusinessPartner.cs" />
     <Compile Include="CityAndValue.cs" />
     <Compile Include="ClaseDatos.cs" />

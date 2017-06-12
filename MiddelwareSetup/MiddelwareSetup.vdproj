@@ -1001,7 +1001,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bretano Middleware"
         "ProductCode" = "8:{C5FA9C53-E3E8-4E78-B606-BD93EB893917}"
-        "PackageCode" = "8:{CF3629B3-2186-4856-BA98-A098083809E7}"
+        "PackageCode" = "8:{E335A65C-165D-4335-808E-64589077849B}"
         "UpgradeCode" = "8:{C1C89595-9E90-4144-ADB5-A4126E7D3EB1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

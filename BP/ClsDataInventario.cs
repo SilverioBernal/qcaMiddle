@@ -624,7 +624,7 @@ namespace BP
 
                     oSalidaInventario.Lines.BatchNumbers.BatchNumber = linea.originalBatchNumber;
                     oSalidaInventario.Lines.BatchNumbers.Quantity = linea.quantity;
-                    oSalidaInventario.Lines.AccountCode = ConfigurationManager.AppSettings["CuentaReloteo"].ToString();                    
+                    oSalidaInventario.Lines.AccountCode = BusinessParametroAplicacion.GetParamValue("CuentaReloteo"); ;// ConfigurationManager.AppSettings["CuentaReloteo"].ToString();                    
                     oSalidaInventario.Lines.BatchNumbers.Add();
 
                     oSalidaInventario.Lines.Add();
@@ -671,7 +671,7 @@ namespace BP
                         if (!string.IsNullOrEmpty(linea.MnfDate))
                             oEntradaInventario.Lines.BatchNumbers.ManufacturingDate = Convert.ToDateTime(linea.MnfDate);
 
-                        oEntradaInventario.Lines.AccountCode = ConfigurationManager.AppSettings["CuentaReloteo"].ToString();  
+                        oEntradaInventario.Lines.AccountCode = BusinessParametroAplicacion.GetParamValue("CuentaReloteo"); //ConfigurationManager.AppSettings["CuentaReloteo"].ToString();  
                         oEntradaInventario.Lines.BatchNumbers.Add();
 
                         oEntradaInventario.Lines.Add();
